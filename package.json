@@ -1,0 +1,30 @@
+{
+  "name": "speedcurve-deploy",
+  "version": "1.0.0",
+  "description": "Define and run SpeedCurve tests from the command line. With speedcurve-deploy, you use a `speedcurve.json` file to configure the tests that you want to run. Then, using a single command, you run the tests on-demand and optionally wait to receive results.",
+  "main": "src/speedcurve.js",
+  "bin": "bin/speedcurve-deploy.js",
+  "scripts": {
+    "build": "standard --fix",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wildlyinaccurate/speedcurve-deploy.git"
+  },
+  "author": "SpeedCurve <support@speedcurve.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wildlyinaccurate/speedcurve-deploy/issues"
+  },
+  "homepage": "https://github.com/wildlyinaccurate/speedcurve-deploy#readme",
+  "dependencies": {
+    "npmlog": "^4.1.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "yargs": "^12.0.5"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
+}

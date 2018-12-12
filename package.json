@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/wildlyinaccurate/speedcurve-deploy.git"
   },
-  "author": "SpeedCurve <support@speedcurve.com>",
+  "author": "SpeedCurve <support@speedcurve.com> (https://speedcurve.com/)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wildlyinaccurate/speedcurve-deploy/issues"

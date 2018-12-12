@@ -1,6 +1,6 @@
 {
   "name": "speedcurve-deploy",
-  "version": "0.0.0",
+  "version": "1.0.0-beta.0",
   "description": "Define and run SpeedCurve tests from the command line. With speedcurve-deploy, you use a `speedcurve.json` file to configure the tests that you want to run. Then, using a single command, you run the tests on-demand and optionally wait to receive results.",
   "main": "src/speedcurve.js",
   "bin": "bin/speedcurve-deploy.js",

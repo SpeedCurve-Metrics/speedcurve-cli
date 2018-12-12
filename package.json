@@ -5,7 +5,7 @@
   "main": "src/speedcurve.js",
   "bin": "bin/speedcurve-deploy.js",
   "scripts": {
-    "test": "prettier --write 'src/**/*.js'"
+    "test": "prettier --write '{src,bin}/**/*.js'"
   },
   "prettier": {
     "endOfLine": "lf",

@@ -1,43 +1,61 @@
-const r = require('request-promise-native')
-const log = require('npmlog')
+const r = require("request-promise-native")
+const truncate = require("./truncate")
+const log = require("./log")
 
 class API {
   constructor() {
-    this.base = 'http://127.0.0.1/'
+    this.base = "http://127.0.0.1/"
+    this.key = "x"
   }
 
   prepareUrl(key, path) {
     const url = new URL(path, this.base)
 
     url.username = key
-    url.password = 'x'
+    url.password = "x"
 
     return url
   }
 
-  request(url, method = 'GET', data = {}) {
-    log.verbose(`Making request to ${url.origin}${url.pathname}`)
+  get(url) {
+    log.http(`GET ${url.origin}${url.pathname}`)
 
-    return r({
-      method,
+    return r.get({
       uri: url.href,
-      json: true,
-      qs: data
+      json: true
     })
   }
 
-  deploy(key, site) {
+  post(url, data = {}) {
+    log.http(`POST ${url.origin}${url.pathname} ${truncate(JSON.stringify(data), 60)}`)
+
+    return r.post({
+      uri: url.href,
+      json: true,
+      form: data
+    })
+  }
+
+  deploy(key, site, note = "", detail = "") {
     const url = this.prepareUrl(key, `/v1/deploy`)
 
-    return this.request(url, 'POST', {
-      site_id: site
+    return this.post(url, {
+      site_id: site,
+      note,
+      detail
     })
+  }
+
+  deployStatus(key, deployId) {
+    const url = this.prepareUrl(key, `/v1/deploy/${deployId}`)
+
+    return this.get(url)
   }
 
   sites(key) {
-    const url = this.prepareUrl(key, '/v1/sites')
+    const url = this.prepareUrl(key, "/v1/sites")
 
-    return this.request(url).then(res => res.sites)
+    return this.get(url).then(res => res.sites)
   }
 }
 

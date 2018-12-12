@@ -20,6 +20,11 @@ const config = require('yargs').options({
   'note-detail': {
     describe: 'Longer expanded detail for this deploy'
   },
+  'quiet': {
+    alias: 'q',
+    describe: 'Quiet mode. Only report errors',
+    type: 'boolean'
+  },
   'verbose': {
     alias: 'v',
     describe: 'Show verbose output',
@@ -27,7 +32,7 @@ const config = require('yargs').options({
   }
 }).argv
 
-log.level = config.verbose ? 'verbose' : 'error'
+log.level = config.verbose ? 'verbose' : config.quiet ? 'error' : 'warn'
 
 try {
   const userConf = require(`${process.cwd()}/.speedcurve.json`)

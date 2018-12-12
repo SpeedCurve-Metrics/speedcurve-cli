@@ -46,14 +46,14 @@ log.level = config.verbose ? "verbose" : config.quiet ? "error" : "warn"
 
 try {
   const userConf = require(`${process.cwd()}/.speedcurve.json`)
-  config.accounts = userConf.accounts
+  config.teams = userConf.teams
 } catch (e) {
   log.error("Unable to find a valid .speedcurve.json file in the current directory.")
   process.exit(400)
 }
 
-if (!Array.isArray(config.accounts) || !config.accounts.length) {
-  log.error(".speedcurve.json must contain an `accounts` array.")
+if (!Array.isArray(config.teams) || !config.teams.length) {
+  log.error(".speedcurve.json must contain an `teams` array.")
   process.exit(400)
 }
 

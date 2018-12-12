@@ -1,8 +1,8 @@
 module.exports = class Result {
-  constructor(siteId, account) {
+  constructor(siteId, team) {
     this.siteId = siteId
-    this.accountName = account.name
-    this.key = account.key
+    this.teamName = team.name
+    this.key = team.key
     this.deployId = null
     this.tests = []
     this.completedTests = []

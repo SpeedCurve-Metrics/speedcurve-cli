@@ -18,7 +18,20 @@ Run `speedcurve-deploy` in a directory containing a `.speedcurve.json` file to r
 speedcurve-deploy --note 'v2.11.8' --detail 'Inline critical CSS, bootstrap app on DOMContentLoaded'
 ```
 
-The `--note` (a short description of the deploy) and `--detail` (longer details of the deploy) flags are both optional but are recommended to help you identify deploys in the SpeedCurve UI.
+> 💁 The `--note` (a short description of the deploy) and `--detail` (longer details of the deploy) flags are both optional but are recommended to help you identify deploys in the SpeedCurve UI.
+
+You can also pass the `--wait` flag to force the process to wait until all tests have been completed:
+
+```
+speedcurve-deploy --note 'v2.11.8' --wait
+OK [News Sites] Triggered 24 tests for BBC News
+OK [News Sites] Triggered 24 tests for The Guardian
+OK [News Sites] Triggered 6 tests for Stuff
+OK [News Sites] Triggered 6 tests for NZ Herald
+OK [News Sites] Triggered 6 tests for Radio NZ
+Waiting for all tests to complete... 66 / 66 (100%)
+OK All tests completed
+```
 
 ## Configuration
 

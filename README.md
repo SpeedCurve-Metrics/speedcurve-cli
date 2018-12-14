@@ -28,12 +28,10 @@ SpeedCurve Deploy is configured with a `.speedcurve.json` file, which looks like
 {
   "teams": [
     {
-      "name": "My Team",
       "key": "******",
       "sites": [41774, 70313, 70315]
     },
     {
-      "name": "Another Team",
       "key": "******"
     }
   ]
@@ -46,6 +44,5 @@ The root object has an `teams` property which is an array of teams objects, each
 |----------|------------------------------------------------------|-----------------------|
 | `key`    | _Required._ [API key][api-docs] for the team.        | Not set               |
 | `sites`  | _Optional._ Array of site IDs to trigger tests for.  | All sites in the team |
-| `name`   | _Optional._ Used as an identifier in error messages. | Not set               |
 
 [api-docs]: https://support.speedcurve.com/apis/synthetic-api

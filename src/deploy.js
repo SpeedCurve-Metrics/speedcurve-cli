@@ -8,9 +8,12 @@ module.exports = async function deployCommand(config) {
 
   for (const i in config.teams) {
     const team = config.teams[i]
+    team.name = `teams[${i}]`
 
-    if (!team.name) {
-      team.name = `teams[${i}]`
+    try {
+      await api.team(config.teams[i].key).then(res => (team.name = res.team))
+    } catch {
+      log.verbose(`Couldn't fetch data for ${team.name}`)
     }
 
     if (!team.key) {
@@ -19,14 +22,18 @@ module.exports = async function deployCommand(config) {
     }
 
     if (team.sites && team.sites.length) {
-      log.verbose(`Deploying sites [${team.sites.join(", ")}] in ${team.name}`)
+      team.sites = await Promise.all(
+        team.sites.map(siteId =>
+          api.site(team.key, siteId).catch(() => ({ site_id: siteId, name: `Site #${siteId}` }))
+        )
+      )
     } else {
-      log.verbose(`No sites specified. Deploying all sites in ${team.name}`)
+      log.verbose(`[${team.name}] No sites specified. Deploying all sites`)
 
       try {
-        team.sites = (await api.sites(team.key)).map(s => s.site_id)
+        team.sites = await api.sites(team.key)
       } catch (err) {
-        log.error(`Error fetching sites for ${team.name}: ${err.message}`)
+        log.error(`[${team.name}] Error fetching sites: ${err.message}`)
       }
     }
 
@@ -35,37 +42,30 @@ module.exports = async function deployCommand(config) {
       continue
     }
 
-    const results = team.sites.map(siteId => new Result(siteId, team))
+    const results = team.sites.map(site => new Result(site, team))
     const ps = results.map(result =>
       api
-        .deploy(team.key, result.siteId, config.note, config.detail)
+        .deploy(team.key, result.site.site_id, config.note, config.detail)
         .then(res => {
           if (res.status === "success") {
             result.updateFromApiResponse(res)
+            allSuccessfulResults.push(result)
+
+            log.ok(
+              `[${team.name}] Triggered ${result.tests} ${pl("test", result.tests)} for ${
+                result.site.name
+              }`
+            )
           } else {
-            log.error(`Couldn't deploy site ${result.siteId} in ${team.name}: ${res.message}`)
+            log.error(`[${team.name}] Couldn't deploy site ${result.site.name}: ${res.message}`)
           }
         })
         .catch(err => {
-          log.error(`Couldn't deploy site ${result.siteId} in ${team.name}: ${err.message}`)
+          log.error(`[${team.name}] Couldn't deploy site ${result.site.name}: ${err.message}`)
         })
     )
 
     await Promise.all(ps)
-
-    const successfulResults = results.filter(result => result.deployId)
-    successfulResults.forEach(r => allSuccessfulResults.push(r))
-
-    if (successfulResults.length) {
-      const tests = Result.countTests(successfulResults)
-      const n = successfulResults.length
-
-      log.ok(
-        `Triggered ${n} ${pl("deploy", n)} (${tests} ${pl("test", tests)}) for ${team.name}`
-      )
-    } else {
-      log.error(`No deploys were triggered for ${team.name}`)
-    }
   }
 
   if (config.wait) {
@@ -82,7 +82,7 @@ module.exports = async function deployCommand(config) {
           })
           .catch(err => {
             log.notice(
-              `Couldn't retrieve deploy status for site ${result.siteId} in team ${
+              `Couldn't retrieve deploy status for site ${result.site.name} in team ${
                 result.teamName
               }: ${err.message}`
             )
@@ -92,8 +92,11 @@ module.exports = async function deployCommand(config) {
       await Promise.all(ps)
 
       const completedTests = Result.countCompletedTests(allSuccessfulResults)
+      const pctCompleted = Math.round((completedTests / totalTests) * 100)
 
-      log.stdout(`\rWaiting for all tests to complete... ${completedTests} / ${totalTests}`)
+      log.stdout(
+        `\rWaiting for all tests to complete... ${completedTests} / ${totalTests} (${pctCompleted}%)`
+      )
 
       if (completedTests < totalTests) {
         return new Promise(resolve => {

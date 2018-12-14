@@ -52,6 +52,18 @@ class API {
     return this.get(url)
   }
 
+  team(key) {
+    const url = this.prepareUrl(key, "/v1/export")
+
+    return this.get(url).then(res => res.teams[0])
+  }
+
+  site(key, siteId) {
+    const url = this.prepareUrl(key, `/v1/sites/${siteId}`)
+
+    return this.get(url).then(res => res.site)
+  }
+
   sites(key) {
     const url = this.prepareUrl(key, "/v1/sites")
 

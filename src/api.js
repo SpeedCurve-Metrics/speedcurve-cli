@@ -1,5 +1,5 @@
 const r = require("request-promise-native")
-const truncate = require("./truncate")
+const truncate = require("./util/truncate")
 const log = require("./log")
 
 class API {

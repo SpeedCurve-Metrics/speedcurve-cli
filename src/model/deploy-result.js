@@ -1,8 +1,7 @@
-module.exports = class Result {
-  constructor(site, team) {
+module.exports = class DeployResult {
+  constructor(site) {
+    this.success = false
     this.site = site
-    this.teamName = team.name
-    this.key = team.key
     this.deployId = null
     this.tests = 0
     this.completedTests = 0

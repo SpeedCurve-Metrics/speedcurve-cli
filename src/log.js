@@ -1,5 +1,6 @@
 const log = require("npmlog")
 
+log.level = "silent"
 log.prefixStyle = {}
 log.addLevel("ok", 5000, { fg: "green", bg: "black" }, "OK")
 

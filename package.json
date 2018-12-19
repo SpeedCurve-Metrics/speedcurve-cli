@@ -1,16 +1,34 @@
 {
-  "name": "speedcurve-deploy",
+  "name": "speedcurve",
   "version": "1.0.0-beta.1",
-  "description": "Define and run SpeedCurve tests from the command line. With speedcurve-deploy, you use a `speedcurve.json` file to configure the tests that you want to run. Then, using a single command, you run the tests on-demand and optionally wait to receive results.",
-  "main": "src/speedcurve.js",
-  "bin": "bin/speedcurve-deploy.js",
+  "description": "Official SpeedCurve CLI and Node.js API.",
+  "main": "src/index.js",
+  "bin": {
+    "speedcurve": "bin/speedcurve.js"
+  },
   "scripts": {
-    "test": "prettier --write '{src,bin}/**/*.js'"
+    "preversion": "npm run test",
+    "postversion": "echo 'Building binaries...' && npm run build && (git push --tags || echo 'Failed to push latest tag. Please do it manually.')",
+    "build": "npm run pkg",
+    "test": "prettier --write '{src,bin}/**/*.js'",
+    "pkg": "pkg . --out-path=bin && npm run copy-bin",
+    "copy-bin": "mkdir -p bin/macos bin/linux bin/windows && mv bin/speedcurve-linux bin/linux/speedcurve && mv bin/speedcurve-macos bin/macos/speedcurve && mv bin/speedcurve-win bin/windows/speedcurve"
   },
   "prettier": {
     "endOfLine": "lf",
     "printWidth": 100,
     "semi": false
+  },
+  "pkg": {
+    "scripts": [
+      "bin/speedcurve.js",
+      "src/**/*.js"
+    ],
+    "targets": [
+      "latest-linux-x64",
+      "latest-macos-x64",
+      "latest-win-x64"
+    ]
   },
   "repository": {
     "type": "git",
@@ -29,6 +47,7 @@
     "yargs": "^12.0.5"
   },
   "devDependencies": {
+    "pkg": "^4.3.5",
     "prettier": "^1.15.3"
   }
 }

@@ -73,6 +73,11 @@ if (!opts.key) {
   process.exit(400)
 }
 
+if (!opts._.length) {
+  yargs.showHelp()
+  process.exit(400)
+}
+
 const command = (() => {
   switch (opts._[0]) {
     case "deploy":

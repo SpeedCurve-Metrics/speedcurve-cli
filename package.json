@@ -1,6 +1,6 @@
 {
   "name": "speedcurve",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "Official SpeedCurve CLI and Node.js API.",
   "main": "src/index.js",
   "bin": {

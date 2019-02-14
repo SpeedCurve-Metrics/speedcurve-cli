@@ -55,7 +55,7 @@ OK All tests completed
 
 ### `speedcurve list-sites`
 
-List all of the sites in a team.
+List all of the sites in a team. Useful for finding the ID of a site to deploy.
 
 ```
 speedcurve list-sites --json
@@ -64,3 +64,7 @@ speedcurve list-sites --json
 ## Node.js API documentation
 
 See [the API reference](https://speedcurve-metrics.github.io/speedcurve-cli/).
+
+## Contributing
+
+This tool is still in beta, but pull requests are welcome! Please read [CONTRIBUTING.md](.github/CONTRIBUTING.md) first.

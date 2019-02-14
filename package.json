@@ -12,10 +12,11 @@
   ],
   "scripts": {
     "preversion": "npm run test && git diff-index --quiet HEAD",
-    "version": "npm run build",
+    "version": "npm run build && npm run commit-docs",
     "postversion": "git push --tags || echo 'Failed to push latest tag. Please do it manually with git push --tags.'",
     "build": "npm run docs",
     "docs": "documentation build --github --format html --output docs/ src/index.js",
+    "commit-docs": "git add docs/ && git commit -m 'Build docs'",
     "test": "prettier --write '{src,bin}/**/*.js'",
     "copy-bin": "mkdir -p bin/macos bin/linux bin/windows && mv bin/speedcurve-linux bin/linux/speedcurve && mv bin/speedcurve-macos bin/macos/speedcurve && mv bin/speedcurve-win bin/windows/speedcurve"
   },

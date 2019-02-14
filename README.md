@@ -2,6 +2,20 @@
 
 🍩 Official SpeedCurve CLI and Node.js API.
 
+## Current features
+
+**This package is in beta** and provides a limited set of features:
+
+* Trigger deploys
+* Monitor the status of deploys
+* List sites in an account
+
+## Planned features
+
+* Fetch historic test results
+* Fetch data from custom charts
+* Integration with performance budget alerts (e.g. fail the build when a budget is crossed)
+
 ## Installation
 
 The recommended installation method is via npm:

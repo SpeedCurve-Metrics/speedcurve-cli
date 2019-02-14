@@ -4,7 +4,7 @@ const log = require("../log")
 const api = require("../api")
 
 module.exports = async function deploy({ key, site = [], note = "", detail = "", wait = false }) {
-  const results = await SpeedCurve.deploy({ key, site, note, detail })
+  const results = await SpeedCurve.deploys.create(key, note, detail, site)
   const successfulResults = results.filter(result => result.success)
 
   if (wait) {

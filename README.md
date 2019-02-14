@@ -14,7 +14,7 @@ Note that this requires [Node.js](https://nodejs.org/) version 8 or higher.
 
 ## Basic usage
 
-The `speedcurve` CLI interacts with the SpeedCurve API using your [SpeedCurve API key][api-docs]. This key can either be set as the `SPEEDCURVE_API_KEY` environment variable, e.g. `SPEEDCURVE_API_KEY=xxx speedcurve deploy` or can be specified using the `--key` flag e.g. `speedcurve deploy --key=xxx`.
+The `speedcurve` CLI interacts with the SpeedCurve API using your [SpeedCurve API key](https://support.speedcurve.com/apis/synthetic-api). This key can either be set as the `SPEEDCURVE_API_KEY` environment variable, e.g. `SPEEDCURVE_API_KEY=xxx speedcurve deploy` or can be specified using the `--key` flag e.g. `speedcurve deploy --key=xxx`.
 
 See `speedcurve --help` for a list of all commands and options.
 
@@ -61,29 +61,6 @@ List all of the sites in a team.
 speedcurve list-sites --json
 ```
 
-## Configuration
+## Node.js API documentation
 
-SpeedCurve Deploy is configured with a `.speedcurve.json` file, which looks like this:
-
-```json
-{
-  "teams": [
-    {
-      "key": "******",
-      "sites": [41774, 70313, 70315]
-    },
-    {
-      "key": "******"
-    }
-  ]
-}
-```
-
-The root object has an `teams` property which is an array of teams objects, each representing a SpeedCurve teams. See below for a description of the teams object properties.
-
-| Property | Description | Default |
-|----------|------------------------------------------------------|-----------------------|
-| `key`    | _Required._ [API key][api-docs] for the team.        | Not set               |
-| `sites`  | _Optional._ Array of site IDs to trigger tests for.  | All sites in the team |
-
-[api-docs]: https://support.speedcurve.com/apis/synthetic-api
+See [the docs directory](docs/index.md).

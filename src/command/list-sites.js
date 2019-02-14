@@ -2,7 +2,7 @@ const SpeedCurve = require("../index")
 const log = require("../log")
 
 module.exports = function listSites({ key, json = false }) {
-  SpeedCurve.sites.get({ key }).then(sites => {
+  SpeedCurve.sites.getAll(key).then(sites => {
     if (json) {
       log.stdout(JSON.stringify(sites, null, 4))
     } else {

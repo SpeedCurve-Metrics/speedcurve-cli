@@ -6,29 +6,22 @@
   "bin": {
     "speedcurve": "bin/speedcurve.js"
   },
+  "directories": [
+    "bin/",
+    "src"
+  ],
   "scripts": {
     "preversion": "npm run test",
-    "postversion": "echo 'Building binaries...' && npm run build && (git push --tags || echo 'Failed to push latest tag. Please do it manually.')",
-    "build": "npm run pkg",
+    "postversion": "npm run build && (git push --tags || echo 'Failed to push latest tag. Please do it manually with git push --tags.')",
+    "build": "npm run docs",
+    "docs": "documentation build --github --format html --output docs/ src/index.js",
     "test": "prettier --write '{src,bin}/**/*.js'",
-    "pkg": "pkg . --out-path=bin && npm run copy-bin",
     "copy-bin": "mkdir -p bin/macos bin/linux bin/windows && mv bin/speedcurve-linux bin/linux/speedcurve && mv bin/speedcurve-macos bin/macos/speedcurve && mv bin/speedcurve-win bin/windows/speedcurve"
   },
   "prettier": {
     "endOfLine": "lf",
     "printWidth": 100,
     "semi": false
-  },
-  "pkg": {
-    "scripts": [
-      "bin/speedcurve.js",
-      "src/**/*.js"
-    ],
-    "targets": [
-      "latest-linux-x64",
-      "latest-macos-x64",
-      "latest-win-x64"
-    ]
   },
   "repository": {
     "type": "git",
@@ -47,7 +40,7 @@
     "yargs": "^12.0.5"
   },
   "devDependencies": {
-    "pkg": "^4.3.5",
-    "prettier": "^1.15.3"
+    "documentation": "^9.1.1",
+    "prettier": "^1.16.4"
   }
 }

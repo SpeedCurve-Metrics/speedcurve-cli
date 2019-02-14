@@ -1,6 +1,7 @@
 const r = require("request-promise-native")
 const truncate = require("./util/truncate")
 const log = require("./log")
+const VERSION = require("../package.json").version
 
 class API {
   constructor() {
@@ -22,7 +23,10 @@ class API {
 
     return r.get({
       uri: url.href,
-      json: true
+      json: true,
+      headers: {
+        'user-agent': `SpeedCurve CLI ${VERSION}`
+      }
     })
   }
 
@@ -32,7 +36,10 @@ class API {
     return r.post({
       uri: url.href,
       json: true,
-      form: data
+      form: data,
+      headers: {
+        'user-agent': `SpeedCurve CLI ${VERSION}`
+      }
     })
   }
 

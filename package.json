@@ -11,8 +11,8 @@
     "src"
   ],
   "scripts": {
-    "preversion": "npm run test",
-    "postversion": "npm run build && (git push --tags || echo 'Failed to push latest tag. Please do it manually with git push --tags.')",
+    "preversion": "npm run test && npm run build",
+    "postversion": "git push --tags || echo 'Failed to push latest tag. Please do it manually with git push --tags.'",
     "build": "npm run docs",
     "docs": "documentation build --github --format html --output docs/ src/index.js",
     "test": "prettier --write '{src,bin}/**/*.js'",

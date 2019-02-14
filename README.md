@@ -63,4 +63,4 @@ speedcurve list-sites --json
 
 ## Node.js API documentation
 
-See [the docs directory](docs/index.md).
+See [the API reference](https://speedcurve-metrics.github.io/speedcurve-cli/).

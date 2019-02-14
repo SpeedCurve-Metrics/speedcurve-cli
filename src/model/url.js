@@ -15,11 +15,11 @@ class Url {
    * @param {String} url
    */
   constructor(urlId, label, url) {
-  	/** @type {Number} */
+    /** @type {Number} */
     this.urlId = urlId
-  	/** @type {String} */
+    /** @type {String} */
     this.label = label
-  	/** @type {String} */
+    /** @type {String} */
     this.url = url
   }
 

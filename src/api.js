@@ -25,7 +25,7 @@ class API {
       uri: url.href,
       json: true,
       headers: {
-        'user-agent': `SpeedCurve CLI ${VERSION}`
+        "user-agent": `SpeedCurve CLI ${VERSION}`
       }
     })
   }
@@ -38,7 +38,7 @@ class API {
       json: true,
       form: data,
       headers: {
-        'user-agent': `SpeedCurve CLI ${VERSION}`
+        "user-agent": `SpeedCurve CLI ${VERSION}`
       }
     })
   }

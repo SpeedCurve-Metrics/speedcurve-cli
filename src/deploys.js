@@ -70,7 +70,10 @@ const deploys = {
               result.success = true
 
               log.ok(
-                `Deploy ${result.deployId} triggered ${result.tests} ${pl("test", result.tests)} for ${result.site.name}`
+                `Deploy ${result.deployId} triggered ${result.tests} ${pl(
+                  "test",
+                  result.tests
+                )} for ${result.site.name}`
               )
             } else {
               log.error(`Couldn't deploy site ${result.site.name}: ${res.message}`)

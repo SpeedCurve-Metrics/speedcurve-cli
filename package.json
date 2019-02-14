@@ -13,7 +13,7 @@
   "scripts": {
     "preversion": "npm run test && git diff-index --quiet HEAD",
     "version": "npm run build && npm run commit-docs",
-    "postversion": "git push --tags || echo 'Failed to push latest tag. Please do it manually with git push --tags.'",
+    "postversion": "git push origin master --tags || echo 'Failed to push latest tag. Please do it manually with git push origin master --tags.'",
     "build": "npm run docs",
     "docs": "documentation build --github --format html --output docs/ src/index.js",
     "commit-docs": "git add docs/ && git commit -m 'Build docs'",

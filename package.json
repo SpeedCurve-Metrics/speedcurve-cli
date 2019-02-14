@@ -6,9 +6,9 @@
   "bin": {
     "speedcurve": "bin/speedcurve.js"
   },
-  "directories": [
+  "files": [
     "bin/",
-    "src"
+    "src/"
   ],
   "scripts": {
     "preversion": "npm run test && git diff-index --quiet HEAD",

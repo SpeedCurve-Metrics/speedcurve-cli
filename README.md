@@ -52,6 +52,12 @@ You can specify which sites to trigger deploys for with the `--site` option. Spe
 speedcurve deploy --note 'v2.11.8' --site 1043801 --site 1029909
 ```
 
+You can also specify a site name instead of an ID if you prefer:
+
+```
+speedcurve deploy --note 'v2.11.8' --site 1043801 --site 'BBC News'
+```
+
 #### The `--wait` option
 
 You can also pass the `--wait` flag to force the process to wait until all tests have been completed:

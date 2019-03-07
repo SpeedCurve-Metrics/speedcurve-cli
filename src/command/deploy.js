@@ -4,6 +4,26 @@ const log = require("../log")
 const api = require("../api")
 
 module.exports = async function deploy({ key, site = [], note = "", detail = "", wait = false }) {
+  site = await Promise.all(
+    site.map(siteIdOrName => {
+      if (typeof siteIdOrName === "string") {
+        return SpeedCurve.sites.getAll(key).then(sites => {
+          const siteByName = sites.find(site => site.name === siteIdOrName)
+
+          if (!siteByName) {
+            log.warn(`Couldn't find site by name "${siteIdOrName}"`)
+            return siteIdOrName
+          }
+
+          return siteByName.siteId
+        })
+      }
+
+      // Assume a valid site ID
+      return Promise.resolve(siteIdOrName)
+    })
+  )
+
   const results = await SpeedCurve.deploys.create(key, note, detail, site)
   const successfulResults = results.filter(result => result.success)
 

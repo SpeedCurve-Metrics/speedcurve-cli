@@ -11,7 +11,7 @@ const sites = {
    * Get the details of a SpeedCurve site
    *
    * @param {String} key - Your SpeedCurve API key
-   * @param {Number} [siteId] - ID of the site to get
+   * @param {Number} siteId - ID of the site to get
    * @return {Promise<Site, Error>}
    */
   get(key, siteId) {

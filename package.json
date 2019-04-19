@@ -17,7 +17,7 @@
     "build": "npm run docs",
     "docs": "documentation build --github --format html --output docs/ src/index.js",
     "commit-docs": "git add docs/ && git commit -m 'Build docs'",
-    "test": "prettier --write '{src,bin}/**/*.js'",
+    "test": "eslint --fix {src,bin}/**/*.js .eslintrc.js --ignore-pattern !.eslintrc.js",
     "copy-bin": "mkdir -p bin/macos bin/linux bin/windows && mv bin/speedcurve-linux bin/linux/speedcurve && mv bin/speedcurve-macos bin/macos/speedcurve && mv bin/speedcurve-win bin/windows/speedcurve"
   },
   "prettier": {
@@ -43,6 +43,8 @@
   },
   "devDependencies": {
     "documentation": "^9.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "prettier": "^1.16.4"
   }
 }

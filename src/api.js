@@ -3,23 +3,32 @@ const truncate = require("./util/truncate")
 const log = require("./log")
 const VERSION = require("../package.json").version
 
+const logFriendlyUrl = url =>
+  [url.origin, url.pathname, url.searchParams ? "?" + url.searchParams : ""].join("")
+
 class API {
   constructor() {
     this.base = "https://api.speedcurve.com/"
     this.key = "x"
   }
 
-  prepareUrl(key, path) {
+  prepareUrl(key, path, searchParams = {}) {
     const url = new URL(path, this.base)
 
     url.username = key
     url.password = "x"
 
+    for (let key in searchParams) {
+      if (typeof searchParams[key] !== "undefined") {
+        url.searchParams.set(key, searchParams[key])
+      }
+    }
+
     return url
   }
 
   get(url) {
-    log.http(`GET ${url.origin}${url.pathname}`)
+    log.http(`GET ${logFriendlyUrl(url)}`)
 
     return r.get({
       uri: url.href,
@@ -31,7 +40,7 @@ class API {
   }
 
   post(url, data = {}) {
-    log.http(`POST ${url.origin}${url.pathname} ${truncate(JSON.stringify(data), 60)}`)
+    log.http(`POST ${logFriendlyUrl(url)} ${truncate(JSON.stringify(data), 60)}`)
 
     return r.post({
       uri: url.href,
@@ -75,6 +84,19 @@ class API {
     const url = this.prepareUrl(key, "/v1/sites")
 
     return this.get(url).then(res => res.sites)
+  }
+
+  test(key, testId) {
+    const url = this.prepareUrl(key, `/v1/tests/${testId}`)
+
+    return this.get(url)
+  }
+
+  tests(key, urlId, days = 1, filters = {}) {
+    const { region, browser } = filters
+    const url = this.prepareUrl(key, `/v1/urls/${urlId}`, { days, region, browser })
+
+    return this.get(url)
   }
 }
 

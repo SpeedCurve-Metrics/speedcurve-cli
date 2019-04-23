@@ -14,7 +14,7 @@ const opts = yargs
       type: "string"
     },
     site: {
-      describe: "Only trigger deploys for the specified site ID(s)",
+      describe: "Only trigger deploys for the specified site ID(s) or name(s)",
       type: "array",
       default: []
     },
@@ -22,6 +22,31 @@ const opts = yargs
       describe: "Wait for deploys to finish before exiting",
       type: "boolean",
       default: false
+    }
+  })
+  .command("tests", "Get the latest synthetic test data for one or more URLs in a site", {
+    site: {
+      describe: "Get test data for the specified site ID or name",
+      type: "string",
+      demandOption: true
+    },
+    url: {
+      describe: "Only get test data for the specific URL ID(s) or name(s)",
+      type: "array",
+      default: []
+    },
+    days: {
+      describe: "How many days worth of test data to get",
+      type: "number",
+      default: 1
+    },
+    region: {
+      describe: "Only get tests from the specified region",
+      type: "string"
+    },
+    browser: {
+      describe: "Only get tests from the specified browser",
+      type: "string"
     }
   })
   .command("list-sites", "List all of the sites in an account", {
@@ -82,6 +107,8 @@ const command = (() => {
   switch (opts._[0]) {
     case "deploy":
       return require("../src/command/deploy")
+    case "tests":
+      return require("../src/command/tests")
     case "list-sites":
       return require("../src/command/list-sites")
     default:

@@ -3,12 +3,12 @@
 <head>
   <meta charset='utf-8' />
   <title>speedcurve 1.0.0-beta.9 | Documentation</title>
-  <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
-  <link href='assets/style.css' type='text/css' rel='stylesheet' />
-  <link href='assets/github.css' type='text/css' rel='stylesheet' />
-  <link href='assets/split.css' type='text/css' rel='stylesheet' />
   <meta name='description' content='Official SpeedCurve CLI and Node.js API.'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' rel='stylesheet' />
+  <link href='assets/style.css' rel='stylesheet' />
+  <link href='assets/github.css' rel='stylesheet' />
+  <link href='assets/split.css' rel='stylesheet' />
 </head>
 <body class='documentation m0'>
     <div class='flex'>
@@ -93,6 +93,46 @@
                         .getAll
                       </a></li>
                     
+                      <li><a
+                        href='#sitesgetallwithtests'
+                        class='regular pre-open'>
+                        .getAllWithTests
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#tests'
+                  class=" toggle-sibling">
+                  tests
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#testsget'
+                        class='regular pre-open'>
+                        .get
+                      </a></li>
+                    
+                      <li><a
+                        href='#testsgetforurl'
+                        class='regular pre-open'>
+                        .getForUrl
+                      </a></li>
+                    
                     </ul>
                   
                   
@@ -173,6 +213,16 @@
               
                 
                 <li><a
+                  href='#siteapiresponse'
+                  class="">
+                  SiteApiResponse
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#site'
                   class=" toggle-sibling">
                   Site
@@ -219,16 +269,6 @@
                   
                   
                 </div>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#siteapiresponse'
-                  class="">
-                  SiteApiResponse
-                  
-                </a>
                 
                 </li>
               
@@ -285,11 +325,66 @@
                         #url
                       </a></li>
                       
+                      <li><a
+                        href='#urltests'
+                        class='regular pre-open'>
+                        #tests
+                      </a></li>
+                      
                     </ul>
                   
                   
                   
                 </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#testresult'
+                  class=" toggle-sibling">
+                  TestResult
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#testresultfromapiresponse'
+                        class='regular pre-open'>
+                        .fromApiResponse
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#testresultdata'
+                        class='regular pre-open'>
+                        #data
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#testresultapiresponse'
+                  class="">
+                  TestResultApiResponse
+                  
+                </a>
                 
                 </li>
               
@@ -313,7 +408,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/index.js#L14-L20'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/index.js#L15-L22'>
       <span>src/index.js</span>
       </a>
     
@@ -323,10 +418,7 @@
   <p>Note: All interaction with the SpeedCurve API requires your
 <a href="https://support.speedcurve.com/apis/synthetic-api">SpeedCurve API key</a></p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>SpeedCurve</div>
-   
   
   
 
@@ -358,8 +450,11 @@
   
 
   
+
+  
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -372,7 +467,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/deploys.js#L11-L93'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/deploys.js#L11-L93'>
       <span>src/deploys.js</span>
       </a>
     
@@ -381,10 +476,7 @@
 
   <p>Create and manage SpeedCurve deploys</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>deploys</div>
-   
   
   
 
@@ -429,7 +521,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/deploys.js#L19-L21'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/deploys.js#L19-L21'>
       <span>src/deploys.js</span>
       </a>
     
@@ -438,10 +530,7 @@
 
   <p>Get the status of a deploy</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>status(key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, deployId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
-   
   
   
 
@@ -498,6 +587,8 @@
   
 
   
+
+  
 </section>
 
       </div>
@@ -517,7 +608,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/deploys.js#L33-L92'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/deploys.js#L33-L92'>
       <span>src/deploys.js</span>
       </a>
     
@@ -527,10 +618,7 @@
   <p>Run on-demand tests for one or more sites. If no <code>siteId</code> parameter is
 specified, a deploy will be created for all sites in the account</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>create(key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, note: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, detail: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, sites: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#deployresult">DeployResult</a>>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>></div>
-   
   
   
 
@@ -608,6 +696,8 @@ specified, a deploy will be created for all sites in the account</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -620,8 +710,11 @@ specified, a deploy will be created for all sites in the account</p>
   
 
   
+
+  
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -634,7 +727,7 @@ specified, a deploy will be created for all sites in the account</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/sites.js#L9-L30'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/sites.js#L9-L42'>
       <span>src/sites.js</span>
       </a>
     
@@ -643,10 +736,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>Retrieve information about SpeedCurve sites</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>sites</div>
-   
   
   
 
@@ -691,7 +781,7 @@ specified, a deploy will be created for all sites in the account</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/sites.js#L17-L19'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/sites.js#L17-L19'>
       <span>src/sites.js</span>
       </a>
     
@@ -700,10 +790,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>Get the details of a SpeedCurve site</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>get(key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, siteId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#site">Site</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>></div>
-   
   
   
 
@@ -760,6 +847,8 @@ specified, a deploy will be created for all sites in the account</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -779,7 +868,7 @@ specified, a deploy will be created for all sites in the account</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/sites.js#L27-L29'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/sites.js#L27-L29'>
       <span>src/sites.js</span>
       </a>
     
@@ -788,10 +877,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>Get the details of all sites in a SpeedCurve account</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>getAll(key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#site">Site</a>>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>></div>
-   
   
   
 
@@ -839,6 +925,96 @@ specified, a deploy will be created for all sites in the account</p>
   
 
   
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='sitesgetallwithtests'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getAllWithTests(key, days)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/sites.js#L39-L41'>
+      <span>src/sites.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the details of all sites in a SpeedCurve account, including recent median
+test results.</p>
+
+    <div class='pre p1 fill-light mt0'>getAllWithTests(key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, days: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#site">Site</a>>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    Your SpeedCurve API key
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>days</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    How many days of median test results to incldue
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#site">Site</a>>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 </section>
 
       </div>
@@ -851,8 +1027,302 @@ specified, a deploy will be created for all sites in the account</p>
   
 
   
+
+  
 </section>
 
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='tests'>
+      tests
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/tests.js#L9-L35'>
+      <span>src/tests.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Retrieve synthetic test results</p>
+
+    <div class='pre p1 fill-light mt0'>tests</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> tests = <span class="hljs-built_in">require</span>(<span class="hljs-string">'speedcurve'</span>).tests</pre>
+    
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='testsget'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>get(key, testId)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/tests.js#L17-L19'>
+      <span>src/tests.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the details of an individual test</p>
+
+    <div class='pre p1 fill-light mt0'>get(key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, testId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#testresult">TestResult</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    Your SpeedCurve API key
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>testId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    ID of the test to get
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#testresult">TestResult</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='testsgetforurl'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getForUrl(key, urlId, days, filters)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/tests.js#L32-L34'>
+      <span>src/tests.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get synthetic test results for a SpeedCurve URL</p>
+
+    <div class='pre p1 fill-light mt0'>getForUrl(key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, urlId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, days: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, filters: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#url">Url</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+	    Your SpeedCurve API key
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>urlId</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    ID of the URL to get tests for
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>days</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            = <code>1</code>)</code>
+	    How many days of tests to get
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>filters</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>filters.region</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>Only include tests from the specified region
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>filters.browser</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>Only include tests from the specified browser
+</span></td>
+</tr>
+
+
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="#url">Url</a>, <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -865,7 +1335,7 @@ specified, a deploy will be created for all sites in the account</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/deploy-result.js#L4-L74'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/deploy-result.js#L4-L74'>
       <span>src/model/deploy-result.js</span>
       </a>
     
@@ -874,10 +1344,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>An object representing a SpeedCurve deploy result.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>new DeployResult(site: <a href="#site">Site</a>)</div>
-   
   
   
 
@@ -929,7 +1396,7 @@ specified, a deploy will be created for all sites in the account</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/deploy-result.js#L46-L48'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/deploy-result.js#L46-L48'>
       <span>src/model/deploy-result.js</span>
       </a>
     
@@ -938,10 +1405,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>Returns the total number of tests in a collection of DeployResults.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>countTests(resultsCollection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#deployresult">DeployResult</a>>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
-   
   
   
 
@@ -977,6 +1441,8 @@ specified, a deploy will be created for all sites in the account</p>
 
       
     
+  
+
   
 
   
@@ -1007,7 +1473,7 @@ specified, a deploy will be created for all sites in the account</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/deploy-result.js#L56-L58'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/deploy-result.js#L56-L58'>
       <span>src/model/deploy-result.js</span>
       </a>
     
@@ -1016,10 +1482,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>Returns the number of tests that have been completed in a collection of DeployResults.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>countCompletedTests(resultsCollection: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#deployresult">DeployResult</a>>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
-   
   
   
 
@@ -1055,6 +1518,8 @@ specified, a deploy will be created for all sites in the account</p>
 
       
     
+  
+
   
 
   
@@ -1093,7 +1558,7 @@ specified, a deploy will be created for all sites in the account</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/deploy-result.js#L13-L13'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/deploy-result.js#L13-L13'>
       <span>src/model/deploy-result.js</span>
       </a>
     
@@ -1102,10 +1567,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>The site that this result is for</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>site</div>
-   
   
     <p>
       Type:
@@ -1119,6 +1581,8 @@ specified, a deploy will be created for all sites in the account</p>
   
   
   
+  
+
   
 
   
@@ -1155,7 +1619,7 @@ specified, a deploy will be created for all sites in the account</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/deploy-result.js#L19-L19'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/deploy-result.js#L19-L19'>
       <span>src/model/deploy-result.js</span>
       </a>
     
@@ -1164,10 +1628,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>A unique ID for this deploy result</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>deployId</div>
-   
   
     <p>
       Type:
@@ -1181,6 +1642,8 @@ specified, a deploy will be created for all sites in the account</p>
   
   
   
+  
+
   
 
   
@@ -1217,7 +1680,7 @@ specified, a deploy will be created for all sites in the account</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/deploy-result.js#L25-L25'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/deploy-result.js#L25-L25'>
       <span>src/model/deploy-result.js</span>
       </a>
     
@@ -1226,10 +1689,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>Whether this deploy was successful</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>success</div>
-   
   
     <p>
       Type:
@@ -1243,6 +1703,8 @@ specified, a deploy will be created for all sites in the account</p>
   
   
   
+  
+
   
 
   
@@ -1279,7 +1741,7 @@ specified, a deploy will be created for all sites in the account</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/deploy-result.js#L31-L31'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/deploy-result.js#L31-L31'>
       <span>src/model/deploy-result.js</span>
       </a>
     
@@ -1288,10 +1750,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>How many tests were triggered for this deploy</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>tests</div>
-   
   
     <p>
       Type:
@@ -1305,6 +1764,8 @@ specified, a deploy will be created for all sites in the account</p>
   
   
   
+  
+
   
 
   
@@ -1341,7 +1802,7 @@ specified, a deploy will be created for all sites in the account</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/deploy-result.js#L37-L37'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/deploy-result.js#L37-L37'>
       <span>src/model/deploy-result.js</span>
       </a>
     
@@ -1350,10 +1811,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>How many tests have been completed so far</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>completedTests</div>
-   
   
     <p>
       Type:
@@ -1384,6 +1842,8 @@ specified, a deploy will be created for all sites in the account</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -1394,8 +1854,90 @@ specified, a deploy will be created for all sites in the account</p>
   
 
   
+
+  
 </section>
 
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='siteapiresponse'>
+      SiteApiResponse
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/site.js#L3-L8'>
+      <span>src/model/site.js</span>
+      </a>
+    
+  </div>
+  
+
+  
+    <div class='pre p1 fill-light mt0'>SiteApiResponse</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>site_id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>urls</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#urlapiresponse">UrlApiResponse</a>>)</code>
+          
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -1408,7 +1950,7 @@ specified, a deploy will be created for all sites in the account</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/site.js#L13-L41'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/site.js#L13-L41'>
       <span>src/model/site.js</span>
       </a>
     
@@ -1417,10 +1959,7 @@ specified, a deploy will be created for all sites in the account</p>
 
   <p>An object representing a SpeedCurve site</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>new Site(siteId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, urls: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#url">Url</a>>)</div>
-   
   
   
 
@@ -1488,7 +2027,7 @@ specified, a deploy will be created for all sites in the account</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/site.js#L34-L40'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/site.js#L34-L40'>
       <span>src/model/site.js</span>
       </a>
     
@@ -1498,10 +2037,7 @@ specified, a deploy will be created for all sites in the account</p>
   <p>Build a new <a href="#site">Site</a> object from a <a href="https://api.speedcurve.com/#get-site-details-and-settings">/v1/sites</a>
 API response object</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>fromApiResponse(response: <a href="#siteapiresponse">SiteApiResponse</a>): <a href="#site">Site</a></div>
-   
   
   
 
@@ -1548,6 +2084,8 @@ API response object</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -1575,7 +2113,7 @@ API response object</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/site.js#L21-L21'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/site.js#L21-L21'>
       <span>src/model/site.js</span>
       </a>
     
@@ -1583,10 +2121,7 @@ API response object</p>
   
 
   
- 
-  
     <div class='pre p1 fill-light mt0'>siteId</div>
-   
   
     <p>
       Type:
@@ -1600,6 +2135,8 @@ API response object</p>
   
   
   
+  
+
   
 
   
@@ -1636,7 +2173,7 @@ API response object</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/site.js#L23-L23'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/site.js#L23-L23'>
       <span>src/model/site.js</span>
       </a>
     
@@ -1644,10 +2181,7 @@ API response object</p>
   
 
   
- 
-  
     <div class='pre p1 fill-light mt0'>name</div>
-   
   
     <p>
       Type:
@@ -1661,6 +2195,8 @@ API response object</p>
   
   
   
+  
+
   
 
   
@@ -1697,7 +2233,7 @@ API response object</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/site.js#L25-L25'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/site.js#L25-L25'>
       <span>src/model/site.js</span>
       </a>
     
@@ -1705,10 +2241,7 @@ API response object</p>
   
 
   
- 
-  
     <div class='pre p1 fill-light mt0'>urls</div>
-   
   
     <p>
       Type:
@@ -1739,6 +2272,8 @@ API response object</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -1749,87 +2284,11 @@ API response object</p>
   
 
   
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='siteapiresponse'>
-      SiteApiResponse
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/site.js#L3-L8'>
-      <span>src/model/site.js</span>
-      </a>
-    
-  </div>
-  
-
-  
- 
-  
-    <div class='pre p1 fill-light mt0'>SiteApiResponse</div>
-   
-  
-    <p>
-      Type:
-      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-    </p>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Properties</div>
-    <div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>site_id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>urls</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#urlapiresponse">UrlApiResponse</a>>)</code>
-          
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -1842,7 +2301,7 @@ API response object</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/url.js#L1-L6'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/url.js#L3-L8'>
       <span>src/model/url.js</span>
       </a>
     
@@ -1850,10 +2309,7 @@ API response object</p>
   
 
   
- 
-  
     <div class='pre p1 fill-light mt0'>UrlApiResponse</div>
-   
   
     <p>
       Type:
@@ -1907,8 +2363,11 @@ API response object</p>
   
 
   
+
+  
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -1921,7 +2380,7 @@ API response object</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/url.js#L11-L35'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/url.js#L13-L45'>
       <span>src/model/url.js</span>
       </a>
     
@@ -1930,10 +2389,7 @@ API response object</p>
 
   <p>An object representing a URL within a SpeedCurve site</p>
 
- 
-  
-    <div class='pre p1 fill-light mt0'>new Url(urlId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, label: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, url: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</div>
-   
+    <div class='pre p1 fill-light mt0'>new Url(urlId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, label: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, url: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, tests: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#testresult">TestResult</a>>)</div>
   
   
 
@@ -1972,6 +2428,15 @@ API response object</p>
           
         </div>
       
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>tests</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#testresult">TestResult</a>>
+            = <code>[]</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
     </div>
   
 
@@ -1991,7 +2456,7 @@ API response object</p>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>fromApiResponse(res, response)</span>
+            <span class='code strong strong truncate'>fromApiResponse(response)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2001,7 +2466,7 @@ API response object</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/url.js#L32-L34'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/url.js#L37-L44'>
       <span>src/model/url.js</span>
       </a>
     
@@ -2011,10 +2476,7 @@ API response object</p>
   <p>Build a new <a href="#url">Url</a> object from a <a href="https://api.speedcurve.com/#get-all-urls">/v1/urls</a>
 API response object</p>
 
- 
-  
-    <div class='pre p1 fill-light mt0'>fromApiResponse(res: any, response: <a href="#urlapiresponse">UrlApiResponse</a>): <a href="#url">Url</a></div>
-   
+    <div class='pre p1 fill-light mt0'>fromApiResponse(response: <a href="#urlapiresponse">UrlApiResponse</a>): <a href="#url">Url</a></div>
   
   
 
@@ -2028,14 +2490,6 @@ API response object</p>
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>res</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -2058,6 +2512,8 @@ API response object</p>
 
       
     
+  
+
   
 
   
@@ -2096,7 +2552,7 @@ API response object</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/url.js#L19-L19'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/url.js#L22-L22'>
       <span>src/model/url.js</span>
       </a>
     
@@ -2104,10 +2560,7 @@ API response object</p>
   
 
   
- 
-  
     <div class='pre p1 fill-light mt0'>urlId</div>
-   
   
     <p>
       Type:
@@ -2121,6 +2574,8 @@ API response object</p>
   
   
   
+  
+
   
 
   
@@ -2157,7 +2612,7 @@ API response object</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/url.js#L21-L21'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/url.js#L24-L24'>
       <span>src/model/url.js</span>
       </a>
     
@@ -2165,10 +2620,7 @@ API response object</p>
   
 
   
- 
-  
     <div class='pre p1 fill-light mt0'>label</div>
-   
   
     <p>
       Type:
@@ -2182,6 +2634,8 @@ API response object</p>
   
   
   
+  
+
   
 
   
@@ -2218,7 +2672,7 @@ API response object</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/0a02f0d51582cc6009ab2b4ff99d159c76dc75be/src/model/url.js#L23-L23'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/url.js#L26-L26'>
       <span>src/model/url.js</span>
       </a>
     
@@ -2226,10 +2680,7 @@ API response object</p>
   
 
   
- 
-  
     <div class='pre p1 fill-light mt0'>url</div>
-   
   
     <p>
       Type:
@@ -2260,6 +2711,68 @@ API response object</p>
   
 
   
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='urltests'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>tests</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/url.js#L28-L28'>
+      <span>src/model/url.js</span>
+      </a>
+    
+  </div>
+  
+
+  
+    <div class='pre p1 fill-light mt0'>tests</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="#testresult">TestResult</a>>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 </section>
 
       </div>
@@ -2270,8 +2783,285 @@ API response object</p>
   
 
   
+
+  
 </section>
 
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='testresult'>
+      TestResult
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/test-result.js#L11-L29'>
+      <span>src/model/test-result.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>An object representing a SpeedCurve synthetic test result. See the
+<a href="https://api.speedcurve.com/#get-all-sites">API documentation</a> for a list
+of all available metrics.</p>
+
+    <div class='pre p1 fill-light mt0'>new TestResult(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='testresultfromapiresponse'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>fromApiResponse(response)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/test-result.js#L26-L28'>
+      <span>src/model/test-result.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Build a new <a href="#testresult">TestResult</a> object from a <a href="https://api.speedcurve.com/#get-all-sites">/v1/sites</a>
+API response object</p>
+
+    <div class='pre p1 fill-light mt0'>fromApiResponse(response: <a href="#testresultapiresponse">TestResultApiResponse</a>): <a href="#testresult">TestResult</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>response</span> <code class='quiet'>(<a href="#testresultapiresponse">TestResultApiResponse</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#testresult">TestResult</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='testresultdata'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>data</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/test-result.js#L17-L17'>
+      <span>src/model/test-result.js</span>
+      </a>
+    
+  </div>
+  
+
+  
+    <div class='pre p1 fill-light mt0'>data</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='testresultapiresponse'>
+      TestResultApiResponse
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://git@github.com/~josephwynn-sc:SpeedCurve-Metrics/speedcurve-cli/blob/67900fc9c58e9d773fd5c005c5dfb7fc3410af85/src/model/test-result.js#L1-L4'>
+      <span>src/model/test-result.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>An object containing all metrics collected during a synthetic test run</p>
+
+    <div class='pre p1 fill-light mt0'>TestResultApiResponse</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
         
       </div>
     </div>

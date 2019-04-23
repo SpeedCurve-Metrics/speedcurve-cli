@@ -1,5 +1,6 @@
 const deploys = require("./deploys")
 const sites = require("./sites")
+const tests = require("./tests")
 const DeployResult = require("./model/deploy-result")
 const Site = require("./model/site")
 const Url = require("./model/url")
@@ -14,6 +15,7 @@ const Url = require("./model/url")
 const exported = {
   deploys,
   sites,
+  tests,
   DeployResult,
   Site,
   Url

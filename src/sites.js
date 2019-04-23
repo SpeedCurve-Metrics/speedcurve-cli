@@ -15,7 +15,7 @@ const sites = {
    * @return {Promise<Site, Error>}
    */
   get(key, siteId) {
-    return api.site(key, siteId)
+    return api.site(key, siteId).then(data => Site.fromApiResponse(data))
   },
 
   /**
@@ -26,6 +26,18 @@ const sites = {
    */
   getAll(key) {
     return api.sites(key).then(res => res.map(data => Site.fromApiResponse(data)))
+  },
+
+  /**
+   * Get the details of all sites in a SpeedCurve account, including recent median
+   * test results.
+   *
+   * @param {String} key - Your SpeedCurve API key
+   * @param {Number} days - How many days of median test results to incldue
+   * @return {Promise<Array<Site>, Error>}
+   */
+  getAllWithTests(key, days) {
+    return api.sites(key, true, days).then(res => res.map(data => Site.fromApiResponse(data)))
   }
 }
 

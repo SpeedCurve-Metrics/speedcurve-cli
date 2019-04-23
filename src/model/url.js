@@ -1,3 +1,5 @@
+const TestResult = require("./test-result")
+
 /**
  * @typedef {Object} UrlApiResponse
  * @property {Number} url_id
@@ -13,14 +15,17 @@ class Url {
    * @param {Number} urlId
    * @param {String} label
    * @param {String} url
+   * @param {Array<TestResult>} tests
    */
-  constructor(urlId, label, url) {
+  constructor(urlId, label, url, tests = []) {
     /** @type {Number} */
     this.urlId = urlId
     /** @type {String} */
     this.label = label
     /** @type {String} */
     this.url = url
+    /** @type {Array<TestResult>} */
+    this.tests = tests
   }
 
   /**
@@ -29,8 +34,13 @@ class Url {
    * @param {UrlApiResponse} response
    * @return {Url}
    */
-  static fromApiResponse(res) {
-    return new Url(res.url_id, res.label, res.url)
+  static fromApiResponse(response) {
+    return new Url(
+      response.url_id,
+      response.label,
+      response.url,
+      response.tests ? response.tests.map(test => TestResult.fromApiResponse(test)) : []
+    )
   }
 }
 

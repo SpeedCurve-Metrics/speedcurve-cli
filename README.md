@@ -81,6 +81,32 @@ List all of the sites in a team. Useful for finding the ID of a site to deploy.
 speedcurve list-sites --json
 ```
 
+### `speedcurve tests`
+
+Fetch synthetic test results for a site and all of its URLs.
+
+```
+speedcurve tests --site 1043801
+```
+
+You can limit the results to specific URLs.
+
+```
+speedcurve tests --site 1043801 --url 184629 --url 78211
+```
+
+Like the `deploy` command, you can use site and URL names instead of IDs:
+
+```
+speedcurve tests --site 'BBC News' --url 'Home' --url 'Article'
+```
+
+Other options allow you to fetch more than 1 day of tests, and limit the results to specific regions or browsers:
+
+```
+speedcurve tests --site 'BBC News' --days 7 --region ap-southeast-2 --browser chrome
+```
+
 ## Node.js API documentation
 
 See [the API reference](https://speedcurve-metrics.github.io/speedcurve-cli/).

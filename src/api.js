@@ -5,7 +5,7 @@ const VERSION = require("../package.json").version
 
 class API {
   constructor() {
-    this.base = "http://127.0.0.1/"
+    this.base = "https://api.speedcurve.com/"
     this.key = "x"
   }
 

@@ -8,23 +8,29 @@
 
 * Trigger deploys
 * Monitor the status of deploys
+* Fetch synthetic test data
 * List sites in an account
 
 ## Planned features
 
-* Fetch historic test results
 * Fetch data from custom charts
 * Integration with performance budget alerts (e.g. fail the build when a budget is crossed)
 
 ## Installation
 
-The recommended installation method is via npm:
+The recommended installation method for the CLI is via npm:
 
 ```
 npm install -g speedcurve
 ```
 
-Note that this requires [Node.js](https://nodejs.org/) version 8 or higher.
+To use the Node.js API you should install it as a dependency of your project:
+
+```
+npm install --save speedcurve
+```
+
+> Note that [Node.js](https://nodejs.org/) version 8 or higher is required.
 
 ## Basic usage
 

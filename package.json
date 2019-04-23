@@ -38,13 +38,13 @@
   "dependencies": {
     "npmlog": "^4.1.2",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.5",
+    "request-promise-native": "^1.0.7",
     "yargs": "^12.0.5"
   },
   "devDependencies": {
-    "documentation": "^9.1.1",
+    "documentation": "^9.3.1",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.16.4"
+    "prettier": "^1.17.0"
   }
 }

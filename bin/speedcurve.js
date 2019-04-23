@@ -85,7 +85,8 @@ const command = (() => {
     case "list-sites":
       return require("../src/command/list-sites")
     default:
-      return yargs.showHelp
+      yargs.showHelp()
+      process.exit(400)
   }
 })()
 

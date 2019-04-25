@@ -12,7 +12,6 @@ const logFriendlyUrl = url => {
 class API {
   constructor() {
     this.base = "https://api.speedcurve.com/"
-    this.key = "x"
   }
 
   prepareUrl(key, path, searchParams = {}) {

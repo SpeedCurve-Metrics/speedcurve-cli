@@ -3,8 +3,11 @@ const truncate = require("./util/truncate")
 const log = require("./log")
 const VERSION = require("../package.json").version
 
-const logFriendlyUrl = url =>
-  [url.origin, url.pathname, url.searchParams ? "?" + url.searchParams : ""].join("")
+const logFriendlyUrl = url => {
+  const hasSearchParams = [...url.searchParams.values()].length > 0
+
+  return [url.origin, url.pathname, hasSearchParams ? "?" + url.searchParams : ""].join("")
+}
 
 class API {
   constructor() {

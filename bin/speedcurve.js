@@ -6,19 +6,23 @@ const api = require("../src/api")
 const opts = yargs
   .command("deploy", "Create a deploy and trigger testing for one or more sites", {
     note: {
+      group: "Deploy options:",
       describe: "Short note for this deploy",
       type: "string"
     },
     detail: {
+      group: "Deploy options:",
       describe: "Longer expanded detail for this deploy",
       type: "string"
     },
     site: {
+      group: "Deploy options:",
       describe: "Only trigger deploys for the specified site ID(s) or name(s)",
       type: "array",
       default: []
     },
     wait: {
+      group: "Deploy options:",
       describe: "Wait for deploys to finish before exiting",
       type: "boolean",
       default: false

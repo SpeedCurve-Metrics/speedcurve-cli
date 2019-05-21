@@ -100,6 +100,12 @@ class API {
 
     return this.get(url)
   }
+
+  budgets(key, deployId) {
+    const url = this.prepareUrl(key, "/v1/budgets", { deploy_id: deployId })
+
+    return this.get(url).then(res => res.budgets)
+  }
 }
 
 module.exports = new API()

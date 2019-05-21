@@ -1,3 +1,4 @@
+const budgets = require("./budgets")
 const deploys = require("./deploys")
 const sites = require("./sites")
 const tests = require("./tests")
@@ -13,6 +14,7 @@ const Url = require("./model/url")
  * const SpeedCurve = require('speedcurve')
  */
 const exported = {
+  budgets,
   deploys,
   sites,
   tests,

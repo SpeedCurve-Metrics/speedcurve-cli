@@ -21,6 +21,12 @@ const opts = yargs
       type: "array",
       default: []
     },
+    "check-budgets": {
+      group: "Deploy options:",
+      describe: "Check the status of relevant performance budgets after the deploy is finished",
+      type: "boolean",
+      default: false
+    },
     wait: {
       group: "Deploy options:",
       describe: "Wait for deploys to finish before exiting",

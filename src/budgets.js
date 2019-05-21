@@ -1,7 +1,5 @@
-const log = require("./log")
 const api = require("./api")
 const PerformanceBudget = require("./model/performance-budget")
-const pl = require("./util/pluralise")
 
 /**
  * Get the status of SpeedCurve performance budgets

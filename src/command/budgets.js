@@ -6,7 +6,7 @@ module.exports = async function budgetsCommand({ key, json = false }) {
   const budgets = await SpeedCurve.budgets.getAll(key)
 
   if (json) {
-      log.stdout(JSON.stringify(budgets))
+    log.stdout(JSON.stringify(budgets))
   } else {
     budgets.forEach(budget => {
       const budgetTitle = `${bold(budget.metricName)} in ${bold(budget.chart.title)}`
@@ -22,7 +22,9 @@ module.exports = async function budgetsCommand({ key, json = false }) {
         const pctDiff = Math.round(crossing.difference_from_threshold * 100)
 
         log.stdout(
-          `${crossing.name} is currently ${bold(value)} (${pctDiff}% ${bold(crossing.status)} ${bold("budget")})\n`
+          `${crossing.name} is currently ${bold(value)} (${pctDiff}% ${bold(
+            crossing.status
+          )} ${bold("budget")})\n`
         )
       })
 

@@ -24,6 +24,7 @@ const opts = yargs
       default: false
     }
   })
+  .command("deploy-status <deployId>", "Get the status of a deploy")
   .command("tests", "Get the latest synthetic test data for one or more URLs in a site", {
     site: {
       describe: "Get test data for the specified site ID or name",
@@ -107,6 +108,8 @@ const command = (() => {
   switch (opts._[0]) {
     case "deploy":
       return require("../src/command/deploy")
+    case "deploy-status":
+      return require("../src/command/deploy-status")
     case "tests":
       return require("../src/command/tests")
     case "list-sites":

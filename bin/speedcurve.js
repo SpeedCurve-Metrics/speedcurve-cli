@@ -35,6 +35,13 @@ const opts = yargs
     }
   })
   .command("deploy-status <deployId>", "Get the status of a deploy")
+  .command("budgets", "Get the status of all performance budgets in an account", {
+    json: {
+      describe: "Display results as JSON",
+      type: "boolean",
+      default: false
+    }
+  })
   .command("tests", "Get the latest synthetic test data for one or more URLs in a site", {
     site: {
       describe: "Get test data for the specified site ID or name",
@@ -120,6 +127,8 @@ const command = (() => {
       return require("../src/command/deploy")
     case "deploy-status":
       return require("../src/command/deploy-status")
+    case "budgets":
+      return require("../src/command/budgets")
     case "tests":
       return require("../src/command/tests")
     case "list-sites":

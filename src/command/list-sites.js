@@ -4,7 +4,7 @@ const log = require("../log")
 module.exports = function listSitesCommand({ key, json = false }) {
   SpeedCurve.sites.getAll(key).then(sites => {
     if (json) {
-      log.stdout(JSON.stringify(sites, null, 4))
+      log.stdout(JSON.stringify(sites))
     } else {
       sites.forEach(site => {
         const urlOutput = site.urls

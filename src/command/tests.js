@@ -2,7 +2,7 @@ const SpeedCurve = require("../index")
 const resolveSiteIds = require("../util/resolve-site-ids")
 const log = require("../log")
 
-module.exports = async function tests({ key, site, url = [], days = 1, region, browser }) {
+module.exports = async function testsCommand({ key, site, url = [], days = 1, region, browser }) {
   const siteId = (await resolveSiteIds(key, [site])).pop()
   const siteUrls = (await SpeedCurve.sites.get(key, siteId)).urls
 

@@ -2,7 +2,7 @@ const SpeedCurve = require("../index")
 const pluralise = require("../util/pluralise")
 const log = require("../log")
 
-module.exports = async function deployStatus({ key, deployId }) {
+module.exports = async function deployStatusCommand({ key, deployId }) {
   const status = await SpeedCurve.deploys.status(key, deployId)
   const completed = status["tests-completed"].length
   const remaining = status["tests-remaining"].length

@@ -2,19 +2,13 @@
 
 🍩 Official SpeedCurve CLI and Node.js API.
 
-## Current features
+This package attempts to be a user-friendly wrapper around the SpeedCurve API. It currently supports:
 
-**This package is in beta** and provides a limited set of features:
-
-* Trigger deploys
-* Monitor the status of deploys
-* Fetch synthetic test data
-* List sites in an account
-
-## Planned features
-
-* Fetch data from custom charts
-* Integration with performance budget alerts (e.g. fail the build when a budget is crossed)
+* Triggering deploys
+* Monitoring the status of deploys
+* Getting the status of performance budgets
+* Fetching synthetic test data
+* Listing sites in an account
 
 ## Installation
 
@@ -78,6 +72,10 @@ OK [News Sites] Triggered 6 tests for Radio NZ
 Waiting for all tests to complete... 66 / 66 (100%)
 OK All tests completed
 ```
+
+#### The `--check-budgets` option
+
+The CLI can monitor the status of your SpeedCurve performance budgets
 
 ### `speedcurve list-sites`
 

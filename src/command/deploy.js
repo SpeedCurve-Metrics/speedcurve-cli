@@ -97,7 +97,7 @@ module.exports = async function deployCommand(opts) {
         const budgetTitle = `${bold(budget.metricName)} in ${bold(budget.chart.title)}`
 
         if (stillOver) {
-          log.warn(bold(`${budgetTitle} is ${bold("still over budget")}`))
+          log.bad(bold(`${budgetTitle} is ${bold("still over budget")}`))
         } else if (statusChanged) {
           if (budget.status === "over") {
             log.bad(bold(`${budgetTitle} has ${bold("gone over budget")}`))
@@ -123,9 +123,13 @@ module.exports = async function deployCommand(opts) {
 
         log.stdout("\n")
       })
+
+      const anyBudgetsOver = [...budgetsAfterDeploy].some(budget => budget.status === "over")
+
+      return anyBudgetsOver ? 1 : 0
     }
 
-    updateDeployStatus()
+    return updateDeployStatus()
       .then(() => {
         log.stdout("\n")
         log.ok("All tests completed")

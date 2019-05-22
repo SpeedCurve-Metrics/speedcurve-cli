@@ -139,9 +139,15 @@ const command = (() => {
   }
 })()
 
-try {
-  command(opts)
-} catch (e) {
-  log.error(e)
-  process.exit(500)
-}
+command(opts)
+  .then(ret => {
+    if (typeof ret === "number") {
+      process.exit(ret)
+    }
+
+    process.exit(0)
+  })
+  .catch(e => {
+    log.error(e)
+    process.exit(500)
+  })

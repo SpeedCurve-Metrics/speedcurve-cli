@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SpeedCurve Node.js API Reference</title>
+	<title>TestResultApiResponse | SpeedCurve Node.js API Reference</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">SpeedCurve Node.js API Reference</a>
+					<a href="../index.html" class="title">SpeedCurve Node.js API Reference</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -51,67 +51,148 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/api.html">api</a>
+				</li>
+				<li>
+					<a href="api.testresultapiresponse.html">TestResultApiResponse</a>
 				</li>
 			</ul>
-			<h1> SpeedCurve Node.js API Reference</h1>
+			<h1>Interface TestResultApiResponse</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<p>All interaction with the API requires your <a href="https://support.speedcurve.com/apis/synthetic-api">SpeedCurve API key</a>.</p>
-				<h2 id="basic-usage">Basic usage</h2>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> SpeedCurve = <span class="hljs-built_in">require</span>(<span class="hljs-string">'speedcurve'</span>)
-<span class="hljs-keyword">const</span> key = <span class="hljs-string">'your-speedcurve-api-key'</span>
-
-<span class="hljs-keyword">const</span> budgets = <span class="hljs-keyword">await</span> SpeedCurve.budgets.getAll(key)
-<span class="hljs-keyword">const</span> deploys = <span class="hljs-keyword">await</span> SpeedCurve.deploys.status(key, deployId)
-<span class="hljs-keyword">const</span> sites = <span class="hljs-keyword">await</span> SpeedCurve.sites.getAll(key)
-<span class="hljs-keyword">const</span> tests = <span class="hljs-keyword">await</span> SpeedCurve.tests.get(key, testId)</code></pre>
-				<h2 id="modules">Modules</h2>
-				<h3 id="speedcurve-budgets"><a href="modules/budgets.html"><code>SpeedCurve.budgets</code></a></h3>
-				<p>Get the status of synthetic performance budgets.</p>
-				<h3 id="speedcurve-deploys"><a href="modules/deploys.html"><code>SpeedCurve.deploys</code></a></h3>
-				<p>Create and monitor SpeedCurve deployments (on-demand testing).</p>
-				<h3 id="speedcurve-sites"><a href="modules/sites.html"><code>SpeedCurve.sites</code></a></h3>
-				<p>Get information about SpeedCurve sites, including recent test results.</p>
-				<h3 id="speedcurve-tests"><a href="modules/tests.html"><code>SpeedCurve.tests</code></a></h3>
-				<p>Get synthetic test results.</p>
-				<h3 id="speedcurve-api"><a href="classes/_api_.client.html"><code>SpeedCurve.api</code></a></h3>
-				<p>Direct access to a <a href="classes/_api_.client.html"><code>Client</code></a> instance with functions for accessing the SpeedCurve API.</p>
-			</div>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">TestResultApiResponse</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.testresultapiresponse.html#test_id" class="tsd-kind-icon">test_<wbr>id</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="test_id" class="tsd-anchor"></a>
+					<h3>test_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">test_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in api.ts:139</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/speedcurve.html">Speed<wbr>Curve</a>
+						<a href="../modules/speedcurve.html">Speed<wbr>Curve</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/api.html">api</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/api.html">api</a>
+						<a href="../modules/budgets.html">budgets</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/budgets.html">budgets</a>
+						<a href="../modules/deploys.html">deploys</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/deploys.html">deploys</a>
+						<a href="../modules/sites.html">sites</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/sites.html">sites</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/tests.html">tests</a>
+						<a href="../modules/tests.html">tests</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../classes/api.client.html" class="tsd-kind-icon">Client</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.budgetapiresponse.html" class="tsd-kind-icon">Budget<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.budgetcrossingapiresponse.html" class="tsd-kind-icon">Budget<wbr>Crossing<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.chartapiresponse.html" class="tsd-kind-icon">Chart<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.chartdataapiresponse.html" class="tsd-kind-icon">Chart<wbr>Data<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.createdeployapiresponse.html" class="tsd-kind-icon">Create<wbr>Deploy<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.dashboardapiresponse.html" class="tsd-kind-icon">Dashboard<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.deploystatusapiresponse.html" class="tsd-kind-icon">Deploy<wbr>Status<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.siteapiresponse.html" class="tsd-kind-icon">Site<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.teamapiresponse.html" class="tsd-kind-icon">Team<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.testfilters.html" class="tsd-kind-icon">Test<wbr>Filters</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.testresultapiresponse.html" class="tsd-kind-icon">Test<wbr>Result<wbr>Api<wbr>Response</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="api.testresultapiresponse.html#test_id" class="tsd-kind-icon">test_<wbr>id</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="api.urlapiresponse.html" class="tsd-kind-icon">Url<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/api.html#createdeploystatus" class="tsd-kind-icon">Create<wbr>Deploy<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/api.html#deploystatus" class="tsd-kind-icon">Deploy<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/api.html#version" class="tsd-kind-icon">VERSION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/api.html#api-1" class="tsd-kind-icon">api</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/api.html#logfriendlyurl" class="tsd-kind-icon">log<wbr>Friendly<wbr>Url</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -177,7 +258,7 @@
 	</div>
 </footer>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

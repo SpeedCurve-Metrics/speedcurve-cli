@@ -61,33 +61,29 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<p>All interaction with the API requires your <a href="https://support.speedcurve.com/apis/synthetic-api">SpeedCurve API key</a>.</p>
-				<h2 id="basic-usage">Basic usage</h2>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> SpeedCurve = <span class="hljs-built_in">require</span>(<span class="hljs-string">'speedcurve'</span>)
-<span class="hljs-keyword">const</span> key = <span class="hljs-string">'your-speedcurve-api-key'</span>
-
-<span class="hljs-keyword">const</span> budgets = <span class="hljs-keyword">await</span> SpeedCurve.budgets.getAll(key)
-<span class="hljs-keyword">const</span> deploys = <span class="hljs-keyword">await</span> SpeedCurve.deploys.status(key, deployId)
-<span class="hljs-keyword">const</span> sites = <span class="hljs-keyword">await</span> SpeedCurve.sites.getAll(key)
-<span class="hljs-keyword">const</span> tests = <span class="hljs-keyword">await</span> SpeedCurve.tests.get(key, testId)</code></pre>
-				<h2 id="modules">Modules</h2>
-				<h3 id="speedcurve-budgets"><a href="modules/budgets.html"><code>SpeedCurve.budgets</code></a></h3>
-				<p>Get the status of synthetic performance budgets.</p>
-				<h3 id="speedcurve-deploys"><a href="modules/deploys.html"><code>SpeedCurve.deploys</code></a></h3>
-				<p>Create and monitor SpeedCurve deployments (on-demand testing).</p>
-				<h3 id="speedcurve-sites"><a href="modules/sites.html"><code>SpeedCurve.sites</code></a></h3>
-				<p>Get information about SpeedCurve sites, including recent test results.</p>
-				<h3 id="speedcurve-tests"><a href="modules/tests.html"><code>SpeedCurve.tests</code></a></h3>
-				<p>Get synthetic test results.</p>
-				<h3 id="speedcurve-api"><a href="classes/_api_.client.html"><code>SpeedCurve.api</code></a></h3>
-				<p>Direct access to a <a href="classes/_api_.client.html"><code>Client</code></a> instance with functions for accessing the SpeedCurve API.</p>
-			</div>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>External modules</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-external-module"><a href="modules/speedcurve.html" class="tsd-kind-icon">Speed<wbr>Curve</a></li>
+								<li class="tsd-kind-external-module"><a href="modules/api.html" class="tsd-kind-icon">api</a></li>
+								<li class="tsd-kind-external-module"><a href="modules/budgets.html" class="tsd-kind-icon">budgets</a></li>
+								<li class="tsd-kind-external-module"><a href="modules/deploys.html" class="tsd-kind-icon">deploys</a></li>
+								<li class="tsd-kind-external-module"><a href="modules/sites.html" class="tsd-kind-icon">sites</a></li>
+								<li class="tsd-kind-external-module"><a href="modules/tests.html" class="tsd-kind-icon">tests</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
+					<li class="globals current ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">

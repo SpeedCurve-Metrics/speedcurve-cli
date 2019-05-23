@@ -2,27 +2,33 @@
   "name": "speedcurve",
   "version": "1.0.0-beta.12",
   "description": "Official SpeedCurve CLI and Node.js API.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
-    "speedcurve": "bin/speedcurve.js"
+    "speedcurve": "dist/cli/index.js"
   },
   "files": [
-    "bin/",
-    "src/"
+    "dist/"
   ],
   "scripts": {
     "preversion": "npm run test && git diff-index --quiet HEAD",
     "version": "npm run build && npm run commit-docs",
     "postversion": "git push origin master --tags || echo 'Failed to push latest tag. Please do it manually with git push origin master --tags.'",
-    "build": "npm run docs",
-    "docs": "documentation build --github --format html --output docs/ src/index.js",
+    "clean": "rm -rfv docs/ dist/",
+    "build": "npm run clean && npm run tsc && npm run docs",
+    "tsc": "tsc",
+    "docs": "typedoc --name 'SpeedCurve Node.js API Reference' --readme api.md --hideGenerator --excludeExternals --exclude src/log.ts --out docs/ src/*.ts",
     "commit-docs": "git add docs/ && git commit -m 'Build docs'",
-    "test": "eslint --fix {src,bin}/**/*.js .eslintrc.js --ignore-pattern !.eslintrc.js",
-    "copy-bin": "mkdir -p bin/macos bin/linux bin/windows && mv bin/speedcurve-linux bin/linux/speedcurve && mv bin/speedcurve-macos bin/macos/speedcurve && mv bin/speedcurve-win bin/windows/speedcurve"
+    "test": "npm run lint && npm run jest",
+    "watch": "tsc --watch",
+    "lint": "npm run eslint && npm run eslint-test",
+    "eslint": "eslint --config .eslintrc-src.js --fix src/**/*.ts",
+    "eslint-test": "eslint --config .eslintrc-test.js --fix __tests__/**/*.js",
+    "jest": "jest"
   },
   "prettier": {
     "endOfLine": "lf",
-    "printWidth": 100,
+    "printWidth": 120,
     "semi": false
   },
   "repository": {
@@ -36,15 +42,25 @@
   },
   "homepage": "https://github.com/wildlyinaccurate/speedcurve-deploy#readme",
   "dependencies": {
+    "@types/node": "^12.0.2",
+    "@types/npmlog": "^4.1.1",
+    "@types/request-promise-native": "^1.0.16",
+    "@types/yargs": "^13.0.0",
     "npmlog": "^4.1.2",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
     "yargs": "^13.2.4"
   },
   "devDependencies": {
-    "documentation": "^11.0.0",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
     "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.17.1"
+    "jest": "^24.8.0",
+    "prettier": "^1.17.1",
+    "typedoc": "^0.14.2",
+    "typedoc-plugin-external-module-name": "^2.1.0",
+    "typescript": "^3.4.5"
   }
 }

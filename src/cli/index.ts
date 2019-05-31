@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import * as yargs from "yargs"
+import yargs from "yargs"
 import { api } from "../api"
 import { Command } from "../command"
 import budgetsCommand from "../command/budgets"

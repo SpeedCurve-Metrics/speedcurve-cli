@@ -111,7 +111,7 @@ const opts = yargs
   .version().argv
 
 api.base = opts.api
-log.level = opts.verbose ? "verbose" : opts.quiet ? "error" : "warn"
+log.setLevel(opts.verbose ? "verbose" : opts.quiet ? "error" : "warn")
 opts.key = opts.key ? opts.key : process.env.SPEEDCURVE_API_KEY
 
 if (!opts.key) {

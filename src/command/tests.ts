@@ -37,7 +37,7 @@ export default async function testsCommand(opts: TestsCommandOptions) {
   const ps = urlIds.map(urlId => SpeedCurve.tests.getForUrl(key, urlId, days, { region, browser }))
   const urls = await Promise.all(ps)
 
-  log.stdout(JSON.stringify(urls, null, 4))
+  log.json(urls)
 }
 
 module.exports = testsCommand

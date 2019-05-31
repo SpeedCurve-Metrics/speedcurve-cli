@@ -6,6 +6,10 @@ class Logger {
     npmlog.level = level
   }
 
+  json(value: any) {
+    this.stdout(JSON.stringify(value))
+  }
+
   stdout(message: string) {
     npmlog.stdout("", message)
   }

@@ -11,7 +11,7 @@ export default function listSitesCommand(opts: ListSitesCommandOptions) {
 
   return SpeedCurve.sites.getAll(key).then(sites => {
     if (json) {
-      log.stdout(JSON.stringify(sites))
+      log.json(sites)
     } else {
       sites.forEach(site => {
         const urlOutput = site.urls

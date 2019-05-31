@@ -12,7 +12,7 @@ export default async function budgetsCommand(opts: BudgetsCommandOptions) {
   const budgets = await SpeedCurve.budgets.getAll(key)
 
   if (json) {
-    log.stdout(JSON.stringify(budgets))
+    log.json(budgets)
   } else {
     budgets.forEach(budget => {
       const budgetTitle = `${bold(budget.metricName)} in ${bold(budget.chart.title)}`

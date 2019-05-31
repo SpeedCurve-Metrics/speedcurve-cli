@@ -16,7 +16,7 @@ export default async function deployStatusCommand(opts: DeployStatusCommandOptio
   const total = completed + remaining
 
   if (json) {
-    log.stdout(JSON.stringify(status, null, 4))
+    log.json(status)
   } else {
     if (remaining) {
       log.stdout(

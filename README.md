@@ -1,5 +1,8 @@
 # SpeedCurve CLI
 
+![CircleCI](https://img.shields.io/circleci/build/github/SpeedCurve-Metrics/speedcurve-cli.svg?style=for-the-badge)
+![David](https://img.shields.io/david/SpeedCurve-Metrics/speedcurve-cli.svg?style=for-the-badge)
+
 🍩 Official SpeedCurve CLI and Node.js API.
 
 This package attempts to be a user-friendly wrapper around the SpeedCurve API. It currently supports:

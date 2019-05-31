@@ -67,8 +67,12 @@ speedcurve deploy --check-budgets
 Get the status of a deploy.
 
 ```
+# Human-readable output
 speedcurve deploy-status 472470
 ✔ Deploy complete. 36 tests completed.
+
+# JSON output
+speedcurve deploy-status --json 472470
 ```
 
 ### `speedcurve list-sites`

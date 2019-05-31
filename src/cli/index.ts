@@ -40,7 +40,13 @@ const opts = yargs
       default: false
     }
   })
-  .command("deploy-status <deployId>", "Get the status of a deploy")
+  .command("deploy-status <deployId>", "Get the status of a deploy", {
+    json: {
+      describe: "Display results as JSON",
+      type: "boolean",
+      default: false
+    }
+  })
   .command("budgets", "Get the status of all performance budgets in an account", {
     json: {
       describe: "Display results as JSON",

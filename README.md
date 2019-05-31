@@ -42,76 +42,81 @@ See `speedcurve --help` for a list of all commands and options.
 Create a deploy and trigger testing for one or more sites.
 
 ```
+# Trigger testing for all sites
+speedcurve deploy
+Requesting deploys for 3 sites...
+✔ Deploy 481509 triggered 6 tests for Stuff
+✔ Deploy 481513 triggered 6 tests for Radio NZ
+✔ Deploy 481511 triggered 6 tests for NZ Herald
+
+# Optionally add a short description and longer detail about the deploy
 speedcurve deploy --note 'v2.11.8' --detail 'Inline critical CSS, bootstrap app on DOMContentLoaded'
+
+# Specify which site(s) to trigger testing for. You can specify a name or an ID
+speedcurve deploy --site 1043801 --site 'BBC News'
+
+# Wait until all tests have completed before exiting
+speedcurve deploy --wait
+
+# Monitor the status of performance budgets
+speedcurve deploy --check-budgets
 ```
 
-> 💁 The `--note` (a short description of the deploy) and `--detail` (longer details of the deploy) flags are both optional but are recommended to help you identify deploys in the SpeedCurve UI.
+### `speedcurve deploy-status`
 
-#### The `--site` option
-
-You can specify which sites to trigger deploys for with the `--site` option. Specify as many sites as you like.
+Get the status of a deploy.
 
 ```
-speedcurve deploy --note 'v2.11.8' --site 1043801 --site 1029909
+speedcurve deploy-status 472470
+✔ Deploy complete. 36 tests completed.
 ```
-
-You can also specify a site name instead of an ID if you prefer:
-
-```
-speedcurve deploy --note 'v2.11.8' --site 1043801 --site 'BBC News'
-```
-
-#### The `--wait` option
-
-You can also pass the `--wait` flag to force the process to wait until all tests have been completed:
-
-```
-speedcurve deploy --note 'v2.11.8' --wait
-OK [News Sites] Triggered 24 tests for BBC News
-OK [News Sites] Triggered 24 tests for The Guardian
-OK [News Sites] Triggered 6 tests for Stuff
-OK [News Sites] Triggered 6 tests for NZ Herald
-OK [News Sites] Triggered 6 tests for Radio NZ
-Waiting for all tests to complete... 66 / 66 (100%)
-OK All tests completed
-```
-
-#### The `--check-budgets` option
-
-The CLI can monitor the status of your SpeedCurve performance budgets
 
 ### `speedcurve list-sites`
 
 List all of the sites in a team. Useful for finding the ID of a site to deploy.
 
 ```
+# Human-readable output
+speedcurve list-sites
+
+# JSON output
 speedcurve list-sites --json
 ```
 
 ### `speedcurve tests`
 
-Fetch synthetic test results for a site and all of its URLs.
+Fetch synthetic test results as JSON for a site and all of its URLs.
 
 ```
+# Get test results for all URLs in a site
 speedcurve tests --site 1043801
-```
 
-You can limit the results to specific URLs.
+# Specify which URL(s) to get test resuts for
+speedcurve tests --site 1043801 --url 184629 --url 'BBC News'
 
-```
-speedcurve tests --site 1043801 --url 184629 --url 78211
-```
-
-Like the `deploy` command, you can use site and URL names instead of IDs:
-
-```
-speedcurve tests --site 'BBC News' --url 'Home' --url 'Article'
-```
-
-Other options allow you to fetch more than 1 day of tests, and limit the results to specific regions or browsers:
-
-```
+# Control how many days of data to fetch, and filter to specific regions or browsers
 speedcurve tests --site 'BBC News' --days 7 --region ap-southeast-2 --browser chrome
+```
+
+### `speedcurve budgets`
+
+Get the status of all synthetic performance budgets.
+
+```
+# Human-readable output
+speedcurve budgets
+✔ Start Render Time in Article Render Times is under budget
+Start Render Time (Syn), Radio NZ, Article is currently 1.1s (45% under budget)
+Start Render Time (Syn), Stuff, Article is currently 1.5s (25% under budget)
+Start Render Time (Syn), NZ Herald, Article is currently 2s (0% under budget)
+
+✖ Start Render Time in Home Render Times is over budget
+Start Render Time (Syn), Radio NZ, Home is currently 4.9s (145% over budget)
+Start Render Time (Syn), Stuff, Home is currently 1.7s (15% under budget)
+Start Render Time (Syn), NZ Herald, Home is currently 1s (50% under budget)
+
+# JSON output
+speedcurve budgets --json
 ```
 
 ## Node.js API documentation

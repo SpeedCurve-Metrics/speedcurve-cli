@@ -76,7 +76,7 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
         return 0
       }
 
-      log.stdout("Checking status of performance budgets...\n")
+      log.stdout("Checking status of performance budgets...\n\n")
 
       const budgetsAfterDeploy: Map<number, PerformanceBudget> = new Map()
 

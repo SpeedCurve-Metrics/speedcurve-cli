@@ -20,7 +20,7 @@ interface DeployCommandOptions {
 export default async function deployCommand(opts: DeployCommandOptions): Promise<ExitCode | void> {
   const { key, site = [], note = "", detail = "", checkBudgets = false, wait = false } = opts
 
-  log.stdout(`Requesting deploys for ${site.length || "all"} ${pluralise("site", site.length)}...\n`)
+  log.verbose(`Requesting deploys for ${site.length || "all"} ${pluralise("site", site.length)}...`)
 
   const budgetsBeforeDeploy: Map<number, PerformanceBudget> = new Map()
 

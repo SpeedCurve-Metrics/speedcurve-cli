@@ -30,6 +30,6 @@ Get information about SpeedCurve sites, including recent test results.
 
 Get synthetic test results.
 
-### [`SpeedCurve.api`](classes/_api_.client.html)
+### [`SpeedCurve.api`](classes/api.client.html)
 
-Direct access to a [`Client`](classes/_api_.client.html) instance with functions for accessing the SpeedCurve API.
+Direct access to a [`Client`](classes/api.client.html) instance with functions for accessing the SpeedCurve API.

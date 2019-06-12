@@ -2,6 +2,8 @@
 
 ### 🍩 Official SpeedCurve CLI and Node.js API.
 
+![SpeedCurve CLI screenshot](.github/screenshot.png)
+
 ![CircleCI](https://img.shields.io/circleci/build/github/SpeedCurve-Metrics/speedcurve-cli.svg?style=for-the-badge)
 ![David](https://img.shields.io/david/SpeedCurve-Metrics/speedcurve-cli.svg?style=for-the-badge)
 

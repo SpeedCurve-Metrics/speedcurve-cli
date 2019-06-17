@@ -1,3 +1,4 @@
+/** @module SpeedCurve */
 import { BudgetApiResponse, BudgetCrossingApiResponse, ChartApiResponse } from "../api"
 
 type ChartYValue = number | string | null

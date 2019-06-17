@@ -24,7 +24,7 @@
     "eslint-test": "eslint --config .eslintrc-test.js --fix __tests__/**/*.js",
     "eslint": "eslint --config .eslintrc-src.js --fix src/**/*.ts",
     "jest": "jest",
-    "docs": "typedoc --name 'SpeedCurve Node.js API Reference' --readme api.md --hideGenerator --excludeExternals --exclude src/log.ts --out docs/ src/*.ts",
+    "docs": "typedoc --name 'SpeedCurve Node.js API Reference' --readme api.md --hideGenerator --excludeExternals --exclude src/log.ts --out docs/ src/*.ts src/model/*.ts",
     "commit-docs": "git add docs/ && git commit -m 'Build docs' || echo 'No documentation changes to commit'"
   },
   "prettier": {

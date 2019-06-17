@@ -1,3 +1,4 @@
+/** @module SpeedCurve */
 import { CreateDeployApiResponse, DeployStatusApiResponse } from "../api"
 import Site from "./site"
 

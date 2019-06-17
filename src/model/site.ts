@@ -1,3 +1,4 @@
+/** @module SpeedCurve */
 import { SiteApiResponse } from "../api"
 import Url from "./url"
 

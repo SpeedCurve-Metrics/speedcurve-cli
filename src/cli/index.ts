@@ -9,6 +9,8 @@ import listSitesCommand from "../command/list-sites"
 import testsCommand from "../command/tests"
 import log from "../log"
 
+log.setLevel("error")
+
 const opts = yargs
   .command("deploy", "Create a deploy and trigger testing for one or more sites", {
     note: {

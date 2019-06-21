@@ -47,8 +47,8 @@ const logger = new Logger()
 
 npmlog.level = "silent"
 npmlog.prefixStyle = {}
-npmlog.addLevel("ok", 5000, { fg: "green" }, "✔")
-npmlog.addLevel("bad", 5000, { fg: "red" }, "✖")
+npmlog.addLevel("ok", 4000, { fg: "green" }, "✔")
+npmlog.addLevel("bad", 4000, { fg: "red" }, "✖")
 
 // In the interests of using a single interface for writing output, this sets up
 // a "stdout" log level which is never written to stderr by npmlog but is instead

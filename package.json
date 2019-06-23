@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/wildlyinaccurate/speedcurve-deploy#readme",
   "dependencies": {
-    "@types/node": "^12.0.4",
+    "@types/node": "^12.0.10",
     "@types/npmlog": "^4.1.1",
     "@types/request-promise-native": "^1.0.16",
     "@types/yargs": "^13.0.0",
@@ -53,15 +53,15 @@
     "yargs": "^13.2.4"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.9.0",
-    "@typescript-eslint/parser": "^1.9.0",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "jest": "^24.8.0",
-    "prettier": "^1.17.1",
+    "prettier": "^1.18.2",
     "typedoc": "^0.14.2",
     "typedoc-plugin-external-module-name": "^2.1.0",
-    "typescript": "^3.5.1"
+    "typescript": "^3.5.2"
   }
 }

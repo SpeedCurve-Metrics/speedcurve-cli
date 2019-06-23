@@ -1,5 +1,6 @@
 /** @module api */
 import * as r from "request-promise-native"
+import { URL } from "url"
 import log from "./log"
 import truncate from "./util/truncate"
 const VERSION = require("../package.json").version

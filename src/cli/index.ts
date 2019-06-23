@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import yargs from "yargs"
+import { URL } from "url"
 import { api } from "../api"
 import { Command } from "../command"
 import budgetsCommand from "../command/budgets"

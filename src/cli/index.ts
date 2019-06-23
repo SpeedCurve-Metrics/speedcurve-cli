@@ -97,7 +97,7 @@ const opts = yargs
         try {
           return new URL(str).toString()
         } catch (e) {
-          log.error("Invalid URL supplied to --api")
+          log.error(`Invalid URL "${str}" supplied to --api`)
           return process.exit(400)
         }
       },

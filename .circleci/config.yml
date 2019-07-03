@@ -24,5 +24,8 @@ jobs:
                 name: test
                 command: npm run test
             - run:
+                name: npm-link
+                command: npm link
+            - run:
                 name: smoke-test
-                command: ./dist/cli/index.js --help
+                command: sudo speedcurve --help

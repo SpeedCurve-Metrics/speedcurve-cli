@@ -34,14 +34,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wildlyinaccurate/speedcurve-deploy.git"
+    "url": "git+https://github.com/SpeedCurve-Metrics/speedcurve-cli.git"
   },
   "author": "SpeedCurve <support@speedcurve.com> (https://speedcurve.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wildlyinaccurate/speedcurve-deploy/issues"
+    "url": "https://github.com/SpeedCurve-Metrics/speedcurve-cli/issues"
   },
-  "homepage": "https://github.com/wildlyinaccurate/speedcurve-deploy#readme",
+  "homepage": "https://github.com/SpeedCurve-Metrics/speedcurve-cli#readme",
   "dependencies": {
     "@types/node": "^12.0.10",
     "@types/npmlog": "^4.1.1",

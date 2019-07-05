@@ -30,7 +30,8 @@
   "prettier": {
     "endOfLine": "lf",
     "printWidth": 120,
-    "semi": false
+    "semi": false,
+    "useTabs": true
   },
   "repository": {
     "type": "git",

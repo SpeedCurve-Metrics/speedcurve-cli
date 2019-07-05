@@ -6,23 +6,23 @@ import Url from "./url"
  * An object representing a SpeedCurve site
  */
 export default class Site {
-  siteId: number
-  name: string
-  urls: Url[]
+	siteId: number
+	name: string
+	urls: Url[]
 
-  constructor(siteId: number, name: string, urls: Url[]) {
-    this.siteId = siteId
-    this.name = name
-    this.urls = urls
-  }
+	constructor(siteId: number, name: string, urls: Url[]) {
+		this.siteId = siteId
+		this.name = name
+		this.urls = urls
+	}
 
-  /**
-   * Build a new {@link Site} object from a {@link https://api.speedcurve.com/#get-site-details-and-settings|/v1/sites}
-   * API response object
-   */
-  static fromApiResponse(response: SiteApiResponse) {
-    return new Site(response.site_id, response.name, response.urls.map(url => Url.fromApiResponse(url)))
-  }
+	/**
+	 * Build a new {@link Site} object from a {@link https://api.speedcurve.com/#get-site-details-and-settings|/v1/sites}
+	 * API response object
+	 */
+	static fromApiResponse(response: SiteApiResponse) {
+		return new Site(response.site_id, response.name, response.urls.map(url => Url.fromApiResponse(url)))
+	}
 }
 
 module.exports = Site

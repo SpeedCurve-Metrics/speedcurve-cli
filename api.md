@@ -1,4 +1,4 @@
-All interaction with the API requires your [SpeedCurve API key](https://support.speedcurve.com/apis/synthetic-api).
+All interaction with the API requires your [SpeedCurve API key](https://support.speedcurve.com/en/articles/415403-synthetic-api).
 
 ## Basic usage
 

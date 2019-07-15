@@ -131,4 +131,4 @@ See [the API reference](https://speedcurve-metrics.github.io/speedcurve-cli/).
 
 ## Contributing
 
-This tool is still in beta, but pull requests are welcome! Please read [CONTRIBUTING.md](.github/CONTRIBUTING.md) first.
+Pull requests are welcome! Please read [CONTRIBUTING.md](.github/CONTRIBUTING.md) first.

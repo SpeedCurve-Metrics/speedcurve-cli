@@ -17,9 +17,9 @@ module.exports = {
     sourceType: "module"
   },
   rules: {
-    "@typescript-eslint/camelcase": false,
-    "@typescript-eslint/explicit-function-return-type": false,
-    "@typescript-eslint/explicit-member-accessibility": false,
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
     "prettier/prettier": "error",
   }
 }

@@ -17,15 +17,15 @@ import * as tests from "./tests"
  * ```
  */
 const SpeedCurve = {
-  budgets,
-  deploys,
-  sites,
-  tests,
-  DeployResult,
-  PerformanceBudget,
-  Site,
-  TestResult,
-  Url
+	budgets,
+	deploys,
+	sites,
+	tests,
+	DeployResult,
+	PerformanceBudget,
+	Site,
+	TestResult,
+	Url
 }
 
 export default SpeedCurve

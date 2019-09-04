@@ -2,45 +2,46 @@ import npmlog = require("npmlog")
 import { MessageObject } from "npmlog"
 
 class Logger {
-  setLevel(level: string) {
-    npmlog.level = level
-  }
+	setLevel(level: string) {
+		npmlog.level = level
+	}
 
-  json(value: any) {
-    this.stdout(JSON.stringify(value))
-  }
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	json(value: any) {
+		this.stdout(JSON.stringify(value))
+	}
 
-  stdout(message: string) {
-    npmlog.stdout("", message)
-  }
+	stdout(message: string) {
+		npmlog.stdout("", message)
+	}
 
-  verbose(message: string) {
-    npmlog.verbose("", message)
-  }
+	verbose(message: string) {
+		npmlog.verbose("", message)
+	}
 
-  http(prefix: string, message: string) {
-    npmlog.http(prefix, message)
-  }
+	http(prefix: string, message: string) {
+		npmlog.http(prefix, message)
+	}
 
-  ok(message: string) {
-    npmlog.ok("", message)
-  }
+	ok(message: string) {
+		npmlog.ok("", message)
+	}
 
-  bad(message: string) {
-    npmlog.bad("", message)
-  }
+	bad(message: string) {
+		npmlog.bad("", message)
+	}
 
-  notice(message: string) {
-    npmlog.notice("", message)
-  }
+	notice(message: string) {
+		npmlog.notice("", message)
+	}
 
-  warn(message: string) {
-    npmlog.warn("", message)
-  }
+	warn(message: string) {
+		npmlog.warn("", message)
+	}
 
-  error(message: string) {
-    npmlog.error("", message)
-  }
+	error(message: string) {
+		npmlog.error("", message)
+	}
 }
 
 const logger = new Logger()
@@ -55,7 +56,7 @@ npmlog.addLevel("bad", 4000, { fg: "red" }, "✖")
 // handled here and passed directly to process.stdout
 npmlog.addLevel("stdout", Infinity, { fg: "green" })
 npmlog.on("log.stdout", (log: MessageObject) => {
-  process.stdout.write(log.prefix + log.message)
+	process.stdout.write(log.prefix + log.message)
 })
 
 export default logger

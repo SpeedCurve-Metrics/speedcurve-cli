@@ -164,7 +164,7 @@ command(opts)
 	.catch((e: Error) => {
 		log.error(e.message)
 
-		if (["TypeError"].includes(e.name)) {
+		if (["TypeError", "ReferenceError"].includes(e.name)) {
 			log.stdout(
 				"\nPlease report this error along with the following details at https://github.com/SpeedCurve-Metrics/speedcurve-cli/issues/new\n"
 			)

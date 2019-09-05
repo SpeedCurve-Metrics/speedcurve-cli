@@ -1,5 +1,6 @@
 /** @module SpeedCurve */
 import { UrlApiResponse } from "../api"
+import Site from "./site"
 import TestResult from "./test-result"
 
 /**
@@ -9,6 +10,7 @@ export default class Url {
 	urlId: number
 	label: string
 	url: string
+	site: Site
 	tests: TestResult[]
 
 	constructor(urlId: number, label: string, url: string, tests: TestResult[] = []) {
@@ -16,6 +18,14 @@ export default class Url {
 		this.label = label
 		this.url = url
 		this.tests = tests
+	}
+
+	toString() {
+		if (this.site) {
+			return `URL ${this.urlId} (${this.site.name} / ${this.label})`
+		}
+
+		return `URL ${this.urlId} (${this.label})`
 	}
 
 	/**

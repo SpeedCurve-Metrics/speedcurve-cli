@@ -1,6 +1,7 @@
 /** @module SpeedCurve */
 import { CreateDeployApiResponse, DeployStatusApiResponse } from "../api"
 import Site from "./site"
+import Url from "./url"
 
 /**
  * An object representing a SpeedCurve deploy result.
@@ -8,12 +9,19 @@ import Site from "./site"
 export default class DeployResult {
 	deployId: number
 	site: Site
+	url: Url
 	success: boolean
 	totalTests: number
 	completedTests: number
 
-	constructor(site: Site) {
-		this.site = site
+	constructor(siteOrUrl: Site | Url) {
+		if ("urlId" in siteOrUrl) {
+			this.url = siteOrUrl
+			this.site = siteOrUrl.site
+		} else {
+			this.site = siteOrUrl
+		}
+
 		this.deployId = null
 		this.success = false
 		this.totalTests = 0

@@ -11,6 +11,7 @@ import resolveSiteIds from "../util/resolve-site-ids"
 interface DeployCommandOptions {
 	key: string
 	site?: string[] | number[]
+	url?: number[]
 	note?: string
 	detail?: string
 	checkBudgets?: boolean
@@ -18,9 +19,13 @@ interface DeployCommandOptions {
 }
 
 export default async function deployCommand(opts: DeployCommandOptions): Promise<ExitCode | void> {
-	const { key, site = [], note = "", detail = "", checkBudgets = false, wait = false } = opts
+	const { key, site = [], url = [], note = "", detail = "", checkBudgets = false, wait = false } = opts
 
-	log.verbose(`Requesting deploys for ${site.length || "all"} ${pluralise("site", site.length)}...`)
+	if (url.length) {
+		log.verbose(`Requesting deploys for ${url.length || "all"} ${pluralise("URL", url.length)}...`)
+	} else {
+		log.verbose(`Requesting deploys for ${site.length || "all"} ${pluralise("site", site.length)}...`)
+	}
 
 	const budgetsBeforeDeploy: Map<number, PerformanceBudget> = new Map()
 
@@ -32,8 +37,15 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 		})
 	}
 
-	const siteIds = await resolveSiteIds(key, site)
-	const results = await SpeedCurve.deploys.create(key, siteIds, note, detail)
+	let results: DeployResult[] = []
+
+	if (url.length) {
+		results = await SpeedCurve.deploys.createForUrls(key, url, note, detail)
+	} else {
+		const siteIds = await resolveSiteIds(key, site)
+		results = await SpeedCurve.deploys.create(key, siteIds, note, detail)
+	}
+
 	const successfulResults = results.filter(result => result.success)
 
 	if (wait || checkBudgets) {

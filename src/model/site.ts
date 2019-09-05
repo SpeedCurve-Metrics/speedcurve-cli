@@ -21,7 +21,13 @@ export default class Site {
 	 * API response object
 	 */
 	static fromApiResponse(response: SiteApiResponse) {
-		return new Site(response.site_id, response.name, response.urls.map(url => Url.fromApiResponse(url)))
+		const site = new Site(response.site_id, response.name, response.urls.map(url => Url.fromApiResponse(url)))
+
+		for (const url of site.urls) {
+			url.site = site
+		}
+
+		return site
 	}
 }
 

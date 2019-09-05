@@ -26,9 +26,15 @@ const opts = yargs
 		},
 		site: {
 			group: "Deploy options:",
+			conflicts: "url",
 			describe: "Only trigger deploys for the specified site ID(s) or name(s)",
-			type: "array",
-			default: []
+			type: "array"
+		},
+		url: {
+			group: "Deploy options:",
+			conflicts: "site",
+			describe: "Only trigger deploys for the specified URL ID(s)",
+			type: "array"
 		},
 		"check-budgets": {
 			group: "Deploy options:",

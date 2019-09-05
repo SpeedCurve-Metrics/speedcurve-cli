@@ -11,11 +11,6 @@ const logFriendlyUrl = (url: URL) => {
 	return [url.origin, url.pathname, hasSearchParams ? "?" + url.searchParams : ""].join("")
 }
 
-export interface TestFilters {
-	region?: string
-	browser?: string
-}
-
 class Client {
 	base: string
 
@@ -63,14 +58,10 @@ class Client {
 		})
 	}
 
-	deploy(key: string, siteId: number, note = "", detail = ""): Promise<CreateDeployApiResponse> {
+	deploy(key: string, settings: DeploySettings): Promise<CreateDeployApiResponse> {
 		const url = this.prepareUrl(key, `/v1/deploy`)
 
-		return this.post(url, {
-			site_id: siteId,
-			note,
-			detail
-		}).then(res => res)
+		return this.post(url, settings).then(res => res)
 	}
 
 	deployStatus(key: string, deployId: number): Promise<DeployStatusApiResponse> {
@@ -122,6 +113,26 @@ class Client {
 		return this.get(url).then(res => res.budgets)
 	}
 }
+
+export interface TestFilters {
+	region?: string
+	browser?: string
+}
+
+interface BaseDeploySettings {
+	note?: string
+	detail?: string
+}
+
+interface UrlDeploySettings extends BaseDeploySettings {
+	url_id: number
+}
+
+interface SiteDeploySettings extends BaseDeploySettings {
+	site_id: number
+}
+
+export type DeploySettings = UrlDeploySettings | SiteDeploySettings
 
 export interface SiteApiResponse {
 	site_id: number

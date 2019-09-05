@@ -14,6 +14,7 @@ This package attempts to be a user-friendly wrapper around the SpeedCurve API. I
 * Getting the status of performance budgets
 * Fetching synthetic test data
 * Listing sites in an account
+* JSON output for easy integration into build pipelines
 
 ## Installation
 

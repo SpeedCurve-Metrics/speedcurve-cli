@@ -21,7 +21,7 @@
     "check-src": "tsc --noEmit",
     "compile-src": "tsc",
     "lint": "npm run eslint && npm run eslint-test",
-    "eslint-test": "eslint --fix '__tests__/**/*.js'",
+    "eslint-test": "eslint --fix '__tests__/**/*.test.js'",
     "eslint": "eslint --fix 'src/**/*.ts'",
     "jest": "jest --testPathIgnorePatterns .eslintrc.js",
     "docs": "typedoc --name 'SpeedCurve Node.js API Reference' --readme api.md --hideGenerator --excludeExternals --exclude src/log.ts --out docs/ src/*.ts src/model/*.ts",

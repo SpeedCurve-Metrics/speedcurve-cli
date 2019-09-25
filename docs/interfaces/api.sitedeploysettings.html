@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DashboardApiResponse | SpeedCurve Node.js API Reference</title>
+	<title>SiteDeploySettings | SpeedCurve Node.js API Reference</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,10 +57,10 @@
 					<a href="../modules/api.html">api</a>
 				</li>
 				<li>
-					<a href="api.dashboardapiresponse.html">DashboardApiResponse</a>
+					<a href="api.sitedeploysettings.html">SiteDeploySettings</a>
 				</li>
 			</ul>
-			<h1>Interface DashboardApiResponse</h1>
+			<h1>Interface SiteDeploySettings</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DashboardApiResponse</span>
+						<a href="api.basedeploysettings.html" class="tsd-signature-type">BaseDeploySettings</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">SiteDeploySettings</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -79,35 +84,48 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.dashboardapiresponse.html#dashboard_id" class="tsd-kind-icon">dashboard_<wbr>id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.dashboardapiresponse.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="api.sitedeploysettings.html#detail" class="tsd-kind-icon">detail</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="api.sitedeploysettings.html#note" class="tsd-kind-icon">note</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="api.sitedeploysettings.html#site_id" class="tsd-kind-icon">site_<wbr>id</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="dashboard_id" class="tsd-anchor"></a>
-					<h3>dashboard_<wbr>id</h3>
-					<div class="tsd-signature tsd-kind-icon">dashboard_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="detail" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> detail</h3>
+					<div class="tsd-signature tsd-kind-icon">detail<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="api.basedeploysettings.html">BaseDeploySettings</a>.<a href="api.basedeploysettings.html#detail">detail</a></p>
 						<ul>
-							<li>Defined in api.ts:200</li>
+							<li>Defined in api.ts:124</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="note" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> note</h3>
+					<div class="tsd-signature tsd-kind-icon">note<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="api.basedeploysettings.html">BaseDeploySettings</a>.<a href="api.basedeploysettings.html#note">note</a></p>
+						<ul>
+							<li>Defined in api.ts:123</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="site_id" class="tsd-anchor"></a>
+					<h3>site_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">site_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in api.ts:201</li>
+							<li>Defined in api.ts:132</li>
 						</ul>
 					</aside>
 				</section>
@@ -162,30 +180,33 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="api.createdeployapiresponse.html" class="tsd-kind-icon">Create<wbr>Deploy<wbr>Api<wbr>Response</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="api.dashboardapiresponse.html" class="tsd-kind-icon">Dashboard<wbr>Api<wbr>Response</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="api.dashboardapiresponse.html#dashboard_id" class="tsd-kind-icon">dashboard_<wbr>id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="api.dashboardapiresponse.html#name" class="tsd-kind-icon">name</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="api.deploystatusapiresponse.html" class="tsd-kind-icon">Deploy<wbr>Status<wbr>Api<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="api.siteapiresponse.html" class="tsd-kind-icon">Site<wbr>Api<wbr>Response</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="api.sitedeploysettings.html" class="tsd-kind-icon">Site<wbr>Deploy<wbr>Settings</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="api.sitedeploysettings.html#detail" class="tsd-kind-icon">detail</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="api.sitedeploysettings.html#note" class="tsd-kind-icon">note</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="api.sitedeploysettings.html#site_id" class="tsd-kind-icon">site_<wbr>id</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="api.teamapiresponse.html" class="tsd-kind-icon">Team<wbr>Api<wbr>Response</a>
 					</li>

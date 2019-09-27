@@ -8,6 +8,8 @@ import deployCommand from "../command/deploy"
 import deployStatusCommand from "../command/deploy-status"
 import listSitesCommand from "../command/list-sites"
 import testsCommand from "../command/tests"
+import createUrlCommand from "../command/create-url"
+import updateUrlCommand from "../command/update-url"
 import log from "../log"
 
 log.setLevel("error")
@@ -95,6 +97,47 @@ const opts = yargs
 			default: false
 		}
 	})
+	.command("create-url", "Create a new URL in a site", {
+		site: {
+			describe: "The site ID or name that the URL should be created within",
+			type: "string",
+			demandOption: true
+		},
+		url: {
+			describe: "The URL",
+			type: "string",
+			demandOption: true
+		},
+		label: {
+			describe: "The label of the new URL",
+			type: "string"
+		},
+		json: {
+			describe: "Display results as JSON",
+			type: "boolean",
+			default: false
+		}
+	})
+	.command("update-url", "Update an existing URL", {
+		urlId: {
+			describe: "The ID of the URL to update",
+			type: "number",
+			demandOption: true
+		},
+		url: {
+			describe: "The URL",
+			type: "string"
+		},
+		label: {
+			describe: "The label of the new URL",
+			type: "string"
+		},
+		json: {
+			describe: "Display results as JSON",
+			type: "boolean",
+			default: false
+		}
+	})
 	.options({
 		key: {
 			describe: "SpeedCurve API key. Can also be specified in the SPEEDCURVE_API_KEY environment variable"
@@ -151,6 +194,10 @@ const command: Command = (() => {
 			return testsCommand
 		case "list-sites":
 			return listSitesCommand
+		case "create-url":
+			return createUrlCommand
+		case "update-url":
+			return updateUrlCommand
 		default:
 			return () => {
 				yargs.showHelp()

@@ -8,6 +8,7 @@ import TestResult from "./model/test-result"
 import Url from "./model/url"
 import * as sites from "./sites"
 import * as tests from "./tests"
+import * as urls from "./urls"
 
 /**
  * Note: All interaction with the SpeedCurve API requires your
@@ -20,6 +21,7 @@ const SpeedCurve = {
 	budgets,
 	deploys,
 	sites,
+	urls,
 	tests,
 	DeployResult,
 	PerformanceBudget,

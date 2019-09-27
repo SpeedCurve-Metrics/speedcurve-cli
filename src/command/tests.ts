@@ -1,6 +1,6 @@
 import SpeedCurve from "../index"
 import log from "../log"
-import resolveSiteIds from "../util/resolve-site-ids"
+import { resolveSiteIds } from "../util/resolve-site-ids"
 
 interface TestsCommandOptions {
 	key: string

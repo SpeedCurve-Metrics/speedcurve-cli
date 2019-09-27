@@ -6,7 +6,7 @@ import DeployResult from "../model/deploy-result"
 import PerformanceBudget from "../model/performance-budget"
 import { bold } from "../util/console"
 import pluralise from "../util/pluralise"
-import resolveSiteIds from "../util/resolve-site-ids"
+import { resolveSiteIds } from "../util/resolve-site-ids"
 
 interface DeployCommandOptions {
 	key: string

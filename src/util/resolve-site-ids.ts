@@ -4,26 +4,41 @@ import Site from "../model/site"
 
 type SiteIdOrName = string | number
 
+const sitesCache: { [key: string]: Site[] } = {}
+
+async function populateSitesCacheForAccount(key: string): Promise<void> {
+	await SpeedCurve.sites.getAll(key).then(sites => {
+		sitesCache[key] = sites
+	})
+}
+
 /*
- * Take an array of site IDs or names and convert it to an array of just site IDs
+ * Find the corresponding site ID for a site name
  */
-export default async function resolveSiteIds(key: string, siteIdsOrNames: SiteIdOrName[]): Promise<number[]> {
-	const needsLookup = siteIdsOrNames.some(x => typeof x === "string")
-	const sites: Site[] = await (needsLookup ? SpeedCurve.sites.getAll(key) : Promise.resolve([]))
+export async function resolveSiteId(key: string, siteIdOrName: SiteIdOrName): Promise<number> {
+	if (typeof siteIdOrName === "string") {
+		if (!sitesCache[key]) {
+			await populateSitesCacheForAccount(key)
+		}
 
-	return siteIdsOrNames.map(siteIdOrName => {
-		if (typeof siteIdOrName === "string") {
-			const siteByName = sites.find(site => site.name === siteIdOrName)
+		const siteByName = sitesCache[key].find(site => site.name === siteIdOrName)
 
-			if (!siteByName) {
-				log.warn(`Couldn't find site by name "${siteIdOrName}". Will try to use it as an ID.`)
-				return Number(siteIdOrName)
-			}
-
+		if (siteByName) {
 			return siteByName.siteId
 		}
 
-		// Assume a valid site ID
-		return Number(siteIdOrName)
-	})
+		log.verbose(`Couldn't find site by name "${siteIdOrName}". Will try to use it as an ID.`)
+	}
+
+	return Number(siteIdOrName)
+}
+
+export async function resolveSiteIds(key: string, siteIdsOrNames: SiteIdOrName[]): Promise<number[]> {
+	const needsLookup = siteIdsOrNames.some(x => typeof x === "string")
+
+	if (needsLookup) {
+		await populateSitesCacheForAccount(key)
+	}
+
+	return Promise.all(siteIdsOrNames.map(siteIdOrName => resolveSiteId(key, siteIdOrName)))
 }

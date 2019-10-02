@@ -23,7 +23,7 @@
     "lint": "npm run eslint && npm run eslint-test",
     "eslint-test": "eslint --fix '__tests__/**/*.test.js'",
     "eslint": "eslint --fix 'src/**/*.ts'",
-    "jest": "jest --testPathIgnorePatterns .eslintrc.js",
+    "jest": "jest --coverage --coverageReporters lcov text --testPathIgnorePatterns .eslintrc.js | coveralls && rm -rf coverage/",
     "docs": "typedoc --name 'SpeedCurve Node.js API Reference' --readme api.md --hideGenerator --excludeExternals --exclude src/log.ts --out docs/ src/*.ts src/model/*.ts",
     "commit-docs": "git add docs/ && git commit -m 'Build docs' || echo 'No documentation changes to commit'"
   },
@@ -56,6 +56,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.1.0",
     "@typescript-eslint/parser": "^2.1.0",
+    "coveralls": "^3.0.6",
     "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-prettier": "^3.1.0",

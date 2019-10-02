@@ -23,6 +23,10 @@ jobs:
             - run:
                 name: test
                 command: npm run test
+                command: npm run build
+            - run:
+                name: report-coverage
+                command: npm run report-coverage
             - run:
                 name: npm-link
                 command: sudo npm link

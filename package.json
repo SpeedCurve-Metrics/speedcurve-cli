@@ -23,7 +23,8 @@
     "lint": "npm run eslint && npm run eslint-test",
     "eslint-test": "eslint --fix '__tests__/**/*.test.js'",
     "eslint": "eslint --fix 'src/**/*.ts'",
-    "jest": "jest --coverage --coverageReporters lcov text --testPathIgnorePatterns .eslintrc.js | coveralls && rm -rf coverage/",
+    "jest": "jest --coverage --coverageReporters lcov text --testPathIgnorePatterns .eslintrc.js",
+    "report-coverage": "cat coverage/lcov.info | coveralls && rm -rf coverage/",
     "docs": "typedoc --name 'SpeedCurve Node.js API Reference' --readme api.md --hideGenerator --excludeExternals --exclude src/log.ts --out docs/ src/*.ts src/model/*.ts",
     "commit-docs": "git add docs/ && git commit -m 'Build docs' || echo 'No documentation changes to commit'"
   },

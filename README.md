@@ -5,6 +5,7 @@
 ![SpeedCurve CLI screenshot](.github/screenshot.png)
 
 [![CircleCI](https://img.shields.io/circleci/build/github/SpeedCurve-Metrics/speedcurve-cli.svg?style=for-the-badge)](https://circleci.com/gh/SpeedCurve-Metrics/speedcurve-cli)
+[![Coveralls](https://img.shields.io/coveralls/github/SpeedCurve-Metrics/speedcurve-cli?style=for-the-badge)](https://coveralls.io/github/SpeedCurve-Metrics/speedcurve-cli)
 [![David](https://img.shields.io/david/SpeedCurve-Metrics/speedcurve-cli.svg?style=for-the-badge)](https://david-dm.org/speedcurve-metrics/speedcurve-cli)
 
 This package attempts to be a user-friendly wrapper around the SpeedCurve API. It currently supports:

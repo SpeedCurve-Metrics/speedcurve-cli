@@ -30,11 +30,13 @@ export function getAll(key: string): Promise<Site[]> {
 export function getAllWithTests(key: string, days: number): Promise<Site[]> {
 	return getAll(key).then(async sites => {
 		return Promise.all(
-			sites.map(async site => {
-				const urlsWithTests = await Promise.all(site.urls.map(url => tests.getForUrl(key, url.urlId, days)))
+			sites.map(async site =>
+				Promise.all(site.urls.map(url => tests.getForUrl(key, url.urlId, days))).then(urlsWithTests => {
+					site.urls = urlsWithTests
 
-				return Object.assign({}, site, { urls: urlsWithTests })
-			})
+					return site
+				})
+			)
 		)
 	})
 }

@@ -63,6 +63,7 @@ speedcurve deploy --site 1043801 --site 'BBC News'
 speedcurve deploy --wait
 
 # Monitor the status of performance budgets
+# Exits with a non-zero status if any budgets are over their threshold
 speedcurve deploy --check-budgets
 ```
 

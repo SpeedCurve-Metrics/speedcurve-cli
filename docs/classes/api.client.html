@@ -96,16 +96,21 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#budgets" class="tsd-kind-icon">budgets</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#budgetsfordeploy" class="tsd-kind-icon">budgets<wbr>For<wbr>Deploy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#createurl" class="tsd-kind-icon">create<wbr>Url</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#deploy" class="tsd-kind-icon">deploy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#deploystatus" class="tsd-kind-icon">deploy<wbr>Status</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#list" class="tsd-kind-icon">list</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#normaliseerrorresponse" class="tsd-kind-icon">normalise<wbr>Error<wbr>Response</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#post" class="tsd-kind-icon">post</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#prepareurl" class="tsd-kind-icon">prepare<wbr>Url</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#put" class="tsd-kind-icon">put</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#site" class="tsd-kind-icon">site</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#sites" class="tsd-kind-icon">sites</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#team" class="tsd-kind-icon">team</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#test" class="tsd-kind-icon">test</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#tests" class="tsd-kind-icon">tests</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="api.client.html#updateurl" class="tsd-kind-icon">update<wbr>Url</a></li>
 							</ul>
 						</section>
 					</div>
@@ -156,7 +161,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:104</li>
+									<li>Defined in api.ts:160</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -179,7 +184,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:110</li>
+									<li>Defined in api.ts:166</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -196,16 +201,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-					<a name="deploy" class="tsd-anchor"></a>
-					<h3>deploy</h3>
+					<a name="createurl" class="tsd-anchor"></a>
+					<h3>create<wbr>Url</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">deploy<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, settings<span class="tsd-signature-symbol">: </span><a href="../modules/api.html#deploysettings" class="tsd-signature-type">DeploySettings</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.createdeployapiresponse.html" class="tsd-signature-type">CreateDeployApiResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Url<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, settings<span class="tsd-signature-symbol">: </span><a href="../interfaces/api.createurlendpointparameters.html" class="tsd-signature-type">CreateUrlEndpointParameters</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.createurlapiresponse.html" class="tsd-signature-type">CreateUrlApiResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:61</li>
+									<li>Defined in api.ts:135</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -214,7 +219,33 @@
 									<h5>key: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>settings: <a href="../modules/api.html#deploysettings" class="tsd-signature-type">DeploySettings</a></h5>
+									<h5>settings: <a href="../interfaces/api.createurlendpointparameters.html" class="tsd-signature-type">CreateUrlEndpointParameters</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.createurlapiresponse.html" class="tsd-signature-type">CreateUrlApiResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="deploy" class="tsd-anchor"></a>
+					<h3>deploy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">deploy<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, settings<span class="tsd-signature-symbol">: </span><a href="../modules/api.html#deployendpointparameters" class="tsd-signature-type">DeployEndpointParameters</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.createdeployapiresponse.html" class="tsd-signature-type">CreateDeployApiResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in api.ts:97</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>settings: <a href="../modules/api.html#deployendpointparameters" class="tsd-signature-type">DeployEndpointParameters</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.createdeployapiresponse.html" class="tsd-signature-type">CreateDeployApiResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -231,7 +262,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:67</li>
+									<li>Defined in api.ts:111</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -251,13 +282,13 @@
 					<a name="get" class="tsd-anchor"></a>
 					<h3>get</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:36</li>
+									<li>Defined in api.ts:53</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -266,7 +297,56 @@
 									<h5>url: <span class="tsd-signature-type">URL</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="list" class="tsd-anchor"></a>
+					<h3>list</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">list<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, siteId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.deploysapiresponse.html" class="tsd-signature-type">DeploysApiResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in api.ts:103</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>siteId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.deploysapiresponse.html" class="tsd-signature-type">DeploysApiResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="normaliseerrorresponse" class="tsd-anchor"></a>
+					<h3>normalise<wbr>Error<wbr>Response</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">normalise<wbr>Error<wbr>Response<span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in api.ts:39</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>e: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -274,13 +354,13 @@
 					<a name="post" class="tsd-anchor"></a>
 					<h3>post</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">post<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">post<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:48</li>
+									<li>Defined in api.ts:67</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -294,7 +374,7 @@
 									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -333,6 +413,34 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="put" class="tsd-anchor"></a>
+					<h3>put</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">put<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">URL</span>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in api.ts:82</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">URL</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> data: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<ul class="tsd-parameters">
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 					<a name="site" class="tsd-anchor"></a>
 					<h3>site</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
@@ -342,7 +450,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:79</li>
+									<li>Defined in api.ts:123</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -368,7 +476,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:85</li>
+									<li>Defined in api.ts:129</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -391,7 +499,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:73</li>
+									<li>Defined in api.ts:117</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -414,7 +522,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:91</li>
+									<li>Defined in api.ts:147</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -440,7 +548,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:97</li>
+									<li>Defined in api.ts:153</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -459,6 +567,35 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.urlapiresponse.html" class="tsd-signature-type">UrlApiResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="updateurl" class="tsd-anchor"></a>
+					<h3>update<wbr>Url</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Url<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, urlId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, settings<span class="tsd-signature-symbol">: </span><a href="../interfaces/api.updateurlendpointparameters.html" class="tsd-signature-type">UpdateUrlEndpointParameters</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.updateurlapiresponse.html" class="tsd-signature-type">UpdateUrlApiResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in api.ts:141</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>urlId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>settings: <a href="../interfaces/api.updateurlendpointparameters.html" class="tsd-signature-type">UpdateUrlEndpointParameters</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.updateurlapiresponse.html" class="tsd-signature-type">UpdateUrlApiResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -510,6 +647,9 @@
 								<a href="api.client.html#budgetsfordeploy" class="tsd-kind-icon">budgets<wbr>For<wbr>Deploy</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="api.client.html#createurl" class="tsd-kind-icon">create<wbr>Url</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="api.client.html#deploy" class="tsd-kind-icon">deploy</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
@@ -519,10 +659,19 @@
 								<a href="api.client.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="api.client.html#list" class="tsd-kind-icon">list</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="api.client.html#normaliseerrorresponse" class="tsd-kind-icon">normalise<wbr>Error<wbr>Response</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="api.client.html#post" class="tsd-kind-icon">post</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="api.client.html#prepareurl" class="tsd-kind-icon">prepare<wbr>Url</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="api.client.html#put" class="tsd-kind-icon">put</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="api.client.html#site" class="tsd-kind-icon">site</a>
@@ -539,12 +688,15 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="api.client.html#tests" class="tsd-kind-icon">tests</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="api.client.html#updateurl" class="tsd-kind-icon">update<wbr>Url</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../interfaces/api.basedeploysettings.html" class="tsd-kind-icon">Base<wbr>Deploy<wbr>Settings</a>
+						<a href="../interfaces/api.basedeployendpointparameters.html" class="tsd-kind-icon">Base<wbr>Deploy<wbr>Endpoint<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/api.budgetapiresponse.html" class="tsd-kind-icon">Budget<wbr>Api<wbr>Response</a>
@@ -562,16 +714,28 @@
 						<a href="../interfaces/api.createdeployapiresponse.html" class="tsd-kind-icon">Create<wbr>Deploy<wbr>Api<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/api.createurlapiresponse.html" class="tsd-kind-icon">Create<wbr>Url<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../interfaces/api.createurlendpointparameters.html" class="tsd-kind-icon">Create<wbr>Url<wbr>Endpoint<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/api.dashboardapiresponse.html" class="tsd-kind-icon">Dashboard<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/api.deploy.html" class="tsd-kind-icon">Deploy</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/api.deploystatusapiresponse.html" class="tsd-kind-icon">Deploy<wbr>Status<wbr>Api<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/api.deploysapiresponse.html" class="tsd-kind-icon">Deploys<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/api.siteapiresponse.html" class="tsd-kind-icon">Site<wbr>Api<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../interfaces/api.sitedeploysettings.html" class="tsd-kind-icon">Site<wbr>Deploy<wbr>Settings</a>
+						<a href="../interfaces/api.sitedeployendpointparameters.html" class="tsd-kind-icon">Site<wbr>Deploy<wbr>Endpoint<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/api.teamapiresponse.html" class="tsd-kind-icon">Team<wbr>Api<wbr>Response</a>
@@ -583,16 +747,22 @@
 						<a href="../interfaces/api.testresultapiresponse.html" class="tsd-kind-icon">Test<wbr>Result<wbr>Api<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/api.updateurlapiresponse.html" class="tsd-kind-icon">Update<wbr>Url<wbr>Api<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../interfaces/api.updateurlendpointparameters.html" class="tsd-kind-icon">Update<wbr>Url<wbr>Endpoint<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/api.urlapiresponse.html" class="tsd-kind-icon">Url<wbr>Api<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../interfaces/api.urldeploysettings.html" class="tsd-kind-icon">Url<wbr>Deploy<wbr>Settings</a>
+						<a href="../interfaces/api.urldeployendpointparameters.html" class="tsd-kind-icon">Url<wbr>Deploy<wbr>Endpoint<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
 						<a href="../modules/api.html#createdeploystatus" class="tsd-kind-icon">Create<wbr>Deploy<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="../modules/api.html#deploysettings" class="tsd-kind-icon">Deploy<wbr>Settings</a>
+						<a href="../modules/api.html#deployendpointparameters" class="tsd-kind-icon">Deploy<wbr>Endpoint<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
 						<a href="../modules/api.html#deploystatus" class="tsd-kind-icon">Deploy<wbr>Status</a>

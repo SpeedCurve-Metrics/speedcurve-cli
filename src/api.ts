@@ -100,6 +100,14 @@ class Client {
 		return this.post(url, settings).then(res => res)
 	}
 
+	list(key: string, siteId: number): Promise<DeploysApiResponse> {
+		console.log('api.ts:siteId', siteId)
+		const params = siteId ? { site_id: `${siteId}` } : {} 
+		const url = this.prepareUrl(key, `/v1/deploys`, params)
+
+		return this.post(url).then(res => res)
+	}
+
 	deployStatus(key: string, deployId: number): Promise<DeployStatusApiResponse> {
 		const url = this.prepareUrl(key, `/v1/deploy/${deployId}`)
 
@@ -248,6 +256,18 @@ export interface DeployStatusApiResponse {
 	status: DeployStatus
 	"tests-completed": object[]
 	"tests-remaining": object[]
+	note: string
+	detail: string
+}
+
+export interface DeploysApiResponse {
+	deploys: Deploy[]
+}
+
+export interface Deploy {
+	deploy_id: number
+	site_id: number
+	timestamp: number
 	note: string
 	detail: string
 }

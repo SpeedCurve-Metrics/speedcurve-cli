@@ -73,6 +73,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="deploys.html#create" class="tsd-kind-icon">create</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="deploys.html#createforurls" class="tsd-kind-icon">create<wbr>For<wbr>Urls</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="deploys.html#list" class="tsd-kind-icon">list</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="deploys.html#status" class="tsd-kind-icon">status</a></li>
 							</ul>
 						</section>
@@ -91,15 +92,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in deploys.ts:28</li>
+									<li>Defined in deploys.ts:41</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Run on-demand tests for one or more sites. If no <code>siteId</code> parameter is
-									specified, a deploy will be created for all sites in the account</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -129,14 +124,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in deploys.ts:93</li>
+									<li>Defined in deploys.ts:106</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Run on-demand tests for one or more URLs.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -157,6 +147,32 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="list" class="tsd-anchor"></a>
+					<h3>list</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">list<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, siteId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.deploy.html" class="tsd-signature-type">Deploy</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in deploys.ts:27</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>siteId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.deploy.html" class="tsd-signature-type">Deploy</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
 					<a name="status" class="tsd-anchor"></a>
 					<h3>status</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
@@ -169,16 +185,6 @@
 									<li>Defined in deploys.ts:20</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get the status of a deploy</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>see</dt>
-									<dd><p><a href="http://api.speedcurve.com/#get-a-deploy" class="external">http://api.speedcurve.com/#get-a-deploy</a></p>
-									</dd>
-								</dl>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -227,6 +233,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="deploys.html#createforurls" class="tsd-kind-icon">create<wbr>For<wbr>Urls</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="deploys.html#list" class="tsd-kind-icon">list</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="deploys.html#status" class="tsd-kind-icon">status</a>

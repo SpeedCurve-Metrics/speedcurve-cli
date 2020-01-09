@@ -22,6 +22,19 @@ export function status(key: string, deployId: number) {
 }
 
 /**
+ * List all deploys for site
+ */
+export async function list(key: string, siteId: number) {
+	try {
+		const { deploys } = await api.list(key, siteId)
+		return deploys
+	} catch (err) {
+		log.verbose(`Couldn't fetch deploys data`)
+		return []
+	}
+}
+
+/**
  * Run on-demand tests for one or more sites. If no `siteId` parameter is
  * specified, a deploy will be created for all sites in the account
  */

@@ -6,6 +6,7 @@ import { Command } from "../command"
 import budgetsCommand from "../command/budgets"
 import deployCommand from "../command/deploy"
 import deployStatusCommand from "../command/deploy-status"
+import listDeploysCommand from "../command/list-deploys"
 import listSitesCommand from "../command/list-sites"
 import testsCommand from "../command/tests"
 import createUrlCommand from "../command/create-url"
@@ -58,6 +59,10 @@ const opts = yargs
 			default: false
 		}
 	})
+	.command(
+		"deploy-site-wait-for-deep-link <siteId>",
+		"Triggers deploy for specified site and wait for the deploy to finish so it can return a deep link"
+	)
 	.command("budgets", "Get the status of all performance budgets in an account", {
 		json: {
 			describe: "Display results as JSON",
@@ -185,6 +190,8 @@ if (!opts._.length) {
 const command: Command = (() => {
 	switch (opts._[0]) {
 		case "deploy":
+			return deployCommand
+		case "deploy-site-wait-for-deep-link":
 			return deployCommand
 		case "deploy-status":
 			return deployStatusCommand

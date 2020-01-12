@@ -67,7 +67,7 @@ speedcurve deploy --wait
 speedcurve deploy --check-budgets
 ```
 
-### `speedcurve deploy-status`
+### `speedcurve deploy-status <deployId>`
 
 Get the status of a deploy.
 

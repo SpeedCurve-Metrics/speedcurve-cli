@@ -1,5 +1,5 @@
 /** @module deploys */
-import { api } from "./api"
+import { api, Deploy } from "./api"
 import log from "./log"
 import DeployResult from "./model/deploy-result"
 import Site from "./model/site"
@@ -24,10 +24,9 @@ export function status(key: string, deployId: number) {
 /**
  * List all deploys for site
  */
-export async function list(key: string, siteId: number) {
+export async function list(key: string, siteId: number): Promise<Deploy[]> {
 	try {
-		const { deploys } = await api.list(key, siteId)
-		return deploys
+		return api.list(key, siteId)
 	} catch (err) {
 		log.verbose(`Couldn't fetch deploys data`)
 		return []

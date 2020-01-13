@@ -6,7 +6,7 @@ import { Command } from "../command"
 import budgetsCommand from "../command/budgets"
 import deployCommand from "../command/deploy"
 import deployStatusCommand from "../command/deploy-status"
-import listDeploysCommand from "../command/list-deploys"
+import deploySiteWaitForDeepLinkCommand from "../command/deploy-site-wait-for-deep-link"
 import listSitesCommand from "../command/list-sites"
 import testsCommand from "../command/tests"
 import createUrlCommand from "../command/create-url"
@@ -61,7 +61,33 @@ const opts = yargs
 	})
 	.command(
 		"deploy-site-wait-for-deep-link <siteId>",
-		"Triggers deploy for specified site and wait for the deploy to finish so it can return a deep link"
+		"Triggers deploy for specified site and wait for the deploy to finish so it can return a deep link",
+		{
+			browser: {
+				describe: "The browser to deep link to via the `b` URL param",
+				type: "string"
+			},
+			deepLinkUrl: {
+				describe: "The URL ID to use for the deep link via the `u` URL param",
+				type: "number"
+			},
+			url: {
+				describe: "Only deploy tests for the specific URL ID",
+				type: "number"
+			},
+			region: {
+				describe: "The region to deep link to via the `r` URL param",
+				type: "string"
+			},
+			shareKey: {
+				describe: "The share key used for the deep link to be publicly available via the `share` URL param",
+				type: "string"
+			},
+			selfHostedName: {
+				describe: "The value to append after `https://speedcurve.com/` when building the deep link if you self host",
+				type: "string"
+			}
+		}
 	)
 	.command("budgets", "Get the status of all performance budgets in an account", {
 		json: {
@@ -191,10 +217,10 @@ const command: Command = (() => {
 	switch (opts._[0]) {
 		case "deploy":
 			return deployCommand
-		case "deploy-site-wait-for-deep-link":
-			return deployCommand
 		case "deploy-status":
 			return deployStatusCommand
+		case "deploy-site-wait-for-deep-link":
+			return deploySiteWaitForDeepLinkCommand
 		case "budgets":
 			return budgetsCommand
 		case "tests":

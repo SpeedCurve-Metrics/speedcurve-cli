@@ -100,12 +100,11 @@ class Client {
 		return this.post(url, settings).then(res => res)
 	}
 
-	list(key: string, siteId: number): Promise<DeploysApiResponse> {
-		console.log('api.ts:siteId', siteId)
-		const params = siteId ? { site_id: `${siteId}` } : {} 
-		const url = this.prepareUrl(key, `/v1/deploys`, params)
+	list(key: string, siteId: number): Promise<Deploy[]> {
+		const searchParams = siteId ? { site_id: `${siteId}` } : {}
+		const url = this.prepareUrl(key, `/v1/deploys`, searchParams)
 
-		return this.post(url).then(res => res)
+		return this.get(url).then(res => res.deploys)
 	}
 
 	deployStatus(key: string, deployId: number): Promise<DeployStatusApiResponse> {
@@ -258,10 +257,6 @@ export interface DeployStatusApiResponse {
 	"tests-remaining": object[]
 	note: string
 	detail: string
-}
-
-export interface DeploysApiResponse {
-	deploys: Deploy[]
 }
 
 export interface Deploy {

@@ -35,7 +35,6 @@ export async function resolveSiteId(key: string, siteIdOrName: SiteIdOrName): Pr
 
 export async function resolveSiteIds(key: string, siteIdsOrNames: SiteIdOrName[]): Promise<number[]> {
 	const needsLookup = siteIdsOrNames.some(x => typeof x === "string")
-
 	if (needsLookup) {
 		await populateSitesCacheForAccount(key)
 	}

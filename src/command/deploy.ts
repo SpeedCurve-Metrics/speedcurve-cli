@@ -48,7 +48,7 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 
 	const successfulResults = results.filter(result => result.success)
 
-	if (wait || checkBudgets) {
+	if (successfulResults.length && (wait || checkBudgets)) {
 		log.stdout("Waiting for all tests to complete...")
 
 		const totalTests = DeployResult.countTests(successfulResults)

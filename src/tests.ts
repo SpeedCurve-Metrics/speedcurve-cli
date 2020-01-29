@@ -1,14 +1,23 @@
-/** @module tests */
+/**
+ * Retrieve synthetic test results
+ *
+ * @example
+ *
+ * <br>
+ * <br>
+ *
+ * ```
+ * const SpeedCurve = require("speedcurve")
+ * const tests = await SpeedCurve.tests.get(key, testId)
+ * ```
+ *
+ * @packageDocumentation
+ */
+
 import { api } from "./api"
 import { TestFilters } from "./api"
 import TestResult from "./model/test-result"
 import Url from "./model/url"
-
-/**
- * Retrieve synthetic test results
- * @example
- * const tests = require('speedcurve').tests
- */
 
 /**
  * Get the details of an individual test

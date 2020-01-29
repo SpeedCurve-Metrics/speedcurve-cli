@@ -1,4 +1,3 @@
-/** @module api */
 import * as r from "request-promise-native"
 import { URL } from "url"
 import log from "./log"
@@ -11,7 +10,7 @@ const logFriendlyUrl = (url: URL) => {
 	return [url.origin, url.pathname, hasSearchParams ? "?" + url.searchParams : ""].join("")
 }
 
-class Client {
+export class ApiClient {
 	base: string
 
 	constructor() {
@@ -299,4 +298,4 @@ export interface TeamApiResponse {
 	times: string[]
 }
 
-export const api = new Client()
+export const api = new ApiClient()

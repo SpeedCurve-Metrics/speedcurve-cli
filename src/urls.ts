@@ -1,11 +1,20 @@
-/** @module sites */
-import { api, CreateUrlApiResponse, UpdateUrlApiResponse } from "./api"
-
 /**
  * Manage URLs in a SpeedCurve account
+ *
  * @example
- * const urls = require('speedcurve').urls
+ *
+ * <br>
+ * <br>
+ *
+ * ```
+ * const SpeedCurve = require("speedcurve")
+ * const response = await SpeedCurve.urls.create(key, { siteId, url, label })
+ * ```
+ *
+ * @packageDocumentation
  */
+
+import { api, CreateUrlApiResponse, UpdateUrlApiResponse } from "./api"
 
 interface CreateUrlOptions {
 	siteId: number

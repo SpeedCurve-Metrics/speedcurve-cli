@@ -1,4 +1,3 @@
-/** @module SpeedCurve */
 import { UrlApiResponse } from "../api"
 import Site from "./site"
 import TestResult from "./test-result"

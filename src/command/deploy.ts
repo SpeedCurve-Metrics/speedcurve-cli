@@ -1,5 +1,5 @@
 import { api } from "../api"
-import SpeedCurve from "../index"
+import * as SpeedCurve from "../index"
 import { ExitCode } from "../command"
 import log from "../log"
 import DeployResult from "../model/deploy-result"

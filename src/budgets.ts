@@ -1,12 +1,21 @@
-/** @module budgets */
-import { api } from "./api"
-import PerformanceBudget from "./model/performance-budget"
-
 /**
  * Get the status of SpeedCurve performance budgets
+ *
  * @example
- * const budgets = require('speedcurve').budgets
+ *
+ * <br>
+ * <br>
+ *
+ * ```
+ * const SpeedCurve = require("speedcurve")
+ * const budgets = await SpeedCurve.budgets.getAll(key)
+ * ```
+ *
+ * @packageDocumentation
  */
+
+import { api } from "./api"
+import PerformanceBudget from "./model/performance-budget"
 
 /**
  * Get all budgets in a SpeedCurve account

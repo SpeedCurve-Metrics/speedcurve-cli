@@ -1,4 +1,3 @@
-/** @module SpeedCurve */
 import { TestResultApiResponse } from "../api"
 
 /**

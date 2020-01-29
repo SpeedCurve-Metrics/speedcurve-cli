@@ -1,4 +1,4 @@
-import SpeedCurve from "../index"
+import * as SpeedCurve from "../index"
 import log from "../log"
 import pluralise from "../util/pluralise"
 

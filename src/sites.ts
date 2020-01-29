@@ -1,13 +1,22 @@
-/** @module sites */
+/**
+ * Retrieve information about SpeedCurve sites
+ *
+ * @example
+ *
+ * <br>
+ * <br>
+ *
+ * ```
+ * const SpeedCurve = require("speedcurve")
+ * const sites = await SpeedCurve.sites.getAll(key)
+ * ```
+ *
+ * @packageDocumentation
+ */
+
 import { api } from "./api"
 import Site from "./model/site"
 import * as tests from "./tests"
-
-/**
- * Retrieve information about SpeedCurve sites
- * @example
- * const sites = require('speedcurve').sites
- */
 
 /**
  * Get the details of a SpeedCurve site

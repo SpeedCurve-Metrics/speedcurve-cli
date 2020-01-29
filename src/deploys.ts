@@ -1,17 +1,26 @@
-/** @module deploys */
+/**
+ * Create and manage SpeedCurve deploys
+ *
+ * @example
+ *
+ * <br>
+ * <br>
+ *
+ * ```
+ * const SpeedCurve = require("speedcurve")
+ * const deployResults = await SpeedCurve.deploys.create(key)
+ * ```
+ *
+ * @packageDocumentation
+ */
+
 import { api } from "./api"
 import log from "./log"
 import DeployResult from "./model/deploy-result"
 import Site from "./model/site"
 import Url from "./model/url"
 import pl from "./util/pluralise"
-import SpeedCurve from "./index"
-
-/**
- * Create and manage SpeedCurve deploys
- * @example
- * const deploys = require('speedcurve').deploys
- */
+import * as SpeedCurve from "./index"
 
 /**
  * Get the status of a deploy

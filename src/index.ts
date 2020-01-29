@@ -1,4 +1,4 @@
-/** @module SpeedCurve */
+import * as api from "./api"
 import * as budgets from "./budgets"
 import * as deploys from "./deploys"
 import DeployResult from "./model/deploy-result"
@@ -11,24 +11,6 @@ import * as tests from "./tests"
 import * as urls from "./urls"
 
 /**
- * Note: All interaction with the SpeedCurve API requires your
- * {@link https://support.speedcurve.com/apis/synthetic-api|SpeedCurve API key}
- * ```js
- * const SpeedCurve = require('speedcurve')
- * ```
+ * @module SpeedCurve
  */
-const SpeedCurve = {
-	budgets,
-	deploys,
-	sites,
-	urls,
-	tests,
-	DeployResult,
-	PerformanceBudget,
-	Site,
-	TestResult,
-	Url
-}
-
-export default SpeedCurve
-module.exports = SpeedCurve
+export { api, budgets, deploys, sites, urls, tests, DeployResult, PerformanceBudget, Site, TestResult, Url }

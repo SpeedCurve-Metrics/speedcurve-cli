@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>tests | SpeedCurve Node.js API Reference</title>
+	<title>&quot;sites&quot; | SpeedCurve Node.js API Reference</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -54,48 +56,63 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="tests.html">tests</a>
+					<a href="_sites_.html">&quot;sites&quot;</a>
 				</li>
 			</ul>
-			<h1>External module tests</h1>
+			<h1>Module &quot;sites&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Retrieve information about SpeedCurve sites</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><br>
+							<br>
+							<pre><code><span class="hljs-keyword">const</span> SpeedCurve = <span class="hljs-built_in">require</span>(<span class="hljs-string">"speedcurve"</span>)
+<span class="hljs-keyword">const</span> sites = <span class="hljs-keyword">await</span> SpeedCurve.sites.getAll(key)</code></pre></dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="tests.html#get" class="tsd-kind-icon">get</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="tests.html#getforurl" class="tsd-kind-icon">get<wbr>For<wbr>Url</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external"><a href="_sites_.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external"><a href="_sites_.html#getall" class="tsd-kind-icon">get<wbr>All</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external"><a href="_sites_.html#getallwithtests" class="tsd-kind-icon">get<wbr>All<wbr>With<wbr>Tests</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external">
 					<a name="get" class="tsd-anchor"></a>
 					<h3>get</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, testId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/speedcurve.testresult.html" class="tsd-signature-type">TestResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, siteId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/site.html" class="tsd-signature-type">Site</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in tests.ts:16</li>
+									<li>Defined in sites.ts:24</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get the details of an individual test</p>
+									<p>Get the details of a SpeedCurve site</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -104,29 +121,58 @@
 									<h5>key: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>testId: <span class="tsd-signature-type">string</span></h5>
+									<h5>siteId: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/speedcurve.testresult.html" class="tsd-signature-type">TestResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/site.html" class="tsd-signature-type">Site</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="getforurl" class="tsd-anchor"></a>
-					<h3>get<wbr>For<wbr>Url</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>For<wbr>Url<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, urlId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, days<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, filters<span class="tsd-signature-symbol">?: </span><a href="../interfaces/api.testfilters.html" class="tsd-signature-type">TestFilters</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/speedcurve.url.html" class="tsd-signature-type">Url</a><span class="tsd-signature-symbol">&gt;</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external">
+					<a name="getall" class="tsd-anchor"></a>
+					<h3>get<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>All<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/site.html" class="tsd-signature-type">Site</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in tests.ts:23</li>
+									<li>Defined in sites.ts:31</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get synthetic test results for a SpeedCurve URL</p>
+									<p>Get the details of all sites in a SpeedCurve account</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/site.html" class="tsd-signature-type">Site</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external">
+					<a name="getallwithtests" class="tsd-anchor"></a>
+					<h3>get<wbr>All<wbr>With<wbr>Tests</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>All<wbr>With<wbr>Tests<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, days<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/site.html" class="tsd-signature-type">Site</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in sites.ts:39</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the details of all sites in a SpeedCurve account, including recent median
+									test results.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -135,16 +181,10 @@
 									<h5>key: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>urlId: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> days: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> filters: <a href="../interfaces/api.testfilters.html" class="tsd-signature-type">TestFilters</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<h5>days: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/speedcurve.url.html" class="tsd-signature-type">Url</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/site.html" class="tsd-signature-type">Site</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -156,40 +196,46 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="speedcurve.html">Speed<wbr>Curve</a>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="api.html">api</a>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="_api_.html">&quot;api&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="budgets.html">budgets</a>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="_budgets_.html">&quot;budgets&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="deploys.html">deploys</a>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="_deploys_.html">&quot;deploys&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="sites.html">sites</a>
+					<li class="current tsd-kind-module tsd-is-external">
+						<a href="_sites_.html">&quot;sites&quot;</a>
 					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="tests.html">tests</a>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="_tests_.html">&quot;tests&quot;</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="_urls_.html">&quot;urls&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="tests.html#get" class="tsd-kind-icon">get</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="_sites_.html#get" class="tsd-kind-icon">get</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="tests.html#getforurl" class="tsd-kind-icon">get<wbr>For<wbr>Url</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="_sites_.html#getall" class="tsd-kind-icon">get<wbr>All</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="_sites_.html#getallwithtests" class="tsd-kind-icon">get<wbr>All<wbr>With<wbr>Tests</a>
 					</li>
 				</ul>
 			</nav>
 		</div>
 	</div>
 </div>
-<footer>
+<footer class="with-border-bottom">
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
@@ -201,6 +247,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -248,6 +295,9 @@
 		</div>
 	</div>
 </footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
 <script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>

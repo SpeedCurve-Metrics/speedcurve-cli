@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SpeedCurve Node.js API Reference</title>
+	<title>&quot;budgets&quot; | SpeedCurve Node.js API Reference</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">SpeedCurve Node.js API Reference</a>
+					<a href="../index.html" class="title">SpeedCurve Node.js API Reference</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -53,90 +53,146 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_budgets_.html">&quot;budgets&quot;</a>
 				</li>
 			</ul>
-			<h1>SpeedCurve Node.js API Reference</h1>
+			<h1>Module &quot;budgets&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Get the status of SpeedCurve performance budgets</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>example</dt>
+						<dd><br>
+							<br>
+							<pre><code><span class="hljs-keyword">const</span> SpeedCurve = <span class="hljs-built_in">require</span>(<span class="hljs-string">"speedcurve"</span>)
+<span class="hljs-keyword">const</span> budgets = <span class="hljs-keyword">await</span> SpeedCurve.budgets.getAll(key)</code></pre></dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section tsd-is-external">
-							<h3>Modules</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-module tsd-is-external"><a href="modules/_api_.html" class="tsd-kind-icon">&quot;api&quot;</a></li>
-								<li class="tsd-kind-module tsd-is-external"><a href="modules/_budgets_.html" class="tsd-kind-icon">&quot;budgets&quot;</a></li>
-								<li class="tsd-kind-module tsd-is-external"><a href="modules/_deploys_.html" class="tsd-kind-icon">&quot;deploys&quot;</a></li>
-								<li class="tsd-kind-module tsd-is-external"><a href="modules/_sites_.html" class="tsd-kind-icon">&quot;sites&quot;</a></li>
-								<li class="tsd-kind-module tsd-is-external"><a href="modules/_tests_.html" class="tsd-kind-icon">&quot;tests&quot;</a></li>
-								<li class="tsd-kind-module tsd-is-external"><a href="modules/_urls_.html" class="tsd-kind-icon">&quot;urls&quot;</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Classes</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-class"><a href="classes/deployresult.html" class="tsd-kind-icon">Deploy<wbr>Result</a></li>
-								<li class="tsd-kind-class"><a href="classes/performancebudget.html" class="tsd-kind-icon">Performance<wbr>Budget</a></li>
-								<li class="tsd-kind-class"><a href="classes/site.html" class="tsd-kind-icon">Site</a></li>
-								<li class="tsd-kind-class"><a href="classes/testresult.html" class="tsd-kind-icon">Test<wbr>Result</a></li>
-								<li class="tsd-kind-class"><a href="classes/url.html" class="tsd-kind-icon">Url</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external"><a href="_budgets_.html#getall" class="tsd-kind-icon">get<wbr>All</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-external"><a href="_budgets_.html#getbydeployid" class="tsd-kind-icon">get<wbr>ByDeploy<wbr>Id</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external">
+					<a name="getall" class="tsd-anchor"></a>
+					<h3>get<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>All<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/performancebudget.html" class="tsd-signature-type">PerformanceBudget</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in budgets.ts:23</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get all budgets in a SpeedCurve account</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/performancebudget.html" class="tsd-signature-type">PerformanceBudget</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-external">
+					<a name="getbydeployid" class="tsd-anchor"></a>
+					<h3>get<wbr>ByDeploy<wbr>Id</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>ByDeploy<wbr>Id<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, deployId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/performancebudget.html" class="tsd-signature-type">PerformanceBudget</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in budgets.ts:30</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get all budgets relating to a deploy ID</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>deployId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/performancebudget.html" class="tsd-signature-type">PerformanceBudget</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals current ">
-						<a href="globals.html"><em>Globals</em></a>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="label tsd-is-external">
 						<span>Externals</span>
 					</li>
 					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/_api_.html">&quot;api&quot;</a>
+						<a href="_api_.html">&quot;api&quot;</a>
+					</li>
+					<li class="current tsd-kind-module tsd-is-external">
+						<a href="_budgets_.html">&quot;budgets&quot;</a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/_budgets_.html">&quot;budgets&quot;</a>
+						<a href="_deploys_.html">&quot;deploys&quot;</a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/_deploys_.html">&quot;deploys&quot;</a>
+						<a href="_sites_.html">&quot;sites&quot;</a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/_sites_.html">&quot;sites&quot;</a>
+						<a href="_tests_.html">&quot;tests&quot;</a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/_tests_.html">&quot;tests&quot;</a>
-					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/_urls_.html">&quot;urls&quot;</a>
+						<a href="_urls_.html">&quot;urls&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="classes/deployresult.html" class="tsd-kind-icon">Deploy<wbr>Result</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="_budgets_.html#getall" class="tsd-kind-icon">get<wbr>All</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/performancebudget.html" class="tsd-kind-icon">Performance<wbr>Budget</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/site.html" class="tsd-kind-icon">Site</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/testresult.html" class="tsd-kind-icon">Test<wbr>Result</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/url.html" class="tsd-kind-icon">Url</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-external">
+						<a href="_budgets_.html#getbydeployid" class="tsd-kind-icon">get<wbr>ByDeploy<wbr>Id</a>
 					</li>
 				</ul>
 			</nav>
@@ -207,7 +263,7 @@
 	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

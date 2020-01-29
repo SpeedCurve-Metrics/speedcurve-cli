@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -54,10 +56,7 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/speedcurve.html">SpeedCurve</a>
-				</li>
-				<li>
-					<a href="speedcurve.url.html">Url</a>
+					<a href="url.html">Url</a>
 				</li>
 			</ul>
 			<h1>Class Url</h1>
@@ -89,24 +88,24 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="speedcurve.url.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="url.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="speedcurve.url.html#label" class="tsd-kind-icon">label</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="speedcurve.url.html#site" class="tsd-kind-icon">site</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="speedcurve.url.html#tests" class="tsd-kind-icon">tests</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="speedcurve.url.html#url" class="tsd-kind-icon">url</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="speedcurve.url.html#urlid" class="tsd-kind-icon">url<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="url.html#label" class="tsd-kind-icon">label</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="url.html#site" class="tsd-kind-icon">site</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="url.html#tests" class="tsd-kind-icon">tests</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="url.html#url-1" class="tsd-kind-icon">url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="url.html#urlid" class="tsd-kind-icon">url<wbr>Id</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="speedcurve.url.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="speedcurve.url.html#fromapiresponse" class="tsd-kind-icon">from<wbr>Api<wbr>Response</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="url.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="url.html#fromapiresponse" class="tsd-kind-icon">from<wbr>Api<wbr>Response</a></li>
 							</ul>
 						</section>
 					</div>
@@ -118,13 +117,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Url<span class="tsd-signature-symbol">(</span>urlId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, tests<span class="tsd-signature-symbol">?: </span><a href="speedcurve.testresult.html" class="tsd-signature-type">TestResult</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="speedcurve.url.html" class="tsd-signature-type">Url</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Url<span class="tsd-signature-symbol">(</span>urlId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, tests<span class="tsd-signature-symbol">?: </span><a href="testresult.html" class="tsd-signature-type">TestResult</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="url.html" class="tsd-signature-type">Url</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in model/url.ts:14</li>
+									<li>Defined in model/url.ts:13</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -139,10 +138,10 @@
 									<h5>url: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> tests: <a href="speedcurve.testresult.html" class="tsd-signature-type">TestResult</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> tests: <a href="testresult.html" class="tsd-signature-type">TestResult</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="speedcurve.url.html" class="tsd-signature-type">Url</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="url.html" class="tsd-signature-type">Url</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -155,14 +154,24 @@
 					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in model/url.ts:11</li>
+							<li>Defined in model/url.ts:10</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="site" class="tsd-anchor"></a>
 					<h3>site</h3>
-					<div class="tsd-signature tsd-kind-icon">site<span class="tsd-signature-symbol">:</span> <a href="speedcurve.site.html" class="tsd-signature-type">Site</a></div>
+					<div class="tsd-signature tsd-kind-icon">site<span class="tsd-signature-symbol">:</span> <a href="site.html" class="tsd-signature-type">Site</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in model/url.ts:12</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="tests" class="tsd-anchor"></a>
+					<h3>tests</h3>
+					<div class="tsd-signature tsd-kind-icon">tests<span class="tsd-signature-symbol">:</span> <a href="testresult.html" class="tsd-signature-type">TestResult</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in model/url.ts:13</li>
@@ -170,22 +179,12 @@
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="tests" class="tsd-anchor"></a>
-					<h3>tests</h3>
-					<div class="tsd-signature tsd-kind-icon">tests<span class="tsd-signature-symbol">:</span> <a href="speedcurve.testresult.html" class="tsd-signature-type">TestResult</a><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in model/url.ts:14</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="url" class="tsd-anchor"></a>
+					<a name="url-1" class="tsd-anchor"></a>
 					<h3>url</h3>
 					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in model/url.ts:12</li>
+							<li>Defined in model/url.ts:11</li>
 						</ul>
 					</aside>
 				</section>
@@ -195,7 +194,7 @@
 					<div class="tsd-signature tsd-kind-icon">url<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in model/url.ts:10</li>
+							<li>Defined in model/url.ts:9</li>
 						</ul>
 					</aside>
 				</section>
@@ -212,7 +211,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in model/url.ts:23</li>
+									<li>Defined in model/url.ts:22</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -223,28 +222,28 @@
 					<a name="fromapiresponse" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> from<wbr>Api<wbr>Response</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">from<wbr>Api<wbr>Response<span class="tsd-signature-symbol">(</span>response<span class="tsd-signature-symbol">: </span><a href="../interfaces/api.urlapiresponse.html" class="tsd-signature-type">UrlApiResponse</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="speedcurve.url.html" class="tsd-signature-type">Url</a></li>
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Api<wbr>Response<span class="tsd-signature-symbol">(</span>response<span class="tsd-signature-symbol">: </span><a href="../interfaces/_api_.urlapiresponse.html" class="tsd-signature-type">UrlApiResponse</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="url.html" class="tsd-signature-type">Url</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in model/url.ts:35</li>
+									<li>Defined in model/url.ts:34</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Build a new <a href="speedcurve.url.html">Url</a> object from a <a href="https://api.speedcurve.com/#get-all-urls" class="external">/v1/urls</a>
+									<p>Build a new <a href="url.html">Url</a> object from a <a href="https://api.speedcurve.com/#get-all-urls" class="external">/v1/urls</a>
 									API response object</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>response: <a href="../interfaces/api.urlapiresponse.html" class="tsd-signature-type">UrlApiResponse</a></h5>
+									<h5>response: <a href="../interfaces/_api_.urlapiresponse.html" class="tsd-signature-type">UrlApiResponse</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="speedcurve.url.html" class="tsd-signature-type">Url</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="url.html" class="tsd-signature-type">Url</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -256,85 +255,61 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="../modules/speedcurve.html">Speed<wbr>Curve</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/api.html">api</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/budgets.html">budgets</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/deploys.html">deploys</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/sites.html">sites</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/tests.html">tests</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="speedcurve.deployresult.html" class="tsd-kind-icon">Deploy<wbr>Result</a>
+					<li class=" tsd-kind-class">
+						<a href="deployresult.html" class="tsd-kind-icon">Deploy<wbr>Result</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="speedcurve.performancebudget.html" class="tsd-kind-icon">Performance<wbr>Budget</a>
+					<li class=" tsd-kind-class">
+						<a href="performancebudget.html" class="tsd-kind-icon">Performance<wbr>Budget</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="speedcurve.site.html" class="tsd-kind-icon">Site</a>
+					<li class=" tsd-kind-class">
+						<a href="site.html" class="tsd-kind-icon">Site</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="speedcurve.testresult.html" class="tsd-kind-icon">Test<wbr>Result</a>
+					<li class=" tsd-kind-class">
+						<a href="testresult.html" class="tsd-kind-icon">Test<wbr>Result</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="speedcurve.url.html" class="tsd-kind-icon">Url</a>
+					<li class="current tsd-kind-class">
+						<a href="url.html" class="tsd-kind-icon">Url</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="speedcurve.url.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="url.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="speedcurve.url.html#label" class="tsd-kind-icon">label</a>
+								<a href="url.html#label" class="tsd-kind-icon">label</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="speedcurve.url.html#site" class="tsd-kind-icon">site</a>
+								<a href="url.html#site" class="tsd-kind-icon">site</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="speedcurve.url.html#tests" class="tsd-kind-icon">tests</a>
+								<a href="url.html#tests" class="tsd-kind-icon">tests</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="speedcurve.url.html#url" class="tsd-kind-icon">url</a>
+								<a href="url.html#url-1" class="tsd-kind-icon">url</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="speedcurve.url.html#urlid" class="tsd-kind-icon">url<wbr>Id</a>
+								<a href="url.html#urlid" class="tsd-kind-icon">url<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="speedcurve.url.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+								<a href="url.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="speedcurve.url.html#fromapiresponse" class="tsd-kind-icon">from<wbr>Api<wbr>Response</a>
+								<a href="url.html#fromapiresponse" class="tsd-kind-icon">from<wbr>Api<wbr>Response</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/speedcurve.html#chartyvalue" class="tsd-kind-icon">ChartYValue</a>
-					</li>
-					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
-						<a href="../modules/speedcurve.html#speedcurve-1" class="tsd-kind-icon">Speed<wbr>Curve</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
 	</div>
 </div>
-<footer>
+<footer class="with-border-bottom">
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
@@ -346,6 +321,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -393,6 +369,9 @@
 		</div>
 	</div>
 </footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
 <script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>

@@ -27,7 +27,7 @@ export async function resolveSiteId(key: string, siteIdOrName: SiteIdOrName): Pr
 			return siteByName.siteId
 		}
 
-		log.verbose(`Couldn't find site by name "${siteIdOrName}". Will try to use it as an ID.`)
+		log.warn(`Couldn't find site by name "${siteIdOrName}". Will try to use it as an ID.`)
 	}
 
 	return Number(siteIdOrName)

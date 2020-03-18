@@ -1,4 +1,4 @@
-import * as r from "request-promise-native"
+import * as r from "request-promise"
 import { URL } from "url"
 import log from "./log"
 import truncate from "./util/truncate"

@@ -43,7 +43,7 @@ test("fetches deploys from the API", async () => {
 
 	const deploy = await SpeedCurve.deploys.status("sckey", 222)
 
-	expect(request.get.mock.calls[0][0].uri).toBe("https://sckey:x@api.speedcurve.com/v1/deploy/222")
+	expect(request.get.mock.calls[0][0].uri).toBe("https://sckey:x@api.speedcurve.com/v1/deploys/222")
 	expect(deploy.deploy_id).toBe(222)
 	expect(deploy.note).toBe("v1.0.0")
 	expect(deploy.detail).toBe("First release")

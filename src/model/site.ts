@@ -34,7 +34,7 @@ export default class Site {
 		return site
 	}
 
-	toJSON(key) {
+	toJSON(key: string) {
 		if (key === "site") {
 			return omit(["urls"], this)
 		}

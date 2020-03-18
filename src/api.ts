@@ -94,13 +94,13 @@ export class ApiClient {
 	}
 
 	deploy(key: string, settings: DeployEndpointParameters): Promise<CreateDeployApiResponse> {
-		const url = this.prepareUrl(key, `/v1/deploy`)
+		const url = this.prepareUrl(key, `/v1/deploys`)
 
 		return this.post(url, settings).then(res => res)
 	}
 
 	deployStatus(key: string, deployId: number): Promise<DeployStatusApiResponse> {
-		const url = this.prepareUrl(key, `/v1/deploy/${deployId}`)
+		const url = this.prepareUrl(key, `/v1/deploys/${deployId}`)
 
 		return this.get(url).then(res => res)
 	}

@@ -1,3 +1,4 @@
+import { omit } from "ramda"
 import { SiteApiResponse } from "../api"
 import Url from "./url"
 
@@ -31,6 +32,14 @@ export default class Site {
 		}
 
 		return site
+	}
+
+	toJSON(key) {
+		if (key === "site") {
+			return omit(["urls"], this)
+		}
+
+		return this
 	}
 }
 

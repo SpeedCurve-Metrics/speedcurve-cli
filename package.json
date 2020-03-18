@@ -46,6 +46,7 @@
   "homepage": "https://github.com/SpeedCurve-Metrics/speedcurve-cli#readme",
   "dependencies": {
     "npmlog": "^4.1.2",
+    "ramda": "^0.27.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
     "yargs": "^15.3.1"
@@ -53,6 +54,7 @@
   "devDependencies": {
     "@types/node": "^13.9.1",
     "@types/npmlog": "^4.1.1",
+    "@types/ramda": "^0.26.44",
     "@types/request-promise": "^4.1.45",
     "@types/yargs": "^15.0.4",
     "@typescript-eslint/eslint-plugin": "^2.24.0",

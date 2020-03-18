@@ -1,5 +1,5 @@
 const SpeedCurve = require("../dist")
-const request = require("request-promise-native")
+const request = require("request-promise")
 
 test("exposes commonly-used APIs", () => {
 	expect(SpeedCurve.budgets).toBeDefined()

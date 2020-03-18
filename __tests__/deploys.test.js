@@ -1,5 +1,5 @@
 const SpeedCurve = require("../dist")
-const request = require("request-promise-native")
+const request = require("request-promise")
 const SPEEDCURVE_API_KEY = "abc123"
 
 describe("SpeedCurve.deploys.create()", () => {

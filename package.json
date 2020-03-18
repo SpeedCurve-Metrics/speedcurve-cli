@@ -1,6 +1,6 @@
 {
   "name": "speedcurve",
-  "version": "1.1.0",
+  "version": "1.1.0-dev",
   "description": "Official SpeedCurve CLI and Node.js API.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -45,25 +45,25 @@
   },
   "homepage": "https://github.com/SpeedCurve-Metrics/speedcurve-cli#readme",
   "dependencies": {
-    "@types/node": "^13.5.1",
-    "@types/npmlog": "^4.1.1",
-    "@types/request-promise-native": "^1.0.17",
-    "@types/yargs": "^15.0.2",
     "npmlog": "^4.1.2",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.8",
-    "yargs": "^15.1.0"
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.18.0",
-    "@typescript-eslint/parser": "^2.18.0",
+    "@types/node": "^13.9.1",
+    "@types/npmlog": "^4.1.1",
+    "@types/request-promise": "^4.1.45",
+    "@types/yargs": "^15.0.4",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
     "coveralls": "^3.0.9",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
-    "typedoc": "^0.17.0-3",
-    "typescript": "^3.8.0-dev.20200128"
+    "typedoc": "^0.17.0",
+    "typescript": "^3.8.3"
   }
 }

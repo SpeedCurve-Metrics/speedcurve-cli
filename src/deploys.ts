@@ -86,7 +86,7 @@ export async function create(key: string, siteIds: number[] = [], note = "", det
 				})
 				.catch(err => {
 					if (err.error) {
-						log.error(`Coludn't deploy site ${result.site.name}: ${err.error.message}`)
+						log.error(`Couldn't deploy site ${result.site.name}: ${err.error.message}`)
 					} else {
 						log.error(`Couldn't deploy site ${result.site.name}: ${err.message}`)
 					}

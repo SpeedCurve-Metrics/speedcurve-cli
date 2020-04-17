@@ -56,7 +56,7 @@ Requesting deploys for 3 sites...
 # Optionally add a short description and longer detail about the deploy
 speedcurve deploy --note 'v2.11.8' --detail 'Inline critical CSS, bootstrap app on DOMContentLoaded'
 
-# Specify which site(s) to trigger testing for. You can specify a name or an ID
+# Specify which site(s) to trigger testing for. Sites can be specified by name or ID
 speedcurve deploy --site 1043801 --site 'BBC News'
 
 # Wait until all tests have completed before exiting
@@ -97,11 +97,11 @@ speedcurve list-sites --json
 Fetch synthetic test results as JSON for a site and all of its URLs.
 
 ```
-# Get test results for all URLs in a site
+# Get test results for all URLs in a site. Sites can be specified by name or ID
 speedcurve tests --site 1043801
 
-# Specify which URL(s) to get test resuts for
-speedcurve tests --site 1043801 --url 184629 --url 'BBC News'
+# Specify which URL(s) to get test resuts for. URLs can be specified by label or ID
+speedcurve tests --site 1043801 --url 184629 --url 'Home'
 
 # Control how many days of data to fetch, and filter to specific regions or browsers
 speedcurve tests --site 'BBC News' --days 7 --region ap-southeast-2 --browser chrome
@@ -126,6 +126,20 @@ Start Render Time (Syn), NZ Herald, Home is currently 1s (50% under budget)
 
 # JSON output
 speedcurve budgets --json
+```
+
+### `speedcurve create-url` and `update-url`
+
+Create a new URL within an existing site, or update an existing URL.
+
+```
+# Create a new URL. Sites can be specified by name or ID
+speedcurve create-url --site 'BBC News' --url 'https://www.bbc.com/news' --label 'Home'
+✔ URL 395928 was created
+
+# Update an existing URL
+speedcurve update-url --urlId 395928 --label 'Index'
+✔ URL 395928 was updated
 ```
 
 ## Node.js API documentation

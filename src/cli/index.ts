@@ -68,7 +68,6 @@ const opts = yargs
 	.command("tests", "Get the latest synthetic test data for one or more URLs in a site", {
 		site: {
 			describe: "Get test data for the specified site ID or name",
-			type: "string",
 			demandOption: true,
 		},
 		url: {
@@ -100,7 +99,6 @@ const opts = yargs
 	.command("create-url", "Create a new URL in a site", {
 		site: {
 			describe: "The site ID or name that the URL should be created within",
-			type: "string",
 			demandOption: true,
 		},
 		url: {

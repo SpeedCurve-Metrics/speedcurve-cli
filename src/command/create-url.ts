@@ -5,7 +5,7 @@ import { resolveSiteId } from "../util/resolve-site-ids"
 interface CreateUrlCommandOptions {
 	key: string
 	json: boolean
-	site: number
+	site: string | number
 	url: string
 	label?: string
 }

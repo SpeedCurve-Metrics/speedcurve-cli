@@ -18,7 +18,7 @@ export default async function createUrlCommand(opts: CreateUrlCommandOptions) {
 		const response = await SpeedCurve.urls.create(key, {
 			siteId,
 			url,
-			label
+			label,
 		})
 
 		if (json) {

@@ -25,16 +25,13 @@ describe("SpeedCurve.deploys.create()", () => {
 		request.get.mockResolvedValueOnce({})
 
 		// Sites API responses
-		request.get
-			.mockResolvedValueOnce({})
-			.mockResolvedValueOnce({})
-			.mockResolvedValueOnce({})
+		request.get.mockResolvedValueOnce({}).mockResolvedValueOnce({}).mockResolvedValueOnce({})
 
 		// Deploys API response
-		request.post.mockImplementation(settings =>
+		request.post.mockImplementation((settings) =>
 			Promise.resolve({
 				deploy_id: Math.round(Math.random() * 1000),
-				site_id: settings.form.site_id
+				site_id: settings.form.site_id,
 			})
 		)
 

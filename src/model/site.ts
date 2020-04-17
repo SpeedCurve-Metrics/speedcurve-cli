@@ -24,7 +24,7 @@ export default class Site {
 		const site = new Site(
 			response.site_id,
 			response.name,
-			response.urls.map(url => Url.fromApiResponse(url))
+			response.urls.map((url) => Url.fromApiResponse(url))
 		)
 
 		for (const url of site.urls) {

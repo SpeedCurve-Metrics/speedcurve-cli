@@ -57,8 +57,8 @@ export class ApiClient {
 				uri: url.href,
 				json: true,
 				headers: {
-					"user-agent": `speedcurve-cli/${VERSION}`
-				}
+					"user-agent": `speedcurve-cli/${VERSION}`,
+				},
 			})
 			.catch(this.normaliseErrorResponse)
 	}
@@ -72,8 +72,8 @@ export class ApiClient {
 				json: true,
 				form: data,
 				headers: {
-					"user-agent": `speedcurve-cli/${VERSION}`
-				}
+					"user-agent": `speedcurve-cli/${VERSION}`,
+				},
 			})
 			.catch(this.normaliseErrorResponse)
 	}
@@ -87,8 +87,8 @@ export class ApiClient {
 				json: true,
 				form: data,
 				headers: {
-					"user-agent": `speedcurve-cli/${VERSION}`
-				}
+					"user-agent": `speedcurve-cli/${VERSION}`,
+				},
 			})
 			.catch(this.normaliseErrorResponse)
 	}
@@ -96,68 +96,68 @@ export class ApiClient {
 	deploy(key: string, settings: DeployEndpointParameters): Promise<CreateDeployApiResponse> {
 		const url = this.prepareUrl(key, `/v1/deploys`)
 
-		return this.post(url, settings).then(res => res)
+		return this.post(url, settings).then((res) => res)
 	}
 
 	deployStatus(key: string, deployId: number): Promise<DeployStatusApiResponse> {
 		const url = this.prepareUrl(key, `/v1/deploys/${deployId}`)
 
-		return this.get(url).then(res => res)
+		return this.get(url).then((res) => res)
 	}
 
 	team(key: string): Promise<TeamApiResponse> {
 		const url = this.prepareUrl(key, "/v1/export")
 
-		return this.get(url).then(res => res.teams[0])
+		return this.get(url).then((res) => res.teams[0])
 	}
 
 	site(key: string, siteId: number): Promise<SiteApiResponse> {
 		const url = this.prepareUrl(key, `/v1/sites/${siteId}`)
 
-		return this.get(url).then(res => res.site)
+		return this.get(url).then((res) => res.site)
 	}
 
 	sites(key: string): Promise<SiteApiResponse[]> {
 		const url = this.prepareUrl(key, "/v1/sites")
 
-		return this.get(url).then(res => res.sites)
+		return this.get(url).then((res) => res.sites)
 	}
 
 	createUrl(key: string, settings: CreateUrlEndpointParameters): Promise<CreateUrlApiResponse> {
 		const url = this.prepareUrl(key, "/v1/urls")
 
-		return this.post(url, settings).then(res => res)
+		return this.post(url, settings).then((res) => res)
 	}
 
 	updateUrl(key: string, urlId: number, settings: UpdateUrlEndpointParameters): Promise<UpdateUrlApiResponse> {
 		const url = this.prepareUrl(key, `/v1/urls/${urlId}`)
 
-		return this.put(url, settings).then(res => res)
+		return this.put(url, settings).then((res) => res)
 	}
 
 	test(key: string, testId: string): Promise<TestResultApiResponse> {
 		const url = this.prepareUrl(key, `/v1/tests/${testId}`)
 
-		return this.get(url).then(res => res)
+		return this.get(url).then((res) => res)
 	}
 
 	tests(key: string, urlId: number, days = 1, filters: TestFilters = {}): Promise<UrlApiResponse> {
 		const { region, browser } = filters
 		const url = this.prepareUrl(key, `/v1/urls/${urlId}`, { days: `${days}`, region, browser })
 
-		return this.get(url).then(res => res)
+		return this.get(url).then((res) => res)
 	}
 
 	budgets(key: string): Promise<BudgetApiResponse[]> {
 		const url = this.prepareUrl(key, "/v1/budgets")
 
-		return this.get(url).then(res => res.budgets)
+		return this.get(url).then((res) => res.budgets)
 	}
 
 	budgetsForDeploy(key: string, deployId: number): Promise<BudgetApiResponse[]> {
 		const url = this.prepareUrl(key, "/v1/budgets", { deploy_id: `${deployId}` })
 
-		return this.get(url).then(res => res.budgets)
+		return this.get(url).then((res) => res.budgets)
 	}
 }
 

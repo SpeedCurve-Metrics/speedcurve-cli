@@ -9,16 +9,16 @@ const makeSite = (siteId, siteName) => ({
 		{
 			url_id: 1234,
 			label: "Home",
-			url: "https://speedcurve.com/"
-		}
+			url: "https://speedcurve.com/",
+		},
 	],
 	regions: [{ region_id: "us-west-1" }],
-	browsers: [{ browser_id: "chrome" }]
+	browsers: [{ browser_id: "chrome" }],
 })
 
 test("SpeedCurve.sites.get()", async () => {
 	request.get.mockResolvedValueOnce({
-		site: makeSite(2222, "Test Site")
+		site: makeSite(2222, "Test Site"),
 	})
 
 	const site = await SpeedCurve.sites.get(SPEEDCURVE_API_KEY, 2222)
@@ -32,7 +32,7 @@ test("SpeedCurve.sites.get()", async () => {
 
 test("SpeedCurve.sites.getAll()", async () => {
 	request.get.mockResolvedValueOnce({
-		sites: [makeSite(2222, "Test Site 1"), makeSite(3333, "Test Site 2"), makeSite(5555, "Test Site 3")]
+		sites: [makeSite(2222, "Test Site 1"), makeSite(3333, "Test Site 2"), makeSite(5555, "Test Site 3")],
 	})
 
 	const sites = await SpeedCurve.sites.getAll(SPEEDCURVE_API_KEY)
@@ -50,14 +50,14 @@ test("SpeedCurve.sites.getAllWithTests()", async () => {
 	request.get
 		// Sites API response
 		.mockResolvedValueOnce({
-			sites: [makeSite(2222, "Test Site 1")]
+			sites: [makeSite(2222, "Test Site 1")],
 		})
 		// Tests API response
 		.mockResolvedValueOnce({
 			url_id: 1234,
 			label: "Home",
 			url: "https://speedcurve.com/",
-			tests: [{ test_id: "202020_XYZ" }, { test_id: "202020_ABC" }]
+			tests: [{ test_id: "202020_XYZ" }, { test_id: "202020_ABC" }],
 		})
 
 	const sites = await SpeedCurve.sites.getAllWithTests(SPEEDCURVE_API_KEY)

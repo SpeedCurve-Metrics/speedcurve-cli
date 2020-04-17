@@ -9,13 +9,13 @@ interface ListSitesCommandOptions {
 export default function listSitesCommand(opts: ListSitesCommandOptions) {
 	const { key, json = false } = opts
 
-	return SpeedCurve.sites.getAll(key).then(sites => {
+	return SpeedCurve.sites.getAll(key).then((sites) => {
 		if (json) {
 			log.json(sites)
 		} else {
-			sites.forEach(site => {
+			sites.forEach((site) => {
 				const urlOutput = site.urls
-					.map(url => [`\tURL Label: ${url.label}\n`, `\tURL: ${url.url}\n`, `\tURL ID: ${url.urlId}\n\n`].join(""))
+					.map((url) => [`\tURL Label: ${url.label}\n`, `\tURL: ${url.url}\n`, `\tURL ID: ${url.urlId}\n\n`].join(""))
 					.join("")
 
 				log.stdout(
@@ -24,7 +24,7 @@ export default function listSitesCommand(opts: ListSitesCommandOptions) {
 						`Site Name: ${site.name}\n`,
 						`Site ID: ${site.siteId}\n`,
 						"Site URLs:\n",
-						urlOutput
+						urlOutput,
 					].join("")
 				)
 			})

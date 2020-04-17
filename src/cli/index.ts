@@ -19,131 +19,131 @@ const opts = yargs
 		note: {
 			group: "Deploy options:",
 			describe: "Short note for this deploy",
-			type: "string"
+			type: "string",
 		},
 		detail: {
 			group: "Deploy options:",
 			describe: "Longer expanded detail for this deploy",
-			type: "string"
+			type: "string",
 		},
 		site: {
 			group: "Deploy options:",
 			conflicts: "url",
 			describe: "Only trigger deploys for the specified site ID(s) or name(s)",
-			type: "array"
+			type: "array",
 		},
 		url: {
 			group: "Deploy options:",
 			conflicts: "site",
 			describe: "Only trigger deploys for the specified URL ID(s)",
-			type: "array"
+			type: "array",
 		},
 		"check-budgets": {
 			group: "Deploy options:",
 			describe: "Check the status of relevant performance budgets after the deploy is finished",
 			type: "boolean",
-			default: false
+			default: false,
 		},
 		wait: {
 			group: "Deploy options:",
 			describe: "Wait for deploys to finish before exiting",
 			type: "boolean",
-			default: false
-		}
+			default: false,
+		},
 	})
 	.command("deploy-status <deployId>", "Get the status of a deploy", {
 		json: {
 			describe: "Display results as JSON",
 			type: "boolean",
-			default: false
-		}
+			default: false,
+		},
 	})
 	.command("budgets", "Get the status of all performance budgets in an account", {
 		json: {
 			describe: "Display results as JSON",
 			type: "boolean",
-			default: false
-		}
+			default: false,
+		},
 	})
 	.command("tests", "Get the latest synthetic test data for one or more URLs in a site", {
 		site: {
 			describe: "Get test data for the specified site ID or name",
 			type: "string",
-			demandOption: true
+			demandOption: true,
 		},
 		url: {
 			describe: "Only get test data for the specific URL ID(s) or name(s)",
 			type: "array",
-			default: []
+			default: [],
 		},
 		days: {
 			describe: "How many days worth of test data to get",
 			type: "number",
-			default: 1
+			default: 1,
 		},
 		region: {
 			describe: "Only get tests from the specified region",
-			type: "string"
+			type: "string",
 		},
 		browser: {
 			describe: "Only get tests from the specified browser",
-			type: "string"
-		}
+			type: "string",
+		},
 	})
 	.command("list-sites", "List all of the sites in an account", {
 		json: {
 			describe: "Display results as JSON",
 			type: "boolean",
-			default: false
-		}
+			default: false,
+		},
 	})
 	.command("create-url", "Create a new URL in a site", {
 		site: {
 			describe: "The site ID or name that the URL should be created within",
 			type: "string",
-			demandOption: true
+			demandOption: true,
 		},
 		url: {
 			describe: "The URL",
 			type: "string",
-			demandOption: true
+			demandOption: true,
 		},
 		label: {
 			describe: "The label of the new URL",
-			type: "string"
+			type: "string",
 		},
 		json: {
 			describe: "Display results as JSON",
 			type: "boolean",
-			default: false
-		}
+			default: false,
+		},
 	})
 	.command("update-url", "Update an existing URL", {
 		urlId: {
 			describe: "The ID of the URL to update",
 			type: "number",
-			demandOption: true
+			demandOption: true,
 		},
 		url: {
 			describe: "The URL",
-			type: "string"
+			type: "string",
 		},
 		label: {
 			describe: "The label of the new URL",
-			type: "string"
+			type: "string",
 		},
 		json: {
 			describe: "Display results as JSON",
 			type: "boolean",
-			default: false
-		}
+			default: false,
+		},
 	})
 	.options({
 		key: {
-			describe: "SpeedCurve API key. Can also be specified in the SPEEDCURVE_API_KEY environment variable"
+			describe: "SpeedCurve API key. Can also be specified in the SPEEDCURVE_API_KEY environment variable",
 		},
 		api: {
-			coerce: str => {
+			coerce: (str) => {
 				try {
 					return new URL(str).toString()
 				} catch (e) {
@@ -153,17 +153,17 @@ const opts = yargs
 			},
 			default: "https://api.speedcurve.com/",
 			describe: "Set the SpeedCurve API endpoint",
-			hidden: true
+			hidden: true,
 		},
 		quiet: {
 			describe: "Quiet mode. Only report errors",
-			type: "boolean"
+			type: "boolean",
 		},
 		verbose: {
 			alias: "v",
 			describe: "Show verbose output",
-			type: "boolean"
-		}
+			type: "boolean",
+		},
 	})
 	.help()
 	.version().argv
@@ -207,7 +207,7 @@ const command: Command = (() => {
 })()
 
 command(opts)
-	.then(ret => {
+	.then((ret) => {
 		if (typeof ret === "number") {
 			process.exit(ret)
 		}

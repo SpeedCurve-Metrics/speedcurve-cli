@@ -32,7 +32,7 @@ export function create(key: string, options: CreateUrlOptions): Promise<CreateUr
 	return api.createUrl(key, {
 		site_id: options.siteId,
 		url: options.url,
-		label: options.label
+		label: options.label,
 	})
 }
 

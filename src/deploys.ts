@@ -38,7 +38,7 @@ export async function create(key: string, siteIds: number[] = [], note = "", det
 	let teamName = "your SpeedCurve team"
 
 	try {
-		await api.team(key).then(res => (teamName = res.team))
+		await api.team(key).then((res) => (teamName = res.team))
 	} catch (err) {
 		log.verbose(`Couldn't fetch team data`)
 	}
@@ -47,7 +47,7 @@ export async function create(key: string, siteIds: number[] = [], note = "", det
 
 	if (siteIds.length) {
 		sites = await Promise.all(
-			siteIds.map(siteId => SpeedCurve.sites.get(key, siteId).catch(() => new Site(siteId, `Site #${siteId}`, [])))
+			siteIds.map((siteId) => SpeedCurve.sites.get(key, siteId).catch(() => new Site(siteId, `Site #${siteId}`, [])))
 		)
 	} else {
 		log.verbose(`No sites specified. Deploying all sites in ${teamName}`)
@@ -64,11 +64,11 @@ export async function create(key: string, siteIds: number[] = [], note = "", det
 	}
 
 	const ps = sites
-		.map(site => new DeployResult(site))
-		.map(result =>
+		.map((site) => new DeployResult(site))
+		.map((result) =>
 			api
 				.deploy(key, { note, detail, site_id: result.site.siteId })
-				.then(res => {
+				.then((res) => {
 					if (res.status === "success") {
 						result.updateFromApiResponse(res)
 						result.success = true
@@ -84,7 +84,7 @@ export async function create(key: string, siteIds: number[] = [], note = "", det
 
 					return result
 				})
-				.catch(err => {
+				.catch((err) => {
 					if (err.error) {
 						log.error(`Couldn't deploy site ${result.site.name}: ${err.error.message}`)
 					} else {
@@ -107,7 +107,7 @@ export async function createForUrls(key: string, urlIds: number[], note = "", de
 	let teamName = "your SpeedCurve team"
 
 	try {
-		await api.team(key).then(res => (teamName = res.team))
+		await api.team(key).then((res) => (teamName = res.team))
 	} catch (err) {
 		log.verbose(`Couldn't fetch team data`)
 	}
@@ -127,15 +127,15 @@ export async function createForUrls(key: string, urlIds: number[], note = "", de
 	} catch (err) {
 		log.verbose(`Error fetching sites for ${teamName}: ${err.message}`)
 
-		urls = urlIds.map(urlId => new Url(urlId, "Unknown", "Unknown"))
+		urls = urlIds.map((urlId) => new Url(urlId, "Unknown", "Unknown"))
 	}
 
 	const ps = urls
-		.map(url => new DeployResult(url))
-		.map(result =>
+		.map((url) => new DeployResult(url))
+		.map((result) =>
 			api
 				.deploy(key, { note, detail, url_id: result.url.urlId })
-				.then(res => {
+				.then((res) => {
 					if (res.status === "success") {
 						result.updateFromApiResponse(res)
 						result.success = true
@@ -151,7 +151,7 @@ export async function createForUrls(key: string, urlIds: number[], note = "", de
 
 					return result
 				})
-				.catch(err => {
+				.catch((err) => {
 					log.error(`Couldn't deploy ${result.url.toString()}: ${err.message}`)
 
 					result.success = false

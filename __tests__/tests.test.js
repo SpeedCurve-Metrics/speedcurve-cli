@@ -4,7 +4,7 @@ const SPEEDCURVE_API_KEY = "abc123"
 
 test("SpeedCurve.tests.get()", async () => {
 	request.get.mockResolvedValueOnce({
-		test_id: "202020_XYZ"
+		test_id: "202020_XYZ",
 	})
 
 	const test = await SpeedCurve.tests.get(SPEEDCURVE_API_KEY, "202020_XYZ")
@@ -19,7 +19,7 @@ test("SpeedCurve.tests.getForUrl()", async () => {
 		url_id: 1234,
 		label: "Home",
 		url: "https://speedcurve.com/",
-		tests: [{ test_id: "202020_XYZ" }, { test_id: "202020_ABC" }]
+		tests: [{ test_id: "202020_XYZ" }, { test_id: "202020_ABC" }],
 	})
 
 	const url = await SpeedCurve.tests.getForUrl(SPEEDCURVE_API_KEY, 1234)

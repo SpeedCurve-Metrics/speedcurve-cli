@@ -17,9 +17,9 @@ test("fetches budgets from the API", async () => {
 				metric_full_name: "Start Render",
 				absolute_threshold: 2.0,
 				relative_threshold: 20,
-				metric_suffix: "s"
-			}
-		]
+				metric_suffix: "s",
+			},
+		],
 	})
 
 	const budgets = await SpeedCurve.budgets.getAll("sckey")
@@ -38,7 +38,7 @@ test("fetches deploys from the API", async () => {
 		"tests-completed": [],
 		"tests-remaining": [],
 		note: "v1.0.0",
-		detail: "First release"
+		detail: "First release",
 	})
 
 	const deploy = await SpeedCurve.deploys.status("sckey", 222)
@@ -55,9 +55,9 @@ test("fetches sites from the API", async () => {
 			{
 				site_id: 101,
 				name: "Site 101",
-				urls: []
-			}
-		]
+				urls: [],
+			},
+		],
 	})
 
 	const sites = await SpeedCurve.sites.getAll("sckey")
@@ -69,7 +69,7 @@ test("fetches sites from the API", async () => {
 
 test("fetches tests from the API", async () => {
 	request.get.mockResolvedValueOnce({
-		test_id: "190528_BK_BURGER"
+		test_id: "190528_BK_BURGER",
 	})
 
 	const test = await SpeedCurve.tests.get("sckey", "190528_BK_BURGER")

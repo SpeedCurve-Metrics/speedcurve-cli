@@ -14,7 +14,7 @@ export default async function budgetsCommand(opts: BudgetsCommandOptions) {
 	if (json) {
 		log.json(budgets)
 	} else {
-		budgets.forEach(budget => {
+		budgets.forEach((budget) => {
 			const budgetTitle = `${bold(budget.metricName)} in ${bold(budget.chart.title)}`
 
 			if (budget.status === "over") {
@@ -23,7 +23,7 @@ export default async function budgetsCommand(opts: BudgetsCommandOptions) {
 				log.ok(bold(`${budgetTitle} is ${bold("under budget")}`))
 			}
 
-			budget.crossings.forEach(crossing => {
+			budget.crossings.forEach((crossing) => {
 				const value = budget.getLatestYValue(crossing, true)
 				const pctDiff = Math.round(crossing.difference_from_threshold * 100)
 

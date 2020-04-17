@@ -15,7 +15,7 @@ export default async function updateUrlCommand(opts: UpdateUrlCommandOptions) {
 	try {
 		const response = await SpeedCurve.urls.update(key, urlId, {
 			url,
-			label
+			label,
 		})
 
 		if (json) {

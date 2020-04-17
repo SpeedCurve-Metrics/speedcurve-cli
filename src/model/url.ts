@@ -36,7 +36,7 @@ export default class Url {
 			response.url_id,
 			response.label,
 			response.url,
-			response.tests ? response.tests.map(test => TestResult.fromApiResponse(test)) : []
+			response.tests ? response.tests.map((test) => TestResult.fromApiResponse(test)) : []
 		)
 	}
 }

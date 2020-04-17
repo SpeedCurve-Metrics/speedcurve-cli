@@ -32,8 +32,8 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 	if (checkBudgets) {
 		log.verbose("Determining initial status of performance budgets...\n")
 
-		await SpeedCurve.budgets.getAll(key).then(budgets => {
-			budgets.forEach(b => budgetsBeforeDeploy.set(b.budgetId, b))
+		await SpeedCurve.budgets.getAll(key).then((budgets) => {
+			budgets.forEach((b) => budgetsBeforeDeploy.set(b.budgetId, b))
 		})
 	}
 
@@ -46,7 +46,7 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 		results = await SpeedCurve.deploys.create(key, siteIds, note, detail)
 	}
 
-	const successfulResults = results.filter(result => result.success)
+	const successfulResults = results.filter((result) => result.success)
 
 	if (successfulResults.length && (wait || checkBudgets)) {
 		log.stdout("Waiting for all tests to complete...")
@@ -54,13 +54,13 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 		const totalTests = DeployResult.countTests(successfulResults)
 
 		const updateDeployStatus = async () => {
-			const ps = successfulResults.map(result =>
+			const ps = successfulResults.map((result) =>
 				api
 					.deployStatus(key, result.deployId)
-					.then(res => {
+					.then((res) => {
 						result.updateFromApiResponse(res)
 					})
-					.catch(err => {
+					.catch((err) => {
 						log.notice(`Couldn't retrieve deploy status for site ${result.site.name}: ${err.message}`)
 					})
 			)
@@ -73,7 +73,7 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 			log.stdout(`\rWaiting for tests to complete... ${completedTests} / ${totalTests} (${pctCompleted}%)`)
 
 			if (completedTests < totalTests) {
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					setTimeout(() => {
 						resolve(updateDeployStatus())
 					}, 5000)
@@ -93,14 +93,14 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 			const budgetsAfterDeploy: Map<number, PerformanceBudget> = new Map()
 
 			await Promise.all(
-				successfulResults.map(result =>
-					SpeedCurve.budgets.getByDeployId(key, result.deployId).then(budgets => {
-						budgets.forEach(b => budgetsAfterDeploy.set(b.budgetId, b))
+				successfulResults.map((result) =>
+					SpeedCurve.budgets.getByDeployId(key, result.deployId).then((budgets) => {
+						budgets.forEach((b) => budgetsAfterDeploy.set(b.budgetId, b))
 					})
 				)
 			)
 
-			budgetsAfterDeploy.forEach(budget => {
+			budgetsAfterDeploy.forEach((budget) => {
 				const prevBudget = budgetsBeforeDeploy.get(budget.budgetId)
 				const statusChanged = prevBudget.status !== budget.status
 				const stillOver = prevBudget.status === "over" && budget.status === "over"
@@ -109,7 +109,7 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 				// reference them by name instead.
 				const prevCrossings = new Map()
 
-				prevBudget.crossings.forEach(crossing => {
+				prevBudget.crossings.forEach((crossing) => {
 					prevCrossings.set(crossing.name, crossing)
 				})
 
@@ -127,7 +127,7 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 					log.ok(bold(`${budgetTitle} is ${bold("still under budget")}`))
 				}
 
-				budget.crossings.forEach(crossing => {
+				budget.crossings.forEach((crossing) => {
 					const prevCrossing = prevCrossings.get(crossing.name)
 					const prevValue = budget.getLatestYValue(prevCrossing, true)
 					const newValue = budget.getLatestYValue(crossing, true)
@@ -141,7 +141,7 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 				log.stdout("\n")
 			})
 
-			const anyBudgetsOver = [...budgetsAfterDeploy.values()].some(budget => budget.status === "over")
+			const anyBudgetsOver = [...budgetsAfterDeploy.values()].some((budget) => budget.status === "over")
 
 			return anyBudgetsOver ? 1 : 0
 		}

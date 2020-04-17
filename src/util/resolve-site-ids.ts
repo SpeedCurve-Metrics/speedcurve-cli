@@ -7,7 +7,7 @@ type SiteIdOrName = string | number
 const sitesCache: { [key: string]: Site[] } = {}
 
 async function populateSitesCacheForAccount(key: string): Promise<void> {
-	await SpeedCurve.sites.getAll(key).then(sites => {
+	await SpeedCurve.sites.getAll(key).then((sites) => {
 		sitesCache[key] = sites
 	})
 }
@@ -21,7 +21,7 @@ export async function resolveSiteId(key: string, siteIdOrName: SiteIdOrName): Pr
 			await populateSitesCacheForAccount(key)
 		}
 
-		const siteByName = sitesCache[key].find(site => site.name === siteIdOrName)
+		const siteByName = sitesCache[key].find((site) => site.name === siteIdOrName)
 
 		if (siteByName) {
 			return siteByName.siteId
@@ -34,11 +34,11 @@ export async function resolveSiteId(key: string, siteIdOrName: SiteIdOrName): Pr
 }
 
 export async function resolveSiteIds(key: string, siteIdsOrNames: SiteIdOrName[]): Promise<number[]> {
-	const needsLookup = siteIdsOrNames.some(x => typeof x === "string")
+	const needsLookup = siteIdsOrNames.some((x) => typeof x === "string")
 
 	if (needsLookup) {
 		await populateSitesCacheForAccount(key)
 	}
 
-	return Promise.all(siteIdsOrNames.map(siteIdOrName => resolveSiteId(key, siteIdOrName)))
+	return Promise.all(siteIdsOrNames.map((siteIdOrName) => resolveSiteId(key, siteIdOrName)))
 }

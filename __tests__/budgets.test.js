@@ -4,12 +4,12 @@ const SPEEDCURVE_API_KEY = "abc123"
 
 const makeBudget = (budgetId, metric) => ({
 	budget_id: budgetId,
-	metric: metric
+	metric: metric,
 })
 
 test("SpeedCurve.budgets.getAll()", async () => {
 	request.get.mockResolvedValueOnce({
-		budgets: [makeBudget(1111, "render"), makeBudget(2222, "doc")]
+		budgets: [makeBudget(1111, "render"), makeBudget(2222, "doc")],
 	})
 
 	const budgets = await SpeedCurve.budgets.getAll(SPEEDCURVE_API_KEY)
@@ -23,7 +23,7 @@ test("SpeedCurve.budgets.getAll()", async () => {
 
 test("SpeedCurve.budgets.getByDeployId()", async () => {
 	request.get.mockResolvedValueOnce({
-		budgets: [makeBudget(1111, "render")]
+		budgets: [makeBudget(1111, "render")],
 	})
 
 	const budgets = await SpeedCurve.budgets.getByDeployId(SPEEDCURVE_API_KEY, 9876)

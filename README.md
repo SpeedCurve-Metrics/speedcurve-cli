@@ -59,6 +59,9 @@ speedcurve deploy --note 'v2.11.8' --detail 'Inline critical CSS, bootstrap app 
 # Specify which site(s) to trigger testing for. Sites can be specified by name or ID
 speedcurve deploy --site 1043801 --site 'BBC News'
 
+# Specify which URL(s) to trigger testing for. URLs must be specified by ID
+speedcurve deploy --url 110912
+
 # Wait until all tests have completed before exiting
 speedcurve deploy --wait
 

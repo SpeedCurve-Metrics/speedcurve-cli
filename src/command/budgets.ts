@@ -24,7 +24,7 @@ export default async function budgetsCommand(opts: BudgetsCommandOptions) {
 			}
 
 			budget.crossings.forEach((crossing) => {
-				const value = budget.getLatestYValue(crossing, true)
+				const value = budget.appendMetricSuffix(budget.getLatestYValue(crossing))
 				const pctDiff = Math.round(crossing.difference_from_threshold * 100)
 
 				log.stdout(

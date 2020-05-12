@@ -1,6 +1,6 @@
 import { BudgetApiResponse, BudgetCrossingApiResponse, ChartApiResponse } from "../api"
 
-type ChartYValue = number | string | null
+type ChartYValue = number | null
 
 /**
  * An object representing a SpeedCurve performance budget
@@ -36,10 +36,15 @@ export default class PerformanceBudget {
 	/**
 	 * Get the most recent Y value from a crossing
 	 */
-	getLatestYValue(crossing: BudgetCrossingApiResponse, appendMetricSuffix = false): ChartYValue {
-		const y = crossing.latest_data.slice(-1).pop().y
+	getLatestYValue(crossing: BudgetCrossingApiResponse): ChartYValue {
+		return crossing.latest_data.slice(-1).pop().y
+	}
 
-		return appendMetricSuffix ? `${y}${this.metricSuffix}` : y
+	/**
+	 * Append the budget metric suffix to a value
+	 */
+	appendMetricSuffix(value: ChartYValue): string {
+		return `${value}${this.metricSuffix}`
 	}
 
 	/**

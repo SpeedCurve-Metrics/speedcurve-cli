@@ -129,8 +129,8 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 
 				budget.crossings.forEach((crossing) => {
 					const prevCrossing = prevCrossings.get(crossing.name)
-					const prevValue = budget.getLatestYValue(prevCrossing, true)
-					const newValue = budget.getLatestYValue(crossing, true)
+					const prevValue = budget.appendMetricSuffix(budget.getLatestYValue(prevCrossing))
+					const newValue = budget.appendMetricSuffix(budget.getLatestYValue(crossing))
 					const pctDiff = Math.round(crossing.difference_from_threshold * 100)
 
 					log.stdout(

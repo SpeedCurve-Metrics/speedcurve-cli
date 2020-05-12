@@ -5,7 +5,7 @@ import log from "../log"
 import DeployResult from "../model/deploy-result"
 import PerformanceBudget from "../model/performance-budget"
 import { bold } from "../util/console"
-import pluralise from "../util/pluralise"
+import pl from "../util/pluralise"
 import { resolveSiteIds } from "../util/resolve-site-ids"
 
 interface DeployCommandOptions {
@@ -16,21 +16,35 @@ interface DeployCommandOptions {
 	detail?: string
 	checkBudgets?: boolean
 	wait?: boolean
+	json?: boolean
 }
 
+type DeployJsonOutput = {
+	deploys: DeployResult[]
+	budgets: PerformanceBudget[]
+}
+
+type KnownLogLevel = "verbose" | "stdout" | "notice" | "bad" | "ok"
+
 export default async function deployCommand(opts: DeployCommandOptions): Promise<ExitCode | void> {
-	const { key, site = [], url = [], note = "", detail = "", checkBudgets = false, wait = false } = opts
+	const { key, site = [], url = [], note = "", detail = "", checkBudgets = false, wait = false, json = false } = opts
+
+	const noJsonLog = (level: KnownLogLevel, message: string) => {
+		if (!json) {
+			log[level](message)
+		}
+	}
 
 	if (url.length) {
-		log.verbose(`Requesting deploys for ${url.length || "all"} ${pluralise("URL", url.length)}...`)
+		noJsonLog("verbose", `Requesting deploys for ${url.length || "all"} ${pl("URL", url.length)}...`)
 	} else {
-		log.verbose(`Requesting deploys for ${site.length || "all"} ${pluralise("site", site.length)}...`)
+		noJsonLog("verbose", `Requesting deploys for ${site.length || "all"} ${pl("site", site.length)}...`)
 	}
 
 	const budgetsBeforeDeploy: Map<number, PerformanceBudget> = new Map()
 
 	if (checkBudgets) {
-		log.verbose("Determining initial status of performance budgets...\n")
+		noJsonLog("verbose", "Determining initial status of performance budgets...\n")
 
 		await SpeedCurve.budgets.getAll(key).then((budgets) => {
 			budgets.forEach((b) => budgetsBeforeDeploy.set(b.budgetId, b))
@@ -48,8 +62,28 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 
 	const successfulResults = results.filter((result) => result.success)
 
+	successfulResults.forEach((result) => {
+		if (result.url) {
+			noJsonLog(
+				"ok",
+				`Deploy ${result.deployId} triggered ${result.totalTests} ${pl("test", result.totalTests)} for ${
+					result.site.name
+				} / ${result.url.label}`
+			)
+		} else {
+			noJsonLog(
+				"ok",
+				`Deploy ${result.deployId} triggered ${result.totalTests} ${pl("test", result.totalTests)} for ${
+					result.site.name
+				}`
+			)
+		}
+	})
+
+	const jsonOut: DeployJsonOutput = { deploys: results, budgets: [] }
+
 	if (successfulResults.length && (wait || checkBudgets)) {
-		log.stdout("Waiting for all tests to complete...")
+		noJsonLog("stdout", "Waiting for all tests to complete...")
 
 		const totalTests = DeployResult.countTests(successfulResults)
 
@@ -61,7 +95,7 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 						result.updateFromApiResponse(res)
 					})
 					.catch((err) => {
-						log.notice(`Couldn't retrieve deploy status for site ${result.site.name}: ${err.message}`)
+						noJsonLog("notice", `Couldn't retrieve deploy status for site ${result.site.name}: ${err.message}`)
 					})
 			)
 
@@ -70,7 +104,7 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 			const completedTests = DeployResult.countCompletedTests(successfulResults)
 			const pctCompleted = Math.round((completedTests / totalTests) * 100)
 
-			log.stdout(`\rWaiting for tests to complete... ${completedTests} / ${totalTests} (${pctCompleted}%)`)
+			noJsonLog("stdout", `\rWaiting for tests to complete... ${completedTests} / ${totalTests} (${pctCompleted}%)`)
 
 			if (completedTests < totalTests) {
 				return new Promise((resolve) => {
@@ -88,9 +122,11 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 				return 0
 			}
 
-			log.stdout("Checking status of performance budgets...\n\n")
+			noJsonLog("stdout", "Checking status of performance budgets...\n\n")
 
 			const budgetsAfterDeploy: Map<number, PerformanceBudget> = new Map()
+
+			jsonOut.budgets = Array.from(budgetsAfterDeploy.values())
 
 			await Promise.all(
 				successfulResults.map((result) =>
@@ -116,15 +152,15 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 				const budgetTitle = `${bold(budget.metricName)} in ${bold(budget.chart.title)}`
 
 				if (stillOver) {
-					log.bad(bold(`${budgetTitle} is ${bold("still over budget")}`))
+					noJsonLog("bad", bold(`${budgetTitle} is ${bold("still over budget")}`))
 				} else if (statusChanged) {
 					if (budget.status === "over") {
-						log.bad(bold(`${budgetTitle} has ${bold("gone over budget")}`))
+						noJsonLog("bad", bold(`${budgetTitle} has ${bold("gone over budget")}`))
 					} else {
-						log.ok(bold(`${budgetTitle} has ${bold("gone under budget")}`))
+						noJsonLog("ok", bold(`${budgetTitle} has ${bold("gone under budget")}`))
 					}
 				} else {
-					log.ok(bold(`${budgetTitle} is ${bold("still under budget")}`))
+					noJsonLog("ok", bold(`${budgetTitle} is ${bold("still under budget")}`))
 				}
 
 				budget.crossings.forEach((crossing) => {
@@ -133,12 +169,13 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 					const newValue = budget.appendMetricSuffix(budget.getLatestYValue(crossing))
 					const pctDiff = Math.round(crossing.difference_from_threshold * 100)
 
-					log.stdout(
+					noJsonLog(
+						"stdout",
 						`${crossing.name} ${bold(prevValue)} => ${bold(newValue)} (${pctDiff}% ${crossing.status} budget)\n`
 					)
 				})
 
-				log.stdout("\n")
+				noJsonLog("stdout", "\n")
 			})
 
 			const anyBudgetsOver = [...budgetsAfterDeploy.values()].some((budget) => budget.status === "over")
@@ -148,9 +185,18 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 
 		return updateDeployStatus()
 			.then(() => {
-				log.stdout("\n")
-				log.ok("All tests completed")
+				noJsonLog("stdout", "\n")
+				noJsonLog("ok", "All tests completed")
 			})
 			.then(maybeCheckBudgets)
+			.then(() => {
+				if (json) {
+					log.json(jsonOut)
+				}
+			})
+	} else {
+		if (json) {
+			log.json(jsonOut)
+		}
 	}
 }

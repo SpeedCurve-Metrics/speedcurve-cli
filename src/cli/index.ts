@@ -50,6 +50,11 @@ const opts = yargs
 			type: "boolean",
 			default: false,
 		},
+		json: {
+			describe: "Display results as JSON",
+			type: "boolean",
+			default: false,
+		},
 	})
 	.command("deploy-status <deployId>", "Get the status of a deploy", {
 		json: {

@@ -19,7 +19,6 @@ import log from "./log"
 import DeployResult from "./model/deploy-result"
 import Site from "./model/site"
 import Url from "./model/url"
-import pl from "./util/pluralise"
 import * as SpeedCurve from "./index"
 
 /**
@@ -72,12 +71,6 @@ export async function create(key: string, siteIds: number[] = [], note = "", det
 					if (res.status === "success") {
 						result.updateFromApiResponse(res)
 						result.success = true
-
-						log.ok(
-							`Deploy ${result.deployId} triggered ${result.totalTests} ${pl("test", result.totalTests)} for ${
-								result.site.name
-							}`
-						)
 					} else {
 						log.error(`Couldn't deploy site ${result.site.name}: ${res.message}`)
 					}
@@ -139,12 +132,6 @@ export async function createForUrls(key: string, urlIds: number[], note = "", de
 					if (res.status === "success") {
 						result.updateFromApiResponse(res)
 						result.success = true
-
-						log.ok(
-							`Deploy ${result.deployId} triggered ${result.totalTests} ${pl("test", result.totalTests)} for ${
-								result.site.name
-							} / ${result.url.label}`
-						)
 					} else {
 						log.error(`Couldn't deploy ${result.url.toString()}: ${res.message}`)
 					}

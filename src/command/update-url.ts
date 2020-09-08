@@ -7,15 +7,17 @@ interface UpdateUrlCommandOptions {
 	urlId: number
 	url: string
 	label?: string
+	script?: string
 }
 
 export default async function updateUrlCommand(opts: UpdateUrlCommandOptions) {
-	const { key, json = false, urlId, url, label } = opts
+	const { key, json = false, urlId, url, label, script } = opts
 
 	try {
 		const response = await SpeedCurve.urls.update(key, urlId, {
 			url,
 			label,
+			script,
 		})
 
 		if (json) {

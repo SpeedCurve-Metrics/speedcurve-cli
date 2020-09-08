@@ -31,3 +31,16 @@ test("SpeedCurve.urls.update()", async () => {
 	expect(response.status).toEqual("success")
 	expect(request.put.mock.calls[0][0].form.label).toEqual("home")
 })
+
+test("SpeedCurve.urls.update(script)", async () => {
+	request.put.mockResolvedValueOnce({
+		status: "success",
+		message: "Success!",
+		url_id: 8081,
+	})
+
+	const response = await SpeedCurve.urls.update(SPEEDCURVE_API_KEY, 8081, { script: "navigate	https://goodrx.com" })
+
+	expect(response.status).toEqual("success")
+	expect(request.put.mock.calls[0][0].form.script).toEqual("navigate	https://goodrx.com")
+})

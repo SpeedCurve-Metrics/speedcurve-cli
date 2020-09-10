@@ -2,8 +2,9 @@ import * as r from "request-promise"
 import { URL } from "url"
 import log from "./log"
 import truncate from "./util/truncate"
-import pkg from "../package.json"
-const VERSION = pkg.version
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const VERSION = require("../package.json").version
 
 const logFriendlyUrl = (url: URL) => {
 	const hasSearchParams = [...url.searchParams.values()].length > 0

@@ -12,7 +12,6 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "outDir": "./dist",
-        "resolveJsonModule": true,
         "strictBindCallApply": true,
         "strictFunctionTypes": true,
         "target": "es6"

@@ -14,7 +14,7 @@
  * @packageDocumentation
  */
 
-import { api } from "./api"
+import { api, DeployStatusApiResponse } from "./api"
 import log from "./log"
 import DeployResult from "./model/deploy-result"
 import Site from "./model/site"
@@ -25,7 +25,7 @@ import * as SpeedCurve from "./index"
  * Get the status of a deploy
  * @see {@link http://api.speedcurve.com/#get-a-deploy}
  */
-export function status(key: string, deployId: number) {
+export function status(key: string, deployId: number): Promise<DeployStatusApiResponse> {
 	return api.deployStatus(key, deployId)
 }
 

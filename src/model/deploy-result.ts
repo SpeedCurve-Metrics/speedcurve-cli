@@ -27,7 +27,7 @@ export default class DeployResult {
 		this.completedTests = 0
 	}
 
-	updateFromApiResponse(response: CreateDeployApiResponse | DeployStatusApiResponse) {
+	updateFromApiResponse(response: CreateDeployApiResponse | DeployStatusApiResponse): void {
 		this.deployId = response.deploy_id
 
 		if (typeof (response as CreateDeployApiResponse)["tests-requested"] !== "undefined") {
@@ -42,14 +42,14 @@ export default class DeployResult {
 	/**
 	 * Returns the total number of tests in a collection of DeployResults.
 	 */
-	static countTests(resultsCollection: DeployResult[]) {
+	static countTests(resultsCollection: DeployResult[]): number {
 		return resultsCollection.reduce((sum, result) => sum + result.totalTests, 0)
 	}
 
 	/**
 	 * Returns the number of tests that have been completed in a collection of DeployResults.
 	 */
-	static countCompletedTests(resultsCollection: DeployResult[]) {
+	static countCompletedTests(resultsCollection: DeployResult[]): number {
 		return resultsCollection.reduce((sum, result) => sum + result.completedTests, 0)
 	}
 }

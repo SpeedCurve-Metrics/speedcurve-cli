@@ -19,7 +19,7 @@ export default class Url {
 		this.tests = tests
 	}
 
-	toString() {
+	toString(): string {
 		if (this.site) {
 			return `URL ${this.urlId} (${this.site.name} / ${this.label})`
 		}
@@ -31,7 +31,7 @@ export default class Url {
 	 * Build a new {@link Url} object from a {@link https://api.speedcurve.com/#get-all-urls|/v1/urls}
 	 * API response object
 	 */
-	static fromApiResponse(response: UrlApiResponse) {
+	static fromApiResponse(response: UrlApiResponse): Url {
 		return new Url(
 			response.url_id,
 			response.label,

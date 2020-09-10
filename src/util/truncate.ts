@@ -1,4 +1,4 @@
-export default function truncate(str: string, length: number) {
+export default function truncate(str: string, length: number): string {
 	const sliced = str.slice(0, length)
 
 	if (sliced.length + 3 < str.length) {

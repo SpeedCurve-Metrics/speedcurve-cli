@@ -7,7 +7,7 @@ interface BudgetsCommandOptions {
 	json: boolean
 }
 
-export default async function budgetsCommand(opts: BudgetsCommandOptions) {
+export default async function budgetsCommand(opts: BudgetsCommandOptions): Promise<void> {
 	const { key, json = false } = opts
 	const budgets = await SpeedCurve.budgets.getAll(key)
 

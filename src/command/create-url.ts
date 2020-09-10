@@ -10,7 +10,7 @@ interface CreateUrlCommandOptions {
 	label?: string
 }
 
-export default async function createUrlCommand(opts: CreateUrlCommandOptions) {
+export default async function createUrlCommand(opts: CreateUrlCommandOptions): Promise<void> {
 	const { key, json = false, site, url, label } = opts
 	const siteId = await resolveSiteId(key, site)
 

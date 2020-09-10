@@ -7,9 +7,9 @@ import { TestResultApiResponse } from "../api"
  */
 export default class TestResult {
 	testId: string
-	data: object
+	data: TestResultData
 
-	constructor(testId: string, data: object) {
+	constructor(testId: string, data: TestResultData) {
 		this.testId = testId
 		this.data = data
 	}
@@ -18,7 +18,11 @@ export default class TestResult {
 	 * Build a new {@link TestResult} object from a {@link https://api.speedcurve.com/#get-all-sites|/v1/sites}
 	 * API response object
 	 */
-	static fromApiResponse(response: TestResultApiResponse) {
+	static fromApiResponse(response: TestResultApiResponse): TestResult {
 		return new TestResult(response.test_id, response)
 	}
+}
+
+interface TestResultData {
+	test_id: string
 }

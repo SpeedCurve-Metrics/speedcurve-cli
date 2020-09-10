@@ -2,7 +2,8 @@ import * as r from "request-promise"
 import { URL } from "url"
 import log from "./log"
 import truncate from "./util/truncate"
-const VERSION = require("../package.json").version
+import pkg from "../package.json"
+const VERSION = pkg.version
 
 const logFriendlyUrl = (url: URL) => {
 	const hasSearchParams = [...url.searchParams.values()].length > 0
@@ -34,22 +35,18 @@ export class ApiClient {
 
 	// The V1 SpeedCurve API does not have consistent error reporting. This
 	// method attempts to normalise errors to be of type { message: string }
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	normaliseErrorResponse(e: any): void {
-		if (typeof e.error === "string") {
-			// API returns a plain text response
-			e.error = { message: e.error }
-		}
-
-		if (typeof e.error.error === "string") {
+	normaliseErrorResponse(e: ApiErrorString | ApiErrorObject): NormalisedApiError {
+		if (typeof (e as ApiErrorObject).error.error === "string") {
 			// API returns an { error: string } object
-			e.error = { message: e.error.error }
+			return { error: { name: "ApiError", message: (e as ApiErrorObject).error.error } }
 		}
 
-		throw e
+		// API returns a plain text response
+		return { error: { name: "ApiError", message: (e as ApiErrorString).error } }
 	}
 
-	get(url: URL) {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	get(url: URL): Promise<any> {
 		log.http("GET", logFriendlyUrl(url))
 
 		return r
@@ -63,7 +60,8 @@ export class ApiClient {
 			.catch(this.normaliseErrorResponse)
 	}
 
-	post(url: URL, data = {}) {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	post(url: URL, data = {}): Promise<any> {
 		log.http("POST", `${logFriendlyUrl(url)} ${truncate(JSON.stringify(data), 60)}`)
 
 		return r
@@ -78,7 +76,8 @@ export class ApiClient {
 			.catch(this.normaliseErrorResponse)
 	}
 
-	put(url: URL, data = {}) {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	put(url: URL, data = {}): Promise<any> {
 		log.http("PUT", `${logFriendlyUrl(url)} ${truncate(JSON.stringify(data), 60)}`)
 
 		return r
@@ -161,6 +160,18 @@ export class ApiClient {
 	}
 }
 
+interface ApiErrorString {
+	error: string
+}
+
+interface ApiErrorObject {
+	error: ApiErrorString
+}
+
+interface NormalisedApiError {
+	error: Error
+}
+
 export interface TestFilters {
 	region?: string
 	browser?: string
@@ -233,7 +244,7 @@ export type DeployStatus = "pending" | "running" | "completed" | "completed, but
 export interface CreateDeployApiResponse {
 	status: CreateDeployStatus
 	message: string
-	info?: object
+	info?: Record<string, unknown>
 	deploy_id?: number
 	site_id?: number
 	timestamp?: number
@@ -245,8 +256,8 @@ export interface DeployStatusApiResponse {
 	site_id: number
 	timestamp: number
 	status: DeployStatus
-	"tests-completed": object[]
-	"tests-remaining": object[]
+	"tests-completed": Record<string, unknown>[]
+	"tests-remaining": Record<string, unknown>[]
 	note: string
 	detail: string
 }
@@ -294,7 +305,7 @@ export interface ChartDataApiResponse {
 export interface TeamApiResponse {
 	team: string
 	sites: SiteApiResponse[]
-	site_settings: object[]
+	site_settings: Record<string, unknown>[]
 	times: string[]
 }
 

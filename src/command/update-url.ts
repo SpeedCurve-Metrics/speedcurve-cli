@@ -10,7 +10,7 @@ interface UpdateUrlCommandOptions {
 	script?: string
 }
 
-export default async function updateUrlCommand(opts: UpdateUrlCommandOptions) {
+export default async function updateUrlCommand(opts: UpdateUrlCommandOptions): Promise<void> {
 	const { key, json = false, urlId, url, label, script } = opts
 
 	try {

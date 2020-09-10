@@ -8,7 +8,7 @@ interface DeployStatusCommandOptions {
 	json: boolean
 }
 
-export default async function deployStatusCommand(opts: DeployStatusCommandOptions) {
+export default async function deployStatusCommand(opts: DeployStatusCommandOptions): Promise<void> {
 	const { key, deployId, json = false } = opts
 	const status = await SpeedCurve.deploys.status(key, deployId)
 	const completed = status["tests-completed"].length

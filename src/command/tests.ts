@@ -11,7 +11,7 @@ interface TestsCommandOptions {
 	browser?: string
 }
 
-export default async function testsCommand(opts: TestsCommandOptions) {
+export default async function testsCommand(opts: TestsCommandOptions): Promise<void> {
 	const { key, site, url = [], days = 1, region, browser } = opts
 	const siteId = (await resolveSiteIds(key, [site])).pop()
 	const siteUrls = (await SpeedCurve.sites.get(key, siteId)).urls

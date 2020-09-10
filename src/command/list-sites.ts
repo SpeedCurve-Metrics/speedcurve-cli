@@ -6,7 +6,7 @@ interface ListSitesCommandOptions {
 	json: boolean
 }
 
-export default function listSitesCommand(opts: ListSitesCommandOptions) {
+export default async function listSitesCommand(opts: ListSitesCommandOptions): Promise<void> {
 	const { key, json = false } = opts
 
 	return SpeedCurve.sites.getAll(key).then((sites) => {

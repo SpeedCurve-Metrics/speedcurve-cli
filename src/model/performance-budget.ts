@@ -51,7 +51,7 @@ export default class PerformanceBudget {
 	 * Build a new {@link Budget} object from a {@link https://api.speedcurve.com/#get-performance-budgets|/v1/budgets}
 	 * API response object
 	 */
-	static fromApiResponse(response: BudgetApiResponse) {
+	static fromApiResponse(response: BudgetApiResponse): PerformanceBudget {
 		const budget = new PerformanceBudget(
 			response.budget_id,
 			response.status,

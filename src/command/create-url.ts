@@ -26,8 +26,8 @@ export default async function createUrlCommand(opts: CreateUrlCommandOptions): P
 		} else {
 			log.ok(`URL ${response.url_id} was created`)
 		}
-	} catch (e) {
-		log.error(`Couldn't create URL. ${e.error.message}`)
+	} catch (err) {
+		log.error(`Couldn't create URL. ${err.message}`)
 	}
 }
 

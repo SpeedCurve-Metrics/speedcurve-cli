@@ -36,14 +36,22 @@ export class ApiClient {
 
 	// The V1 SpeedCurve API does not have consistent error reporting. This
 	// method attempts to normalise errors to be of type { message: string }
-	normaliseErrorResponse(e: ApiErrorString | ApiErrorObject): NormalisedApiError {
-		if (typeof (e as ApiErrorObject).error.error === "string") {
-			// API returns an { error: string } object
-			return { error: { name: "ApiError", message: (e as ApiErrorObject).error.error } }
+	normaliseError(e: ApiError): Error {
+		if (typeof (e as ApiErrorString) === "string") {
+			// API returns a string
+			return new Error(e as ApiErrorString)
 		}
 
-		// API returns a plain text response
-		return { error: { name: "ApiError", message: (e as ApiErrorString).error } }
+		if (typeof (e as ApiErrorObjectWithErrorKey).error === "string") {
+			// API returns an { error: string } object
+			return new Error((e as ApiErrorObjectWithErrorKey).error)
+		}
+		if (typeof (e as ApiErrorObjectWithMessageKey).message === "string") {
+			// API returns an { message: string } object
+			return new Error((e as ApiErrorObjectWithMessageKey).message)
+		}
+
+		return new Error(`An unknown error was received from the API: ${JSON.stringify(e)}`)
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -58,7 +66,9 @@ export class ApiClient {
 					"user-agent": `speedcurve-cli/${VERSION}`,
 				},
 			})
-			.catch(this.normaliseErrorResponse)
+			.catch((res) => {
+				throw this.normaliseError(res.error)
+			})
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -74,7 +84,9 @@ export class ApiClient {
 					"user-agent": `speedcurve-cli/${VERSION}`,
 				},
 			})
-			.catch(this.normaliseErrorResponse)
+			.catch((err) => {
+				throw this.normaliseError(err)
+			})
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -90,7 +102,9 @@ export class ApiClient {
 					"user-agent": `speedcurve-cli/${VERSION}`,
 				},
 			})
-			.catch(this.normaliseErrorResponse)
+			.catch((err) => {
+				throw this.normaliseError(err)
+			})
 	}
 
 	deploy(key: string, settings: DeployEndpointParameters): Promise<CreateDeployApiResponse> {
@@ -161,17 +175,17 @@ export class ApiClient {
 	}
 }
 
-interface ApiErrorString {
+type ApiErrorString = string
+
+interface ApiErrorObjectWithErrorKey {
 	error: string
 }
 
-interface ApiErrorObject {
-	error: ApiErrorString
+interface ApiErrorObjectWithMessageKey {
+	message: string
 }
 
-interface NormalisedApiError {
-	error: Error
-}
+type ApiError = ApiErrorString | ApiErrorObjectWithErrorKey | ApiErrorObjectWithMessageKey
 
 export interface TestFilters {
 	region?: string

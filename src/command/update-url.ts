@@ -25,8 +25,8 @@ export default async function updateUrlCommand(opts: UpdateUrlCommandOptions): P
 		} else {
 			log.ok(`URL ${response.url_id} was updated`)
 		}
-	} catch (e) {
-		log.error(`Couldn't update URL. ${e.error.message}`)
+	} catch (err) {
+		log.error(`Couldn't update URL. ${err.message}`)
 	}
 }
 

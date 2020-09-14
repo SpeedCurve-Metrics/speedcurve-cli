@@ -1,4 +1,4 @@
-import * as api from "./api"
+import { api } from "./api"
 import * as budgets from "./budgets"
 import * as deploys from "./deploys"
 import DeployResult from "./model/deploy-result"

@@ -72,15 +72,17 @@ export async function create(key: string, siteIds: number[] = [], note = "", det
 						result.updateFromApiResponse(res)
 						result.success = true
 					} else {
-						log.error(`Couldn't deploy site ${result.site.name}: ${res.message}`)
+						result.error = `Couldn't deploy site ${result.site.name}: ${res.message}`
+						log.error(result.error)
 					}
 
 					return result
 				})
 				.catch((err) => {
-					log.error(`Couldn't deploy site ${result.site.name}: ${err.message}`)
-
+					result.error = `Couldn't deploy site ${result.site.name}: ${err.message}`
 					result.success = false
+
+					log.error(result.error)
 
 					return result
 				})
@@ -129,15 +131,17 @@ export async function createForUrls(key: string, urlIds: number[], note = "", de
 						result.updateFromApiResponse(res)
 						result.success = true
 					} else {
-						log.error(`Couldn't deploy ${result.url.toString()}: ${res.message}`)
+						result.error = `Couldn't deploy ${result.url.toString()}: ${res.message}`
+						log.error(result.error)
 					}
 
 					return result
 				})
 				.catch((err) => {
-					log.error(`Couldn't deploy ${result.url.toString()}: ${err.message}`)
-
+					result.error = `Couldn't deploy ${result.url.toString()}: ${err.message}`
 					result.success = false
+
+					log.error(result.error)
 
 					return result
 				})

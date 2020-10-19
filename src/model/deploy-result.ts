@@ -10,6 +10,7 @@ export default class DeployResult {
 	site: Site
 	url: Url
 	success: boolean
+	error?: string
 	totalTests: number
 	completedTests: number
 

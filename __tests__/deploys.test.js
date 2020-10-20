@@ -17,7 +17,7 @@ describe("SpeedCurve.deploys.create()", () => {
 
 		expect(results.length).toEqual(1)
 		expect(results[0]).toBeInstanceOf(SpeedCurve.DeployResult)
-		expect(request.post.mock.calls[0][0].form.site_id).toEqual(1001)
+		expect(request.post.mock.calls[0][0].form.site_id).toEqual("1001")
 	})
 
 	test("Deploy multiple sites", async () => {
@@ -44,7 +44,7 @@ describe("SpeedCurve.deploys.create()", () => {
 		expect(results[1].site).toBeInstanceOf(SpeedCurve.Site)
 		expect(results[0].site.siteId).toEqual(1001)
 		expect(results[1].site.siteId).toEqual(1002)
-		expect(request.post.mock.calls[0][0].form.site_id).toEqual(1001)
-		expect(request.post.mock.calls[1][0].form.site_id).toEqual(1002)
+		expect(request.post.mock.calls[0][0].form.site_id).toEqual("1001")
+		expect(request.post.mock.calls[1][0].form.site_id).toEqual("1002")
 	})
 })

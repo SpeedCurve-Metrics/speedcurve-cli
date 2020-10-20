@@ -54,10 +54,10 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 	let results: DeployResult[] = []
 
 	if (url.length) {
-		results = await SpeedCurve.deploys.createForUrls(key, url, note, detail)
+		results = await SpeedCurve.deploys.createForUrls(key, url, { note, detail })
 	} else {
 		const siteIds = await resolveSiteIds(key, site)
-		results = await SpeedCurve.deploys.create(key, siteIds, note, detail)
+		results = await SpeedCurve.deploys.create(key, siteIds, { note, detail })
 	}
 
 	const successfulResults = results.filter((result) => result.success)

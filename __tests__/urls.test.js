@@ -16,7 +16,7 @@ test("SpeedCurve.urls.create()", async () => {
 	})
 
 	expect(response.status).toEqual("success")
-	expect(request.post.mock.calls[0][0].form.site_id).toEqual(326)
+	expect(request.post.mock.calls[0][0].form.site_id).toEqual("326")
 })
 
 test("SpeedCurve.urls.update()", async () => {

@@ -218,6 +218,7 @@ export interface TestFilters {
 interface BaseDeployEndpointParameters {
 	note?: string
 	detail?: string
+	force?: boolean
 }
 
 interface UrlDeployEndpointParameters extends BaseDeployEndpointParameters {

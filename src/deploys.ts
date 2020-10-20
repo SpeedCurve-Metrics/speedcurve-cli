@@ -21,6 +21,12 @@ import Site from "./model/site"
 import Url from "./model/url"
 import * as SpeedCurve from "./index"
 
+interface DeployOptions {
+	note?: string
+	detail?: string
+	force?: boolean
+}
+
 /**
  * Get the status of a deploy
  * @see {@link http://api.speedcurve.com/#get-a-deploy}
@@ -33,7 +39,11 @@ export function status(key: string, deployId: number): Promise<DeployStatusApiRe
  * Run on-demand tests for one or more sites. If no `siteId` parameter is
  * specified, a deploy will be created for all sites in the account
  */
-export async function create(key: string, siteIds: number[] = [], note = "", detail = ""): Promise<DeployResult[]> {
+export async function create(
+	key: string,
+	siteIds: number[] = [],
+	{ note = "", detail = "", force = false }: DeployOptions = {}
+): Promise<DeployResult[]> {
 	let teamName = "your SpeedCurve team"
 
 	try {
@@ -66,7 +76,7 @@ export async function create(key: string, siteIds: number[] = [], note = "", det
 		.map((site) => new DeployResult(site))
 		.map((result) =>
 			api
-				.deploy(key, { note, detail, site_id: result.site.siteId })
+				.deploy(key, { note, detail, force, site_id: result.site.siteId })
 				.then((res) => {
 					if (res.status === "success") {
 						result.updateFromApiResponse(res)
@@ -94,7 +104,11 @@ export async function create(key: string, siteIds: number[] = [], note = "", det
 /**
  * Run on-demand tests for one or more URLs.
  */
-export async function createForUrls(key: string, urlIds: number[], note = "", detail = ""): Promise<DeployResult[]> {
+export async function createForUrls(
+	key: string,
+	urlIds: number[],
+	{ note = "", detail = "", force = false }: DeployOptions = {}
+): Promise<DeployResult[]> {
 	let teamName = "your SpeedCurve team"
 
 	try {
@@ -125,7 +139,7 @@ export async function createForUrls(key: string, urlIds: number[], note = "", de
 		.map((url) => new DeployResult(url))
 		.map((result) =>
 			api
-				.deploy(key, { note, detail, url_id: result.url.urlId })
+				.deploy(key, { note, detail, force, url_id: result.url.urlId })
 				.then((res) => {
 					if (res.status === "success") {
 						result.updateFromApiResponse(res)

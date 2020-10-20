@@ -1,6 +1,6 @@
 {
   "name": "speedcurve",
-  "version": "1.4.1",
+  "version": "2.0.0",
   "description": "Official SpeedCurve CLI and Node.js API.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -25,13 +25,32 @@ export class ApiClient {
 		url.username = key
 		url.password = "x"
 
-		for (const key in searchParams) {
-			if (typeof searchParams[key] !== "undefined") {
-				url.searchParams.set(key, searchParams[key])
-			}
+		const preparedSearchParams = this.prepareData(searchParams)
+
+		for (const key in preparedSearchParams) {
+			url.searchParams.set(key, preparedSearchParams[key])
 		}
 
 		return url
+	}
+
+	/**
+	 * Transform a plain JS object into an API-compatible object
+	 */
+	prepareData(data: Record<string, unknown>): Record<string, string> {
+		const formData: Record<string, string> = {}
+
+		for (const key in data) {
+			if (typeof data[key] === "boolean") {
+				// Boolean values are sent as "1" or "0"
+				formData[key] = data[key] ? "1" : "0"
+			} else if (typeof data[key] !== "undefined") {
+				// Undefined/unset values are excluded
+				formData[key] = data[key].toString()
+			}
+		}
+
+		return formData
 	}
 
 	// The V1 SpeedCurve API does not have consistent error reporting. This
@@ -73,13 +92,15 @@ export class ApiClient {
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	post(url: URL, data = {}): Promise<any> {
-		log.http("POST", `${logFriendlyUrl(url)} ${truncate(JSON.stringify(data), 60)}`)
+		const formData = this.prepareData(data)
+
+		log.http("POST", `${logFriendlyUrl(url)} ${truncate(JSON.stringify(formData), 100)}`)
 
 		return r
 			.post({
 				uri: url.href,
 				json: true,
-				form: data,
+				form: formData,
 				headers: {
 					"user-agent": `speedcurve-cli/${VERSION}`,
 				},
@@ -91,13 +112,15 @@ export class ApiClient {
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	put(url: URL, data = {}): Promise<any> {
-		log.http("PUT", `${logFriendlyUrl(url)} ${truncate(JSON.stringify(data), 60)}`)
+		const formData = this.prepareData(data)
+
+		log.http("PUT", `${logFriendlyUrl(url)} ${truncate(JSON.stringify(formData), 100)}`)
 
 		return r
 			.put({
 				uri: url.href,
 				json: true,
-				form: data,
+				form: formData,
 				headers: {
 					"user-agent": `speedcurve-cli/${VERSION}`,
 				},

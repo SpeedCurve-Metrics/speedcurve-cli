@@ -24,7 +24,7 @@
     "eslint": "eslint --fix 'src/**/*.ts'",
     "jest": "jest",
     "report-coverage": "cat coverage/lcov.info | coveralls && rm -rf coverage/",
-    "docs": "typedoc --name 'SpeedCurve Node.js API Reference' --out docs/ --readme api.md --mode library src/index.ts",
+    "docs": "typedoc --name 'SpeedCurve Node.js API Reference' --out docs/ --readme api.md --mode library src/index.ts && touch docs/.nojekyll",
     "commit-docs": "git add docs/ && git commit -m 'Build docs' || echo 'No documentation changes to commit'"
   },
   "prettier": {

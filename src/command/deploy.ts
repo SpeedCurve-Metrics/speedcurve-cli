@@ -189,10 +189,12 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 				noJsonLog("ok", "All tests completed")
 			})
 			.then(maybeCheckBudgets)
-			.then(() => {
+			.then((result) => {
 				if (json) {
 					log.json(jsonOut)
 				}
+
+				return result
 			})
 	} else {
 		if (json) {

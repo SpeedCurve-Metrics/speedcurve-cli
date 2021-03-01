@@ -12,7 +12,7 @@ class Logger {
 	}
 
 	stdout(message: string) {
-		npmlog.stdout("", message)
+		process.stdout.write(message)
 	}
 
 	verbose(message: string) {

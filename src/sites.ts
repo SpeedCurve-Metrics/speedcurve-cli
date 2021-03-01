@@ -1,6 +1,7 @@
 /**
  * Retrieve information about SpeedCurve sites
  *
+ * @module SpeedCurve/sites
  * @example
  *
  * <br>

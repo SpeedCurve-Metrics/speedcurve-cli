@@ -1,3 +1,6 @@
+/**
+ * @module SpeedCurve/api
+ */
 import * as r from "request-promise"
 import { URL } from "url"
 import log from "./log"

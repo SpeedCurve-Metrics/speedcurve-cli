@@ -1,0 +1,13 @@
+{
+    "name": "SpeedCurve Node.js API Reference",
+    "out": "docs",
+    "readme": "api.md",
+    "entryPoints": [
+        "src/api.ts",
+        "src/budgets.ts",
+        "src/deploys.ts",
+        "src/sites.ts",
+        "src/tests.ts",
+        "src/urls.ts"
+    ]
+}

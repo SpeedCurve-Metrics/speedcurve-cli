@@ -1,6 +1,7 @@
 /**
  * Create and manage SpeedCurve deploys
  *
+ * @module SpeedCurve/deploys
  * @example
  *
  * <br>

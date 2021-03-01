@@ -1,6 +1,7 @@
 /**
  * Retrieve synthetic test results
  *
+ * @module SpeedCurve/tests
  * @example
  *
  * <br>

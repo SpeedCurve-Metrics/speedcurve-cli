@@ -1,6 +1,7 @@
 /**
  * Manage URLs in a SpeedCurve account
  *
+ * @module SpeedCurve/urls
  * @example
  *
  * <br>

@@ -1,6 +1,7 @@
 /**
  * Get the status of SpeedCurve performance budgets
  *
+ * @module SpeedCurve/budgets
  * @example
  *
  * <br>

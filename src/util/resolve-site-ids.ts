@@ -1,44 +1,44 @@
-import * as SpeedCurve from "../index"
-import log from "../log"
-import Site from "../model/site"
+import * as SpeedCurve from "../index";
+import log from "../log";
+import Site from "../model/site";
 
-type SiteIdOrName = string | number
+type SiteIdOrName = string | number;
 
-const sitesCache: { [key: string]: Site[] } = {}
+const sitesCache: { [key: string]: Site[] } = {};
 
 async function populateSitesCacheForAccount(key: string): Promise<void> {
-	await SpeedCurve.sites.getAll(key).then((sites) => {
-		sitesCache[key] = sites
-	})
+  await SpeedCurve.sites.getAll(key).then((sites) => {
+    sitesCache[key] = sites;
+  });
 }
 
 /*
  * Find the corresponding site ID for a site name
  */
 export async function resolveSiteId(key: string, siteIdOrName: SiteIdOrName): Promise<number> {
-	if (typeof siteIdOrName === "string") {
-		if (!sitesCache[key]) {
-			await populateSitesCacheForAccount(key)
-		}
+  if (typeof siteIdOrName === "string") {
+    if (!sitesCache[key]) {
+      await populateSitesCacheForAccount(key);
+    }
 
-		const siteByName = sitesCache[key].find((site) => site.name === siteIdOrName)
+    const siteByName = sitesCache[key].find((site) => site.name === siteIdOrName);
 
-		if (siteByName) {
-			return siteByName.siteId
-		}
+    if (siteByName) {
+      return siteByName.siteId;
+    }
 
-		log.warn(`Couldn't find site by name "${siteIdOrName}". Will try to use it as an ID.`)
-	}
+    log.warn(`Couldn't find site by name "${siteIdOrName}". Will try to use it as an ID.`);
+  }
 
-	return Number(siteIdOrName)
+  return Number(siteIdOrName);
 }
 
 export async function resolveSiteIds(key: string, siteIdsOrNames: SiteIdOrName[]): Promise<number[]> {
-	const needsLookup = siteIdsOrNames.some((x) => typeof x === "string")
+  const needsLookup = siteIdsOrNames.some((x) => typeof x === "string");
 
-	if (needsLookup) {
-		await populateSitesCacheForAccount(key)
-	}
+  if (needsLookup) {
+    await populateSitesCacheForAccount(key);
+  }
 
-	return Promise.all(siteIdsOrNames.map((siteIdOrName) => resolveSiteId(key, siteIdOrName)))
+  return Promise.all(siteIdsOrNames.map((siteIdOrName) => resolveSiteId(key, siteIdOrName)));
 }

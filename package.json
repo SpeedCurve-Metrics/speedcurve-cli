@@ -28,10 +28,7 @@
     "commit-docs": "git add docs/ && git commit -m 'Build docs' || echo 'No documentation changes to commit'"
   },
   "prettier": {
-    "endOfLine": "lf",
-    "printWidth": 120,
-    "semi": false,
-    "useTabs": true
+    "printWidth": 120
   },
   "repository": {
     "type": "git",

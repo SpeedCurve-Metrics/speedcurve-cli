@@ -1,34 +1,34 @@
-import * as SpeedCurve from "../index"
-import log from "../log"
-import { resolveSiteId } from "../util/resolve-site-ids"
+import * as SpeedCurve from "../index";
+import log from "../log";
+import { resolveSiteId } from "../util/resolve-site-ids";
 
 interface CreateUrlCommandOptions {
-	key: string
-	json: boolean
-	site: string | number
-	url: string
-	label?: string
+  key: string;
+  json: boolean;
+  site: string | number;
+  url: string;
+  label?: string;
 }
 
 export default async function createUrlCommand(opts: CreateUrlCommandOptions): Promise<void> {
-	const { key, json = false, site, url, label } = opts
-	const siteId = await resolveSiteId(key, site)
+  const { key, json = false, site, url, label } = opts;
+  const siteId = await resolveSiteId(key, site);
 
-	try {
-		const response = await SpeedCurve.urls.create(key, {
-			siteId,
-			url,
-			label,
-		})
+  try {
+    const response = await SpeedCurve.urls.create(key, {
+      siteId,
+      url,
+      label,
+    });
 
-		if (json) {
-			log.json(response)
-		} else {
-			log.ok(`URL ${response.url_id} was created`)
-		}
-	} catch (err) {
-		log.error(`Couldn't create URL. ${err.message}`)
-	}
+    if (json) {
+      log.json(response);
+    } else {
+      log.ok(`URL ${response.url_id} was created`);
+    }
+  } catch (err) {
+    log.error(`Couldn't create URL. ${err.message}`);
+  }
 }
 
-module.exports = createUrlCommand
+module.exports = createUrlCommand;

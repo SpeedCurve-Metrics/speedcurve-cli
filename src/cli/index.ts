@@ -169,7 +169,8 @@ const opts = yargs
     },
   })
   .help()
-  .version().argv;
+  .version()
+  .parseSync();
 
 api.base = opts.api;
 log.setLevel(opts.verbose ? "verbose" : opts.quiet ? "error" : "warn");

@@ -1,0 +1,5 @@
+export default {
+  UNKNOWN_ERROR: 1,
+  DEPLOY_FAILED: 2,
+  DEPLOY_OVER_BUDGET: 4,
+};

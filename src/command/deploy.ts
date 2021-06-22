@@ -4,6 +4,7 @@ import { ExitCode } from "../command";
 import log from "../log";
 import DeployResult from "../model/deploy-result";
 import PerformanceBudget from "../model/performance-budget";
+import exitCodes from "../util/exit-codes";
 import { bold } from "../util/console";
 import pl from "../util/pluralise";
 import { resolveSiteIds } from "../util/resolve-site-ids";
@@ -28,6 +29,9 @@ type KnownLogLevel = "verbose" | "stdout" | "notice" | "bad" | "ok";
 
 export default async function deployCommand(opts: DeployCommandOptions): Promise<ExitCode | void> {
   const { key, site = [], url = [], note = "", detail = "", checkBudgets = false, wait = false, json = false } = opts;
+
+  // Used to record any errors during the deploy process
+  let exitCode = 0;
 
   const noJsonLog = (level: KnownLogLevel, message: string) => {
     if (!json) {
@@ -61,6 +65,10 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
   }
 
   const successfulResults = results.filter((result) => result.success);
+
+  if (successfulResults.length !== results.length) {
+    exitCode = exitCodes.DEPLOY_FAILED;
+  }
 
   successfulResults.forEach((result) => {
     if (result.url) {
@@ -119,7 +127,7 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 
     const maybeCheckBudgets = async () => {
       if (!checkBudgets) {
-        return 0;
+        return;
       }
 
       noJsonLog("stdout", "Checking status of performance budgets...\n\n");
@@ -180,7 +188,9 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
 
       const anyBudgetsOver = [...budgetsAfterDeploy.values()].some((budget) => budget.status === "over");
 
-      return anyBudgetsOver ? 1 : 0;
+      if (anyBudgetsOver) {
+        exitCode = exitCodes.DEPLOY_OVER_BUDGET;
+      }
     };
 
     return updateDeployStatus()
@@ -189,16 +199,18 @@ export default async function deployCommand(opts: DeployCommandOptions): Promise
         noJsonLog("ok", "All tests completed");
       })
       .then(maybeCheckBudgets)
-      .then((result) => {
+      .then(() => {
         if (json) {
           log.json(jsonOut);
         }
 
-        return result;
+        return exitCode;
       });
   } else {
     if (json) {
       log.json(jsonOut);
     }
   }
+
+  return exitCode;
 }

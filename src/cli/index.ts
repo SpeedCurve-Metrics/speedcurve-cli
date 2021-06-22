@@ -158,6 +158,10 @@ const opts = yargs
       describe: "Set the SpeedCurve API endpoint",
       hidden: true,
     },
+    "ignore-errors": {
+      describe: "Ignore errors where possible and always exit with a status code of 0",
+      type: "boolean",
+    },
     quiet: {
       describe: "Quiet mode. Only report errors",
       type: "boolean",
@@ -212,7 +216,7 @@ const command: Command = (() => {
 
 command(opts)
   .then((ret) => {
-    if (typeof ret === "number") {
+    if (typeof ret === "number" && !opts["ignore-errors"]) {
       process.exit(ret);
     }
 

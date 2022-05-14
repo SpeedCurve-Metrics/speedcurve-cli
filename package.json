@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/SpeedCurve-Metrics/speedcurve-cli#readme",
   "dependencies": {
-    "npmlog": "^4.1.2",
+    "npmlog": "^5.0.0",
     "ramda": "^0.27.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",

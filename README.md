@@ -4,9 +4,9 @@
 
 ![SpeedCurve CLI screenshot](.github/screenshot.png)
 
-[![Build status](https://img.shields.io/circleci/build/github/SpeedCurve-Metrics/speedcurve-cli.svg?style=for-the-badge)](https://circleci.com/gh/SpeedCurve-Metrics/speedcurve-cli)
-[![Test coverage](https://img.shields.io/coveralls/github/SpeedCurve-Metrics/speedcurve-cli?style=for-the-badge)](https://coveralls.io/github/SpeedCurve-Metrics/speedcurve-cli)
-[![Security score](https://snyk.io/advisor/npm-package/speedcurve/badge.svg)](https://snyk.io/advisor/npm-package/speedcurve)
+[![Build Status](https://img.shields.io/circleci/build/github/SpeedCurve-Metrics/speedcurve-cli.svg?style=for-the-badge)](https://circleci.com/gh/SpeedCurve-Metrics/speedcurve-cli)
+[![Test Coverage](https://img.shields.io/coveralls/github/SpeedCurve-Metrics/speedcurve-cli?style=for-the-badge)](https://coveralls.io/github/SpeedCurve-Metrics/speedcurve-cli)
+[![Snyk Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/speedcurve?style=for-the-badge)](https://snyk.io/advisor/npm-package/speedcurve)
 
 This package attempts to be a user-friendly wrapper around the SpeedCurve API. It currently supports:
 

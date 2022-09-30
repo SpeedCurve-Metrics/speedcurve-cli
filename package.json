@@ -13,7 +13,7 @@
   "scripts": {
     "preversion": "npm run test && git diff-index --quiet HEAD",
     "version": "npm run build && npm run commit-docs",
-    "postversion": "git push origin master --tags || echo 'Failed to push latest tag. Please do it manually with git push origin master --tags.'",
+    "postversion": "git push origin main --tags || echo 'Failed to push latest tag. Please do it manually with git push origin main --tags.'",
     "clean": "rm -rfv docs/ dist/",
     "test": "npm run lint && npm run compile-src && npm run jest",
     "build": "npm run clean && npm run compile-src && npm run docs",

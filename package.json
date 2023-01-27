@@ -24,7 +24,7 @@
     "eslint": "eslint --fix 'src/**/*.ts'",
     "jest": "jest",
     "report-coverage": "cat coverage/lcov.info | coveralls && rm -rf coverage/",
-    "docs": "typedoc",
+    "docs": "typedoc src/",
     "commit-docs": "git add docs/ && git commit -m 'Build docs' || echo 'No documentation changes to commit'"
   },
   "prettier": {

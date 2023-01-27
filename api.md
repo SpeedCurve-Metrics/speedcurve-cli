@@ -34,6 +34,6 @@ Get synthetic test results.
 
 Manage URLs within a SpeedCurve site.
 
-### [`SpeedCurve.api`](classes/speedcurve_api.apiclient.html)
+### [`SpeedCurve.api`](classes/api.ApiClient.html)
 
-Direct access to an [`ApiClient`](classes/speedcurve_api.apiclient.html) instance with functions for accessing the SpeedCurve API.
+Direct access to an [`ApiClient`](classes/api.ApiClient.html) instance with functions for accessing the SpeedCurve API.

@@ -180,32 +180,36 @@ api.base = opts.api;
 log.setLevel(opts.verbose ? "verbose" : opts.quiet ? "error" : "warn");
 opts.key = opts.key ? opts.key : process.env.SPEEDCURVE_API_KEY;
 
-if (!opts.key) {
-  log.error(`No API key was given. Please specify an API key in the SPEEDCURVE_API_KEY environment variable.`);
-  process.exit(400);
-}
-
 if (!opts._.length) {
   yargs.showHelp();
   process.exit(400);
 }
 
+const requiresKey = (command: Command) => {
+  if (!opts.key) {
+    log.error(`No API key was given. Please specify an API key in the SPEEDCURVE_API_KEY environment variable.`);
+    process.exit(400);
+  }
+
+  return command;
+};
+
 const command: Command = (() => {
   switch (opts._[0]) {
     case "deploy":
-      return deployCommand;
+      return requiresKey(deployCommand);
     case "deploy-status":
-      return deployStatusCommand;
+      return requiresKey(deployStatusCommand);
     case "budgets":
-      return budgetsCommand;
+      return requiresKey(budgetsCommand);
     case "tests":
-      return testsCommand;
+      return requiresKey(testsCommand);
     case "list-sites":
-      return listSitesCommand;
+      return requiresKey(listSitesCommand);
     case "create-url":
-      return createUrlCommand;
+      return requiresKey(createUrlCommand);
     case "update-url":
-      return updateUrlCommand;
+      return requiresKey(updateUrlCommand);
     default:
       return () => {
         yargs.showHelp();

@@ -1,11 +1,8 @@
 /**
  * Retrieve synthetic test results
  *
- * @module SpeedCurve/tests
+ * @module
  * @example
- *
- * <br>
- * <br>
  *
  * ```
  * const SpeedCurve = require("speedcurve")

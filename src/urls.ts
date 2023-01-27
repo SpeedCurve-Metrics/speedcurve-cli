@@ -1,11 +1,8 @@
 /**
  * Manage URLs in a SpeedCurve account
  *
- * @module SpeedCurve/urls
+ * @module
  * @example
- *
- * <br>
- * <br>
  *
  * ```
  * const SpeedCurve = require("speedcurve")

@@ -1,11 +1,8 @@
 /**
  * Create and manage SpeedCurve deploys
  *
- * @module SpeedCurve/deploys
+ * @module
  * @example
- *
- * <br>
- * <br>
  *
  * ```
  * const SpeedCurve = require("speedcurve")

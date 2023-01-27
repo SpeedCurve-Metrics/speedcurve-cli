@@ -1,11 +1,8 @@
 /**
  * Get the status of SpeedCurve performance budgets
  *
- * @module SpeedCurve/budgets
+ * @module
  * @example
- *
- * <br>
- * <br>
  *
  * ```
  * const SpeedCurve = require("speedcurve")

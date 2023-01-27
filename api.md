@@ -14,23 +14,23 @@ const tests = await SpeedCurve.tests.get(key, testId)
 
 ## Modules
 
-### [`SpeedCurve.budgets`](modules/speedcurve_budgets.html)
+### [`SpeedCurve.budgets`](modules/budgets.html)
 
 Get the status of synthetic performance budgets.
 
-### [`SpeedCurve.deploys`](modules/speedcurve_deploys.html)
+### [`SpeedCurve.deploys`](modules/deploys.html)
 
 Create and monitor SpeedCurve deployments (on-demand testing).
 
-### [`SpeedCurve.sites`](modules/speedcurve_sites.html)
+### [`SpeedCurve.sites`](modules/sites.html)
 
 Get information about SpeedCurve sites, including recent test results.
 
-### [`SpeedCurve.tests`](modules/speedcurve_tests.html)
+### [`SpeedCurve.tests`](modules/tests.html)
 
 Get synthetic test results.
 
-### [`SpeedCurve.urls`](modules/speedcurve_urls.html)
+### [`SpeedCurve.urls`](modules/urls.html)
 
 Manage URLs within a SpeedCurve site.
 

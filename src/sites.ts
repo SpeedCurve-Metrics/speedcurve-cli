@@ -1,11 +1,8 @@
 /**
  * Retrieve information about SpeedCurve sites
  *
- * @module SpeedCurve/sites
+ * @module
  * @example
- *
- * <br>
- * <br>
  *
  * ```
  * const SpeedCurve = require("speedcurve")

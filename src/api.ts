@@ -1,5 +1,14 @@
 /**
- * @module SpeedCurve/api
+ * Provides direct access to the SpeedCurve REST API client. See {@link ApiClient} for usage information.
+ *
+ * @module
+ * @example
+ *
+ * ```
+ * import SpeedCurve from "speedcurve";
+ *
+ * const api = SpeedCurve.api;
+ * ```
  */
 import * as r from "request-promise";
 import { URL } from "url";

@@ -1,5 +1,11 @@
 {
     "name": "SpeedCurve Node.js API Reference",
+    "readme": "api.md",
+    "cleanOutputDir": true,
     "out": "docs",
-    "readme": "api.md"
+    "exclude": ["src/{cli,command,util}/**"],
+    "entryPoints": ["src"],
+    "entryPointStrategy": "expand",
+    "plugin": ["typedoc-theme-hierarchy"],
+    "theme": "hierarchy"
 }

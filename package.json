@@ -44,7 +44,7 @@
     "ramda": "^0.28.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
-    "yargs": "^17.0.1"
+    "yargs": "^17.7.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
